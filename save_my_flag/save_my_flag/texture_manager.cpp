@@ -7,6 +7,7 @@ void TextureManager::LoadTexture(const char* filename, int id)
     element.id = id;
     element.tex = new LPDIRECT3DTEXTURE9();
 
+
     HRESULT hr = D3DXCreateTextureFromFileExA(g_pd3dDevice,
         filename, D3DX_DEFAULT_NONPOW2, D3DX_DEFAULT_NONPOW2, 0,
         D3DUSAGE_DYNAMIC,
