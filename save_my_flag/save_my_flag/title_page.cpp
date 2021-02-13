@@ -15,10 +15,8 @@ TitlePage::TitlePage()
 
 	classType = TITLE_PAGE;
 	StartButtonState = TEX_START_BUTTON_NOMAL;
-
-	//gameSystem.deleteData();
 	
-	tex = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
+	tex = textureManager->GetTexture(TEX_TITLE_PAGE_TITLE);
 }
 
 void TitlePage::Update()

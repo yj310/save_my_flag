@@ -22,6 +22,6 @@ public:
 	void BackgroundRender();
 	void StartButtonRender();
 protected:
-	LPD3DXSPRITE spr = nullptr;
 	LPDIRECT3DTEXTURE9* tex;
+	LPD3DXSPRITE spr = nullptr;
 };

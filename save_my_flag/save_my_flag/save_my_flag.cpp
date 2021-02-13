@@ -34,7 +34,7 @@ LPDIRECT3D9         g_pD3D = NULL;
 LPDIRECT3DDEVICE9   g_pd3dDevice = NULL;
 
 // Manager
-TextureManager textureManager;
+TextureManager* textureManager = new TextureManager();
 InputManager inputManager;
 PageManager pageManager;
 DataManager dataManager;
@@ -74,10 +74,10 @@ HRESULT InitD3D(HWND hWnd)
 void InitMyStuff()
 {
     //background
-    textureManager.LoadTexture("source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
+    textureManager->LoadTexture("source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
     
     //ui
-    textureManager.LoadTexture("source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);
+    textureManager->LoadTexture("source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);
     
     
 
@@ -195,7 +195,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
    hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, 1920, 1080, nullptr, nullptr, hInstance, nullptr);
+      CW_USEDEFAULT, 0, WINDOW_WIDTH, WINDOW_HEIGHT, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {
