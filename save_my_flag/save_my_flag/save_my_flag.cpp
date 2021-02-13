@@ -11,6 +11,7 @@
 #pragma warning( disable : 4996 ) // disable deprecated warning 
 #include <strsafe.h>
 #pragma warning( default : 4996 )
+#include "global.h"
 
 #define MAX_LOADSTRING 100
 
@@ -19,15 +20,29 @@ HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 
-HWND hWnd;
-LPDIRECT3D9         g_pD3D = nullptr;
-LPDIRECT3DDEVICE9   g_pd3dDevice = nullptr;
 
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 
+
+/* global */
+// basic
+HWND hWnd;
+LPDIRECT3D9         g_pD3D = NULL;
+LPDIRECT3DDEVICE9   g_pd3dDevice = NULL;
+
+// Manager
+TextureManager textureManager;
+InputManager inputManager;
+PageManager pageManager;
+DataManager dataManager;
+
+// Other
+float deltaTime = 0.3f;
+DWORD prevTime;
+//GameSystem gameSystem;
 
 HRESULT InitD3D(HWND hWnd)
 {

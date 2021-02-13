@@ -20,7 +20,8 @@
 #define WINDOW_HEIGHT 1080
 
 // page
-#define TITLE_PAGE 0
+#define TEX_FADING 0
+#define TITLE_PAGE 1
 
 /* Texture ID */
 // Background
@@ -52,7 +53,7 @@ extern DataManager dataManager;
 
 
 // Other
-extern HWND MyhWnd;
+extern HWND hWnd;
 extern float deltaTime;
 
 

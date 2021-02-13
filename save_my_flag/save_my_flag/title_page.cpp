@@ -22,7 +22,7 @@ void TitlePage::Update()
 {
 	POINT pt;
 	GetCursorPos(&pt);
-	ScreenToClient(MyhWnd, &pt);
+	ScreenToClient(hWnd, &pt);
 
 	StartButtonUpdate(pt);
 
