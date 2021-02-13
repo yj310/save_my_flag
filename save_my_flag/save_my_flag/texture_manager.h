@@ -8,7 +8,6 @@ class TextureElement
 public:
 	int id;
 	LPDIRECT3DTEXTURE9* texture;
-	LPD3DXSPRITE sprite;
 };
 
 class TextureManager

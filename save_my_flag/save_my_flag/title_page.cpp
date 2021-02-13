@@ -68,7 +68,7 @@ void TitlePage::StartButtonUpdate(POINT pt)
 /* Render */
 void TitlePage::BackgroundRender()
 {
-	TextureElement* element = new TextureElement();
+	/*TextureElement* element = new TextureElement();
 	D3DXCreateSprite(g_pd3dDevice, &element->sprite);
 	RECT rc;
 	D3DXVECTOR3 pos;
@@ -86,7 +86,7 @@ void TitlePage::BackgroundRender()
 
 	element->sprite->Draw(*element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
-	element->sprite->End();
+	element->sprite->End();*/
 }
 
 void TitlePage::StartButtonRender()
