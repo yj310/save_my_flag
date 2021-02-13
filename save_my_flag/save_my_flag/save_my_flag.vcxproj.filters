@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="헤더 파일\Manager">
+      <UniqueIdentifier>{80e61067-b6ac-4d29-bf57-f4a6fc004754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{95effa3e-d175-4859-a014-b33596c1106e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Page">
+      <UniqueIdentifier>{7690db3e-9ad7-4824-a4b0-6ffe33fb626d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Page">
+      <UniqueIdentifier>{aab5d0b9-8fad-445f-93c2-b7f54489d76e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -27,10 +39,49 @@
     <ClInclude Include="save_my_flag.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="texture_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="input_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="page_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="page.h">
+      <Filter>헤더 파일\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="title_page.h">
+      <Filter>헤더 파일\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="Fading.h">
+      <Filter>헤더 파일\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="data_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="save_my_flag.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_manager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="page_manager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Fading.cpp">
+      <Filter>소스 파일\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="data_manager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="title_page.cpp">
+      <Filter>소스 파일\Page</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
