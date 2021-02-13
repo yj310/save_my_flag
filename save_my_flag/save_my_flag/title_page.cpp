@@ -32,7 +32,7 @@ void TitlePage::Update()
 void TitlePage::Render()
 {
 	BackgroundRender();
-	StartButtonRender();
+	TitleRender();
 
 }
 
