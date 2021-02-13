@@ -71,6 +71,20 @@ HRESULT InitD3D(HWND hWnd)
     return S_OK;
 }
 
+void InitMyStuff()
+{
+    //background
+    textureManager.LoadTexture("source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
+    
+    //ui
+    textureManager.LoadTexture("source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);
+    
+    
+
+    pageManager.CreateTitlePage();
+    prevTime = GetTickCount();
+}
+
 void Render()
 {
     
@@ -79,7 +93,7 @@ void Render()
    
     if (SUCCEEDED(g_pd3dDevice->BeginScene()))
     {
-       
+        pageManager.Render();
         g_pd3dDevice->EndScene();
     }
 
@@ -90,6 +104,20 @@ void Render()
 void Update()
 {
 
+    DWORD cur = GetTickCount();
+    DWORD diff = cur - prevTime;
+    deltaTime = diff / 1000.0f;
+    if (deltaTime > 0.016f)
+    {
+        deltaTime = 0.016f;
+    }
+    prevTime = cur;
+
+
+
+    pageManager.Update();
+    //cheats.Update();
+    //inputManager.Update();
 }
 
 void GameLoop()
@@ -175,6 +203,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    }
 
    InitD3D(hWnd);
+   InitMyStuff();
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 

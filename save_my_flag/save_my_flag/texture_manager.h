@@ -7,17 +7,16 @@ class TextureElement
 {
 public:
 	int id;
-	LPDIRECT3DTEXTURE9 texture;
-	ID3DXSprite* sprite;
-
+	LPDIRECT3DTEXTURE9* texture;
+	LPD3DXSPRITE sprite;
 };
 
 class TextureManager
 {
 public:
-	vector<TextureElement*> elements;
+	vector<TextureElement> elements;
 
-	void LoadTexture(const TCHAR* name, int id);
-	TextureElement* getTexture(int id);
+	void LoadTexture(const char* name, int id);
+	LPDIRECT3DTEXTURE9* getTexture(int id);
 
 };

@@ -26,6 +26,7 @@
 /* Texture ID */
 // Background
 #define TEX_TITLE_PAGE_BACKGROUND 1000
+#define TEX_TITLE_PAGE_TITLE 1100
 
 // Object
 

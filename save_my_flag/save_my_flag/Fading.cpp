@@ -16,7 +16,7 @@ void Fading::Update()
 void Fading::Render()
 {
 
-	TextureElement* element = textureManager.getTexture(TEX_FADING);
+	/*TextureElement* element = textureManager.getTexture(TEX_FADING);
 	RECT rc;
 	D3DXVECTOR3 pos;
 
@@ -31,6 +31,6 @@ void Fading::Render()
 
 	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB((255 / 50) * pageManager.FadingCount, 255, 255, 255));
 
-	element->sprite->End();
+	element->sprite->End();*/
 
 }

@@ -65,12 +65,13 @@ void TitlePage::StartButtonUpdate(POINT pt)
 /* Render */
 void TitlePage::BackgroundRender()
 {
-	TextureElement* element;
+	TextureElement* element = new TextureElement();
+	D3DXCreateSprite(g_pd3dDevice, &element->sprite);
 	RECT rc;
 	D3DXVECTOR3 pos;
 	D3DXVECTOR3 cen;
 
-	element = textureManager.getTexture(TEX_TITLE_PAGE_BACKGROUND);
+	element->texture = textureManager.getTexture(TEX_TITLE_PAGE_BACKGROUND);
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
 	rc.left = 0;
@@ -80,30 +81,31 @@ void TitlePage::BackgroundRender()
 
 	pos = { 0, 0, 0 };
 
-	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(*element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
 }
 
 void TitlePage::StartButtonRender()
 {
-	TextureElement* element;
+
+	TextureElement* element = new TextureElement();
+	D3DXCreateSprite(g_pd3dDevice, &element->sprite);
 	RECT rc;
 	D3DXVECTOR3 pos;
 	D3DXVECTOR3 cen;
 
-	element = textureManager.getTexture(StartButtonState);
+	element->texture = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
 	rc.left = 0;
 	rc.top = 0;
-	rc.right = START_BUTTON_WIDTH;
-	rc.bottom = START_BUTTON_HEIGHT;
+	rc.right = WINDOW_WIDTH;
+	rc.bottom = WINDOW_HEIGHT;
 
-	pos = { START_BUTTON_X, START_BUTTON_Y, 0 };
-	cen = { START_BUTTON_HALF_WIDTH, START_BUTTON_HALF_HEIGHT, 0 };
+	pos = { 0, 0, 0 };
 
-	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(*element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
 
