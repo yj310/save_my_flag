@@ -22,6 +22,7 @@
 // page
 #define TEX_FADING 0
 #define TITLE_PAGE 1
+#define FIRST_GAME_PAGE 1
 
 /* Texture ID */
 // Background

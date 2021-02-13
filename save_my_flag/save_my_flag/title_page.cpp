@@ -66,7 +66,6 @@ void TitlePage::StartButtonUpdate(POINT pt)
 void TitlePage::BackgroundRender()
 {
 
-
 	TextureElement* element = textureManager.getTexture(TEX_TITLE_PAGE_BACKGROUND);
 
 	RECT rc;
@@ -89,7 +88,7 @@ void TitlePage::BackgroundRender()
 
 }
 
-void TitlePage::StartButtonRender()
+void TitlePage::TitleRender()
 {
 
 	TextureElement* element = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
@@ -112,5 +111,9 @@ void TitlePage::StartButtonRender()
 
 	element->sprite->End();
 
+}
+
+void TitlePage::StartButtonRender()
+{
 
 }
