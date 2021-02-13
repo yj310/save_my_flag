@@ -34,7 +34,7 @@ LPDIRECT3D9         g_pD3D = NULL;
 LPDIRECT3DDEVICE9   g_pd3dDevice = NULL;
 
 // Manager
-TextureManager* textureManager = new TextureManager();
+TextureManager textureManager;
 InputManager inputManager;
 PageManager pageManager;
 DataManager dataManager;
@@ -74,10 +74,10 @@ HRESULT InitD3D(HWND hWnd)
 void InitMyStuff()
 {
     //background
-    textureManager->LoadTexture("source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
+    textureManager.LoadTexture(L"source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
     
     //ui
-    textureManager->LoadTexture("source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);
+    textureManager.LoadTexture(L"source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);
     
     
 

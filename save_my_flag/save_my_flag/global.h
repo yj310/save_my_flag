@@ -47,7 +47,7 @@ extern LPDIRECT3DDEVICE9 g_pd3dDevice;
 
 
 // Managers
-extern TextureManager* textureManager;
+extern TextureManager textureManager;
 extern InputManager inputManager;
 extern PageManager pageManager;
 extern DataManager dataManager;

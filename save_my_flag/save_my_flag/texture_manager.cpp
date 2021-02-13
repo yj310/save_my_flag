@@ -1,36 +1,23 @@
 #include "texture_manager.h"
 #include "global.h"
 
-void TextureManager::LoadTexture(const char* filename, int id)
+void TextureManager::LoadTexture(const TCHAR* name, int id)
 {
-    TextureElement element;
-    element.id = id;
-    element.tex = new LPDIRECT3DTEXTURE9();
-
-
-    HRESULT hr = D3DXCreateTextureFromFileExA(g_pd3dDevice,
-        filename, D3DX_DEFAULT_NONPOW2, D3DX_DEFAULT_NONPOW2, 0,
-        D3DUSAGE_DYNAMIC,
-        D3DFMT_UNKNOWN,
-        D3DPOOL_DEFAULT,
-        D3DX_DEFAULT,
-        D3DX_DEFAULT,
-        0,
-        nullptr,
-        nullptr, element.tex);
-
-    elements.push_back(element);
+	TextureElement* newElement = new TextureElement();
+	newElement->id = id;
+	D3DXCreateSprite(g_pd3dDevice, &newElement->sprite);
+	D3DXCreateTextureFromFile(g_pd3dDevice, name, &newElement->texture);
+	elements.push_back(newElement);
 }
 
-LPDIRECT3DTEXTURE9* TextureManager::GetTexture(int id)
+TextureElement* TextureManager::getTexture(int id)
 {
-    for (int i = 0; i < elements.size(); ++i)
-    {
-        if (elements[i].id == id)
-        {
-            return elements[i].tex;
-        }
-    }
-
-    return nullptr;
+	for (int i = 0; i < elements.size(); ++i)
+	{
+		if (elements[i]->id == id)
+		{
+			return elements[i];
+		}
+	}
+	return nullptr;
 }

@@ -11,12 +11,11 @@
 
 TitlePage::TitlePage()
 {
-	D3DXCreateSprite(g_pd3dDevice, &spr);
 
 	classType = TITLE_PAGE;
 	StartButtonState = TEX_START_BUTTON_NOMAL;
 	
-	tex = textureManager->GetTexture(TEX_TITLE_PAGE_TITLE);
+	
 }
 
 void TitlePage::Update()
@@ -32,7 +31,7 @@ void TitlePage::Update()
 
 void TitlePage::Render()
 {
-	//BackgroundRender();
+	BackgroundRender();
 	StartButtonRender();
 
 }
@@ -66,13 +65,15 @@ void TitlePage::StartButtonUpdate(POINT pt)
 /* Render */
 void TitlePage::BackgroundRender()
 {
-	/*TextureElement* element = new TextureElement();
-	D3DXCreateSprite(g_pd3dDevice, &element->sprite);
+
+
+	TextureElement* element = textureManager.getTexture(TEX_TITLE_PAGE_BACKGROUND);
+
 	RECT rc;
 	D3DXVECTOR3 pos;
 	D3DXVECTOR3 cen;
 
-	element->texture = textureManager.getTexture(TEX_TITLE_PAGE_BACKGROUND);
+	//element->texture = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
 	rc.left = 0;
@@ -82,22 +83,23 @@ void TitlePage::BackgroundRender()
 
 	pos = { 0, 0, 0 };
 
-	element->sprite->Draw(*element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
-	element->sprite->End();*/
+	element->sprite->End();
+
 }
 
 void TitlePage::StartButtonRender()
 {
 
-	//TextureElement* element = new TextureElement();
-	//D3DXCreateSprite(g_pd3dDevice, &element->sprite);
+	TextureElement* element = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
+	
 	RECT rc;
 	D3DXVECTOR3 pos;
 	D3DXVECTOR3 cen;
 
 	//element->texture = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
-	spr->Begin(D3DXSPRITE_ALPHABLEND);
+	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
 	rc.left = 0;
 	rc.top = 0;
@@ -106,9 +108,9 @@ void TitlePage::StartButtonRender()
 
 	pos = { 0, 0, 0 };
 
-	spr->Draw(*tex, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
-	spr->End();
+	element->sprite->End();
 
 
 }
