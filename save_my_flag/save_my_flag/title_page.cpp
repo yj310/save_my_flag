@@ -32,7 +32,7 @@ void TitlePage::Update()
 void TitlePage::Render()
 {
 	BackgroundRender();
-	StartButtonRender();
+	TitleRender();
 
 }
 
@@ -72,7 +72,6 @@ void TitlePage::BackgroundRender()
 	D3DXVECTOR3 pos;
 	D3DXVECTOR3 cen;
 
-	//element->texture = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
 	rc.left = 0;
