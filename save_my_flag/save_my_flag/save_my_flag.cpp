@@ -232,6 +232,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     case WM_LBUTTONUP:
         inputManager.keyBuffer[VK_LBUTTON] = 0;
+        break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;

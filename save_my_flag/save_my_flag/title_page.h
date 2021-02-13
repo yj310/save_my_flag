@@ -20,6 +20,7 @@ public:
 
 	/* Render */
 	void BackgroundRender();
+	void TitleRender();
 	void StartButtonRender();
 protected:
 	
