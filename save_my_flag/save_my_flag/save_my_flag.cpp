@@ -60,6 +60,13 @@ HRESULT InitD3D(HWND hWnd)
     d3dpp.EnableAutoDepthStencil = TRUE;
     d3dpp.AutoDepthStencilFormat = D3DFMT_D16;
 
+
+	/*d3dpp.Windowed = false;
+	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
+	d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8;
+	d3dpp.BackBufferWidth = WINDOW_WIDTH;
+	d3dpp.BackBufferHeight = WINDOW_HEIGHT;*/
+
     // Create the D3DDevice
     if (FAILED(g_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd,
         D3DCREATE_SOFTWARE_VERTEXPROCESSING,
