@@ -11,11 +11,14 @@
 
 TitlePage::TitlePage()
 {
+	D3DXCreateSprite(g_pd3dDevice, &spr);
+
 	classType = TITLE_PAGE;
 	StartButtonState = TEX_START_BUTTON_NOMAL;
 
 	//gameSystem.deleteData();
-
+	
+	tex = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
 }
 
 void TitlePage::Update()
@@ -31,7 +34,7 @@ void TitlePage::Update()
 
 void TitlePage::Render()
 {
-	BackgroundRender();
+	//BackgroundRender();
 	StartButtonRender();
 
 }
@@ -89,14 +92,14 @@ void TitlePage::BackgroundRender()
 void TitlePage::StartButtonRender()
 {
 
-	TextureElement* element = new TextureElement();
-	D3DXCreateSprite(g_pd3dDevice, &element->sprite);
+	//TextureElement* element = new TextureElement();
+	//D3DXCreateSprite(g_pd3dDevice, &element->sprite);
 	RECT rc;
 	D3DXVECTOR3 pos;
 	D3DXVECTOR3 cen;
 
-	element->texture = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
-	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
+	//element->texture = textureManager.getTexture(TEX_TITLE_PAGE_TITLE);
+	spr->Begin(D3DXSPRITE_ALPHABLEND);
 
 	rc.left = 0;
 	rc.top = 0;
@@ -105,9 +108,9 @@ void TitlePage::StartButtonRender()
 
 	pos = { 0, 0, 0 };
 
-	element->sprite->Draw(*element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	spr->Draw(*tex, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
-	element->sprite->End();
+	spr->End();
 
 
 }
