@@ -37,6 +37,8 @@
 #define TEX_ENEMY_A 2004
 #define TEX_ENEMY_B 2005
 #define TEX_PLAYER 2006
+#define TEX_PLAYER 2006
+#define TEX_BRICK 2007
 
 // UI
 #define TEX_TITLE_PAGE_TITLE 3000
