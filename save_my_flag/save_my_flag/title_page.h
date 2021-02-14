@@ -14,14 +14,18 @@ public:
 
 
 	int StartButtonState;
+	int ExitButtonState;
 
 	/* Update */
 	void StartButtonUpdate(POINT pt);
+	void ExitButtonUpdate(POINT pt);
 
 	/* Render */
 	void BackgroundRender();
 	void TitleRender();
 	void StartButtonRender();
+	void ExitButtonRender();
+
 protected:
 	
 };
