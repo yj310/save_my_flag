@@ -1,6 +1,7 @@
 #pragma once
 #include "page.h"
 #include <d3dx9.h>
+#include "enemy_a.h"
 
 
 class TitlePage : public Page
@@ -24,6 +25,8 @@ public:
 	int enemy_count;
 	float enemy_X_direction;
 	int enemy_speed;
+
+	EnemyA* enemyA;
 
 
 	/* Update */

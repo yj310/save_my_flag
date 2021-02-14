@@ -31,6 +31,9 @@
     <Filter Include="헤더 파일\object">
       <UniqueIdentifier>{3e2a422a-e06a-4bb0-b8aa-e01b518a7e0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\object\enemy">
+      <UniqueIdentifier>{f0de6ae7-08e6-40a5-b129-0dacea8e62eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -81,6 +84,12 @@
     <ClInclude Include="tile.h">
       <Filter>헤더 파일\object</Filter>
     </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_a.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="save_my_flag.cpp">
@@ -112,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="tile.cpp">
       <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy_a.cpp">
+      <Filter>소스 파일\object\enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -156,6 +156,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="data_manager.h" />
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="enemy_a.h" />
     <ClInclude Include="Fading.h" />
     <ClInclude Include="first_game_page.h" />
     <ClInclude Include="framework.h" />
@@ -174,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="data_manager.cpp" />
+    <ClCompile Include="enemy_a.cpp" />
     <ClCompile Include="Fading.cpp" />
     <ClCompile Include="first_game_page.cpp" />
     <ClCompile Include="game_system.cpp" />
