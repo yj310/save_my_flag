@@ -27,6 +27,7 @@
 /* Texture ID */
 // Background
 #define TEX_TITLE_PAGE_BACKGROUND 1000
+#define TEX_FIRST_GAME_PAGE_BACKGROUND 1100
 
 // Object
 #define TEX_CLOUD_A 2000
