@@ -27,6 +27,11 @@
 #define CLOUD_B_WIDTH 340
 #define CLOUD_B_HEIGHT 190
 
+#define ENEMY_X 1800
+#define ENEMY_Y 910
+#define ENEMY_WIDTH 100
+#define ENEMY_HEIGHT 100
+
 TitlePage::TitlePage()
 {
 
@@ -37,9 +42,11 @@ TitlePage::TitlePage()
 	cloud_b_Y = CLOUD_B_Y;
 	cloud_a_Y_direction = 1;
 	cloud_b_Y_direction = 1;
-	enemy_X = 1800;
+	enemy_X = ENEMY_X;
 	enemy_state = TEX_ENEMY_A;
 	enemy_count = 0;
+	enemy_X_direction = -1;
+	enemy_speed = 1;
 }
 
 void TitlePage::Update()
@@ -142,6 +149,34 @@ void TitlePage::CloudUpdate()
 
 void TitlePage::EnemyUpdate()
 {
+
+	enemy_X += enemy_X_direction;
+	if (enemy_X <= 0)
+	{
+		enemy_speed * 2;
+		enemy_X_direction = enemy_speed;
+	}
+	if (enemy_X >= WINDOW_WIDTH)
+	{
+		enemy_speed * 2;
+		enemy_X_direction = enemy_speed * -1;
+	}
+
+
+	enemy_count += 1;
+	if (enemy_count == 20)
+	{
+		enemy_count = 0;
+		if (enemy_state == TEX_ENEMY_A)
+		{
+			enemy_state = TEX_ENEMY_B;
+		} 
+		else if (enemy_state == TEX_ENEMY_B)
+		{
+			enemy_state = TEX_ENEMY_A;
+		}
+	}
+
 
 }
 
@@ -269,7 +304,7 @@ void TitlePage::CloudRender()
 
 void TitlePage::EnemyRender()
 {
-	TextureElement* element = textureManager.getTexture(ExitButtonState);
+	TextureElement* element = textureManager.getTexture(enemy_state);
 
 	RECT rc;
 	D3DXVECTOR3 pos;
@@ -279,11 +314,11 @@ void TitlePage::EnemyRender()
 
 	rc.left = 0;
 	rc.top = 0;
-	rc.right = EXIT_BUTTON_WIDTH;
-	rc.bottom = EXIT_BUTTON_HEIGHT;
+	rc.right = ENEMY_WIDTH;
+	rc.bottom = ENEMY_HEIGHT;
 
-	pos = { EXIT_BUTTON_X, EXIT_BUTTON_Y, 0 };
-	cen = { EXIT_BUTTON_HALF_WIDTH, EXIT_BUTTON_HALF_HEIGHT, 0 };
+	pos = { enemy_X, ENEMY_Y, 0 };
+	cen = { ENEMY_WIDTH / 2, ENEMY_HEIGHT, 0 };
 
 	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
