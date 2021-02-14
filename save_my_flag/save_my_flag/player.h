@@ -10,6 +10,7 @@ public:
 	void Render();
 
 	void Jump();
+	void setPos(float x, float y);
 	D3DXVECTOR2 getPos();
 	int getRadious();
 	float getSpeed();

@@ -19,6 +19,7 @@ public:
 	void BackgroundRender();
 
 	Player player;
+
 protected:
 
 };

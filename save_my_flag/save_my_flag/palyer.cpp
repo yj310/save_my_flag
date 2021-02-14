@@ -1,4 +1,5 @@
 #include "player.h"
+#include "global.h"
 
 #define PLAYER_WIDTH 100
 #define PLAYER_HEIGHT 100
@@ -44,16 +45,16 @@ void Player::Render()
 
 void Player::Update()
 {
-	if (inputManager.keyBuffer[VK_LEFT] == 1)
+	if (inputManager.keyBuffer['A'] == 1)
 	{
 		posX -= speed;
 	}
-	else if (inputManager.keyBuffer[VK_RIGHT] == 1)
+	else if (inputManager.keyBuffer['D'] == 1)
 	{
 		posX += speed;
 	}
 
-	if (inputManager.keyBuffer[VK_UP] == 1 && !isJump)
+	if (inputManager.keyBuffer['W'] == 1 && !isJump)
 	{
 		jumpStartPosY = posY;
 		isJump = true;
@@ -62,8 +63,9 @@ void Player::Update()
 	if (isJump)
 	{
 		Jump();
+		posY = jumpStartPosY + jumpHeight;
 	}
-	posY = jumpStartPosY + jumpHeight;
+	
 }
 
 
@@ -86,6 +88,13 @@ void Player::Jump()
 float Player::getSpeed()
 {
 	return speed;
+}
+
+void Player::setPos(float x, float y)
+{
+	posX = x;
+	posY = y;
+	
 }
 
 D3DXVECTOR2 Player::getPos()

@@ -11,5 +11,6 @@ public:
 	float posY;
 
 	D3DXVECTOR2 getPos();
+	void setPos(float x, float y);
 	D3DXVECTOR2 getSize();
 };

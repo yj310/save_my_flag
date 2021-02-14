@@ -12,7 +12,7 @@ public:
 	GameSystem();
 	void CreateMap();
 	void GenerateTiles();
-
+	void MakeTile(float x, float y);
 	void Update();
 	void Render();
 

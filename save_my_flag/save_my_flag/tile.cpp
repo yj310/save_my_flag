@@ -35,12 +35,22 @@ void Tile::Render()
 
 void Tile::Update()
 {
-
+	
+	/*if (inputManager.keyBuffer[VK_LEFT] == 1)
+	{
+		posX += 10;
+	}*/
 }
 
 D3DXVECTOR2 Tile::getPos()
 {
 	return { posX, posY };
+}
+
+void Tile::setPos(float x, float y)
+{
+	posX = x;
+	posY = y;
 }
 
 D3DXVECTOR2 Tile::getSize()
