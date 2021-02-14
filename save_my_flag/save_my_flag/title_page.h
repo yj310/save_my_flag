@@ -17,6 +17,8 @@ public:
 	int ExitButtonState;
 	float cloud_a_Y;
 	float cloud_b_Y;
+	float cloud_a_Y_direction;
+	float cloud_b_Y_direction;
 	float enemy_X;
 	int enemy_state;
 	int enemy_count;
@@ -36,6 +38,7 @@ public:
 
 	void CloudRender();
 	void EnemyRender();
+	void TileRender();
 
 protected:
 	
