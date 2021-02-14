@@ -42,11 +42,8 @@ TitlePage::TitlePage()
 	cloud_b_Y = CLOUD_B_Y;
 	cloud_a_Y_direction = 1;
 	cloud_b_Y_direction = 1;
-	enemy_X = ENEMY_X;
-	enemy_state = TEX_ENEMY_A;
-	enemy_count = 0;
-	enemy_X_direction = -1;
-	enemy_speed = 1;
+
+	enemyA = new EnemyA(1700, 910, -1);
 }
 
 void TitlePage::Update()
@@ -149,32 +146,17 @@ void TitlePage::CloudUpdate()
 
 void TitlePage::EnemyUpdate()
 {
+	enemyA->Update();
 
-	enemy_X += enemy_X_direction;
-	if (enemy_X <= 0)
+	if (enemyA->posX <= enemyA->width / 2)
 	{
-		enemy_speed * 2;
-		enemy_X_direction = enemy_speed;
+		enemyA->direction = 1;
+		enemyA->state = TEX_ENEMY_C;
 	}
-	if (enemy_X >= WINDOW_WIDTH)
+	if (enemyA->posX >= WINDOW_WIDTH - enemyA->width / 2)
 	{
-		enemy_speed * 2;
-		enemy_X_direction = enemy_speed * -1;
-	}
-
-
-	enemy_count += 1;
-	if (enemy_count == 20)
-	{
-		enemy_count = 0;
-		if (enemy_state == TEX_ENEMY_A)
-		{
-			enemy_state = TEX_ENEMY_B;
-		} 
-		else if (enemy_state == TEX_ENEMY_B)
-		{
-			enemy_state = TEX_ENEMY_A;
-		}
+		enemyA->direction = -1;
+		enemyA->state = TEX_ENEMY_A;
 	}
 
 
@@ -304,25 +286,7 @@ void TitlePage::CloudRender()
 
 void TitlePage::EnemyRender()
 {
-	TextureElement* element = textureManager.getTexture(enemy_state);
-
-	RECT rc;
-	D3DXVECTOR3 pos;
-	D3DXVECTOR3 cen;
-
-	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
-
-	rc.left = 0;
-	rc.top = 0;
-	rc.right = ENEMY_WIDTH;
-	rc.bottom = ENEMY_HEIGHT;
-
-	pos = { enemy_X, ENEMY_Y, 0 };
-	cen = { ENEMY_WIDTH / 2, ENEMY_HEIGHT, 0 };
-
-	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
-
-	element->sprite->End();
+	enemyA->Render();
 }
 
 void TitlePage::TileRender()
