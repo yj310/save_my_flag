@@ -22,6 +22,8 @@ public:
 	float enemy_X;
 	int enemy_state;
 	int enemy_count;
+	float enemy_X_direction;
+	int enemy_speed;
 
 
 	/* Update */
