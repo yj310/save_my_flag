@@ -90,6 +90,9 @@
     <ClInclude Include="enemy_a.h">
       <Filter>헤더 파일\object</Filter>
     </ClInclude>
+    <ClInclude Include="gold.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="save_my_flag.cpp">
@@ -124,6 +127,9 @@
     </ClCompile>
     <ClCompile Include="enemy_a.cpp">
       <Filter>소스 파일\object\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="gold.cpp">
+      <Filter>소스 파일\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
