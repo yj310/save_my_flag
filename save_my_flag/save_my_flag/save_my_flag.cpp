@@ -38,6 +38,7 @@ TextureManager textureManager;
 InputManager inputManager;
 PageManager pageManager;
 DataManager dataManager;
+GameSystem gameSystem;
 
 // Other
 float deltaTime = 0.3f;

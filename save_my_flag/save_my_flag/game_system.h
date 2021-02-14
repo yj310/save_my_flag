@@ -1,8 +1,10 @@
 #pragma once
-#include "player.h"
+
 #include "tile.h"
-#include <d3dx9.h>
+#include <vector>
 using namespace std;
+
+class Player;
 
 class GameSystem
 {
