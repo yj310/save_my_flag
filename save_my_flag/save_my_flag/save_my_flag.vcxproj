@@ -172,6 +172,7 @@
   <ItemGroup>
     <ClCompile Include="data_manager.cpp" />
     <ClCompile Include="Fading.cpp" />
+    <ClCompile Include="first_game_page.cpp" />
     <ClCompile Include="page_manager.cpp" />
     <ClCompile Include="save_my_flag.cpp" />
     <ClCompile Include="texture_manager.cpp" />
