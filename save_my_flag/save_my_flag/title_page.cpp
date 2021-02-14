@@ -23,7 +23,11 @@ TitlePage::TitlePage()
 	classType = TITLE_PAGE;
 	StartButtonState = TEX_START_BUTTON_NOMAL;
 	ExitButtonState = TEX_EXIT_BUTTON_NOMAL;
-	
+	cloud_a_Y = 80;
+	cloud_b_Y = 200;
+	enemy_X = 1800;
+	enemy_state = TEX_ENEMY_A;
+	enemy_count = 0;
 }
 
 void TitlePage::Update()
@@ -34,6 +38,8 @@ void TitlePage::Update()
 
 	StartButtonUpdate(pt);
 	ExitButtonUpdate(pt);
+	CloudUpdate();
+	EnemyUpdate();
 
 }
 
@@ -44,6 +50,8 @@ void TitlePage::Render()
 	TitleRender();
 	StartButtonRender();
 	ExitButtonRender();
+	CloudRender();
+	EnemyRender();
 
 }
 
@@ -92,6 +100,16 @@ void TitlePage::ExitButtonUpdate(POINT pt)
 	{
 		ExitButtonState = TEX_EXIT_BUTTON_NOMAL;
 	}
+}
+
+void TitlePage::CloudUpdate()
+{
+
+}
+
+void TitlePage::EnemyUpdate()
+{
+
 }
 
 
@@ -167,6 +185,56 @@ void TitlePage::StartButtonRender()
 }
 
 void TitlePage::ExitButtonRender()
+{
+	TextureElement* element = textureManager.getTexture(ExitButtonState);
+
+	RECT rc;
+	D3DXVECTOR3 pos;
+	D3DXVECTOR3 cen;
+
+	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
+
+	rc.left = 0;
+	rc.top = 0;
+	rc.right = EXIT_BUTTON_WIDTH;
+	rc.bottom = EXIT_BUTTON_HEIGHT;
+
+	pos = { EXIT_BUTTON_X, EXIT_BUTTON_Y, 0 };
+	cen = { EXIT_BUTTON_HALF_WIDTH, EXIT_BUTTON_HALF_HEIGHT, 0 };
+
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+
+	element->sprite->End();
+}
+
+void TitlePage::CloudRender()
+{
+	TextureElement* element;
+
+	RECT rc;
+	D3DXVECTOR3 pos;
+	D3DXVECTOR3 cen;
+
+
+	element = textureManager.getTexture(TEX_CLOUD_B);
+	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
+	rc.left = 0;	rc.top = 0;		rc.right = 340;	rc.bottom = 190;
+	pos = { 80, cloud_b_Y, 0 };
+	element->sprite->Draw(element->texture, &rc, false, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->End();
+
+
+	element = textureManager.getTexture(TEX_CLOUD_A);
+	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
+	rc.left = 0;	rc.top = 0;		rc.right = 415;	rc.bottom = 195;
+	pos = { 1400, cloud_a_Y, 0 };
+	element->sprite->Draw(element->texture, &rc, false, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->End();
+
+
+}
+
+void TitlePage::EnemyRender()
 {
 	TextureElement* element = textureManager.getTexture(ExitButtonState);
 

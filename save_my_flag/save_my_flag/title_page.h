@@ -15,16 +15,27 @@ public:
 
 	int StartButtonState;
 	int ExitButtonState;
+	float cloud_a_Y;
+	float cloud_b_Y;
+	float enemy_X;
+	int enemy_state;
+	int enemy_count;
+
 
 	/* Update */
 	void StartButtonUpdate(POINT pt);
 	void ExitButtonUpdate(POINT pt);
+	void CloudUpdate();
+	void EnemyUpdate();
 
 	/* Render */
 	void BackgroundRender();
 	void TitleRender();
 	void StartButtonRender();
 	void ExitButtonRender();
+
+	void CloudRender();
+	void EnemyRender();
 
 protected:
 	

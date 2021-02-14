@@ -1,10 +1,2 @@
-﻿  data_manager.cpp
-  Fading.cpp
-  first_game_page.cpp
-  page_manager.cpp
-  save_my_flag.cpp
-  texture_manager.cpp
-C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\texture_manager.cpp(15,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  title_page.cpp
-  코드를 생성하고 있습니다...
-  save_my_flag.vcxproj -> C:\Users\qwer1\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
+﻿  title_page.cpp
+  save_my_flag.vcxproj -> D:\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
