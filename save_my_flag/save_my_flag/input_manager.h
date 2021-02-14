@@ -14,6 +14,6 @@ public:
 		{
 			prevKeyBuffer[i] = keyBuffer[i];
 		}
-		mouseWheel = 0;
+		//mouseWheel = 0;
 	}
 };

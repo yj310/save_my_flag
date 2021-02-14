@@ -121,10 +121,15 @@ void Update()
     prevTime = cur;
 
 
+    if (inputManager.prevKeyBuffer[VK_ESCAPE] == 1 && inputManager.keyBuffer[VK_ESCAPE] == 0)
+    {
+       PostQuitMessage(0);
+      
+    }
 
     pageManager.Update();
     //cheats.Update();
-    //inputManager.Update();
+    inputManager.Update();
 }
 
 void GameLoop()
