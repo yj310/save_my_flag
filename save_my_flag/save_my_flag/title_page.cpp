@@ -52,10 +52,11 @@ void TitlePage::Update()
 	GetCursorPos(&pt);
 	ScreenToClient(hWnd, &pt);
 
-	StartButtonUpdate(pt);
-	ExitButtonUpdate(pt);
 	CloudUpdate();
 	EnemyUpdate();
+	StartButtonUpdate(pt);
+	ExitButtonUpdate(pt);
+	
 
 }
 
@@ -146,6 +147,7 @@ void TitlePage::CloudUpdate()
 
 void TitlePage::EnemyUpdate()
 {
+	//if(enemyA)
 	enemyA->Update();
 
 	if (enemyA->posX <= enemyA->width / 2)
