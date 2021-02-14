@@ -25,6 +25,12 @@
     <Filter Include="소스 파일\Page">
       <UniqueIdentifier>{aab5d0b9-8fad-445f-93c2-b7f54489d76e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\object">
+      <UniqueIdentifier>{da69033f-8506-48a7-ac54-50615ac8aedb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object">
+      <UniqueIdentifier>{3e2a422a-e06a-4bb0-b8aa-e01b518a7e0e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -72,6 +78,9 @@
     <ClInclude Include="game_system.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="save_my_flag.cpp">
@@ -100,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="game_system.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="tile.cpp">
+      <Filter>소스 파일\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

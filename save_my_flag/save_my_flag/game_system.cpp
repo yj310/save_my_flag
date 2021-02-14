@@ -8,7 +8,7 @@ GameSystem::GameSystem()
 
 void GameSystem::CreateMap()
 {
-
+	
 }
 
 void GameSystem::Update()

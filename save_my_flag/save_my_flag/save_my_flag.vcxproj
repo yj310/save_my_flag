@@ -169,6 +169,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="save_my_flag.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="tile.h" />
     <ClInclude Include="title_page.h" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +181,7 @@
     <ClCompile Include="palyer.cpp" />
     <ClCompile Include="save_my_flag.cpp" />
     <ClCompile Include="texture_manager.cpp" />
+    <ClCompile Include="tile.cpp" />
     <ClCompile Include="title_page.cpp" />
   </ItemGroup>
   <ItemGroup>
