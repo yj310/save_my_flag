@@ -4,6 +4,7 @@
 #include "enemy_a.h"
 #include "tile.h"
 #include <vector>
+#include "gold.h"
 
 using namespace std;
 
@@ -32,6 +33,7 @@ public:
 
 	EnemyA* enemyA;
 	vector<Tile*> tiles;
+	Gold* gold;
 
 
 	/* Update */

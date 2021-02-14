@@ -54,6 +54,7 @@ TitlePage::TitlePage()
 		Tile* tile = new Tile((i+14) * 100, 590);
 		tiles.push_back(tile);
 	}
+	gold = new Gold(1750, 590);
 }
 
 void TitlePage::Update()
@@ -64,9 +65,10 @@ void TitlePage::Update()
 
 	CloudUpdate();
 	EnemyUpdate();
+	gold->Update();
+
 	StartButtonUpdate(pt);
 	ExitButtonUpdate(pt);
-	
 
 }
 
@@ -80,6 +82,7 @@ void TitlePage::Render()
 	CloudRender();
 	EnemyRender();
 	TileRender();
+	gold->Render();
 }
 
 /* Update*/
