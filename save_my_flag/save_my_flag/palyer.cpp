@@ -5,12 +5,11 @@
 
 Player::Player()
 {
-	posX = 0;
-	posY = 0;
+	posX = 500;
+	posY = 500;
 	radious = 100;
 	isDead = false;
-	width = PLAYER_WIDTH;
-	height = PLAYER_HEIGHT;
+
 }
 
 void Player::Update()
@@ -30,11 +29,11 @@ void Player::Render()
 
 	rc.left = 0;
 	rc.top = 0;
-	rc.right = width;
-	rc.bottom = height;
+	rc.right = PLAYER_WIDTH;
+	rc.bottom = PLAYER_HEIGHT;
 
-	cen = { width / 2, height / 2, 0 };
-	pos = { 500, 500, 0 };
+	cen = { PLAYER_WIDTH / 2, PLAYER_HEIGHT / 2, 0 };
+	pos = { posX, posY, 0 };
 
 	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
@@ -44,6 +43,11 @@ void Player::Render()
 D3DXVECTOR2 Player::getPos()
 {
 	return { posX, posY };
+}
+
+D3DXVECTOR2 Player::getSize()
+{
+	return { PLAYER_WIDTH, PLAYER_HEIGHT };
 }
 
 int  Player::getRadious()

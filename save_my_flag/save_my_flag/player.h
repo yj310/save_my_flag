@@ -12,12 +12,11 @@ public:
 	D3DXVECTOR2 getPos();
 	int getRadious();
 	bool getIsDead();
+	D3DXVECTOR2 getSize();
 
 	float posX;
 	float posY;
 	int radious;
-	float width;
-	float height;
 	bool isDead;
 
 };
