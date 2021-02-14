@@ -220,7 +220,7 @@ void TitlePage::CloudRender()
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 	rc.left = 0;	rc.top = 0;		rc.right = 340;	rc.bottom = 190;
 	pos = { 80, cloud_b_Y, 0 };
-	element->sprite->Draw(element->texture, &rc, false, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 	element->sprite->End();
 
 
@@ -228,7 +228,7 @@ void TitlePage::CloudRender()
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 	rc.left = 0;	rc.top = 0;		rc.right = 415;	rc.bottom = 195;
 	pos = { 1400, cloud_a_Y, 0 };
-	element->sprite->Draw(element->texture, &rc, false, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 	element->sprite->End();
 
 

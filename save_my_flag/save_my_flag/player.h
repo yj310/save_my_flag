@@ -16,8 +16,8 @@ public:
 	float posX;
 	float posY;
 	int radious;
-	int width;
-	int height;
+	float width;
+	float height;
 	bool isDead;
 
 };

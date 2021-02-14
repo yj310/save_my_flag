@@ -1,12 +1,16 @@
 #include "player.h"
 
+#define PLAYER_WIDTH 100
+#define PLAYER_HEIGHT 100
+
 Player::Player()
 {
 	posX = 0;
 	posY = 0;
 	radious = 100;
 	isDead = false;
-	//width = 
+	width = PLAYER_WIDTH;
+	height = PLAYER_HEIGHT;
 }
 
 void Player::Update()
@@ -26,12 +30,13 @@ void Player::Render()
 
 	rc.left = 0;
 	rc.top = 0;
-	rc.right = 100;
-	rc.bottom = ;
+	rc.right = width;
+	rc.bottom = height;
 
-	pos = { 0, 0, 0 };
+	cen = { width / 2, height / 2, 0 };
+	pos = { 500, 500, 0 };
 
-	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
 }

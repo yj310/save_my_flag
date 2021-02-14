@@ -91,6 +91,7 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/object/cloud_b_bad.png", TEX_CLOUD_B_BAD);
 	textureManager.LoadTexture(L"source/image/object/enemy_a.png", TEX_ENEMY_A);
 	textureManager.LoadTexture(L"source/image/object/enemy_b.png", TEX_ENEMY_B);
+	textureManager.LoadTexture(L"source/image/character/player.png", TEX_PLAYER);
 
     //ui
     textureManager.LoadTexture(L"source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);
