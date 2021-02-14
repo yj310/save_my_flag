@@ -82,9 +82,16 @@ void InitMyStuff()
 {
     //background
     textureManager.LoadTexture(L"source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
-    
+
+	// object
+	// textureManager.LoadTexture(L"source/image/object/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
+
     //ui
     textureManager.LoadTexture(L"source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);
+	textureManager.LoadTexture(L"source/image/ui/title_page/start_button_nomal.png", TEX_START_BUTTON_NOMAL);
+	textureManager.LoadTexture(L"source/image/ui/title_page/start_button_mouseover.png", TEX_START_BUTTON_BORD);
+	textureManager.LoadTexture(L"source/image/ui/title_page/exit_button_nomal.png", TEX_EXIT_BUTTON_NOMAL);
+	textureManager.LoadTexture(L"source/image/ui/title_page/exit_button_mouseover.png", TEX_EXIT_BUTTON_BORD);
     
     
 

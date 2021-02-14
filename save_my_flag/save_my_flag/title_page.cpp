@@ -2,18 +2,18 @@
 #include "global.h"
 
 
-#define START_BUTTON_WIDTH 320
-#define START_BUTTON_HEIGHT 110
-#define START_BUTTON_X 500
+#define START_BUTTON_WIDTH 400
+#define START_BUTTON_HEIGHT 150
+#define START_BUTTON_X WINDOW_WIDTH/2
 #define START_BUTTON_Y 600
 #define START_BUTTON_HALF_WIDTH START_BUTTON_WIDTH / 2
 #define START_BUTTON_HALF_HEIGHT START_BUTTON_HEIGHT / 2
 
 
-#define EXIT_BUTTON_WIDTH 320
-#define EXIT_BUTTON_HEIGHT 110
-#define EXIT_BUTTON_X 700
-#define EXIT_BUTTON_Y 600
+#define EXIT_BUTTON_WIDTH 400
+#define EXIT_BUTTON_HEIGHT 150
+#define EXIT_BUTTON_X WINDOW_WIDTH/2
+#define EXIT_BUTTON_Y 800
 #define EXIT_BUTTON_HALF_WIDTH EXIT_BUTTON_WIDTH / 2
 #define EXIT_BUTTON_HALF_HEIGHT EXIT_BUTTON_HEIGHT / 2
 
@@ -33,6 +33,7 @@ void TitlePage::Update()
 	ScreenToClient(hWnd, &pt);
 
 	StartButtonUpdate(pt);
+	ExitButtonUpdate(pt);
 
 }
 
@@ -41,6 +42,8 @@ void TitlePage::Render()
 {
 	BackgroundRender();
 	TitleRender();
+	StartButtonRender();
+	ExitButtonRender();
 
 }
 
@@ -156,8 +159,9 @@ void TitlePage::StartButtonRender()
 	rc.bottom = START_BUTTON_HEIGHT;
 
 	pos = { START_BUTTON_X, START_BUTTON_Y, 0};
+	cen = { START_BUTTON_HALF_WIDTH, START_BUTTON_HALF_HEIGHT, 0 };
 
-	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
 }
@@ -178,8 +182,9 @@ void TitlePage::ExitButtonRender()
 	rc.bottom = EXIT_BUTTON_HEIGHT;
 
 	pos = { EXIT_BUTTON_X, EXIT_BUTTON_Y, 0 };
+	cen = { EXIT_BUTTON_HALF_WIDTH, EXIT_BUTTON_HALF_HEIGHT, 0 };
 
-	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
 }
