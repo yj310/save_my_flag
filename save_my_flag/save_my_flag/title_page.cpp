@@ -62,7 +62,7 @@ void TitlePage::StartButtonUpdate(POINT pt)
 		if (inputManager.prevKeyBuffer[VK_LBUTTON] == 1
 			&& inputManager.keyBuffer[VK_LBUTTON] == 0)
 		{
-			//pageManager.CreateStartPlayerPage();
+			pageManager.CreateFirstGamePage();
 		}
 	}
 	else if (StartButtonState == TEX_START_BUTTON_BORD)

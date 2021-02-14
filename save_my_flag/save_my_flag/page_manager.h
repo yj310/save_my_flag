@@ -23,10 +23,8 @@ public:
 	int FadingCount;
 
 
-
-
-
 	void CreateTitlePage();
+	void CreateFirstGamePage();
 
 	void Update();
 	void Render();

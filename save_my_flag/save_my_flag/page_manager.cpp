@@ -1,6 +1,7 @@
 #include "page_manager.h"
 #include "global.h"
 #include "title_page.h"
+#include "first_game_page.h"
 
 
 void PageManager::CreateTitlePage()
@@ -12,6 +13,14 @@ void PageManager::CreateTitlePage()
 	currentPage = newPage;
 }
 
+void PageManager::CreateFirstGamePage()
+{
+	if (currentPage != nullptr) {
+		delete currentPage;
+	}
+	FirstGamePage* newPage = new FirstGamePage();
+	currentPage = newPage;
+}
 
 void PageManager::Update()
 {
