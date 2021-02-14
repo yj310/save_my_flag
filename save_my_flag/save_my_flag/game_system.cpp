@@ -11,6 +11,11 @@ void GameSystem::CreateMap()
 	
 }
 
+void GameSystem::GenerateTiles()
+{
+	
+}
+
 void GameSystem::Update()
 {
 

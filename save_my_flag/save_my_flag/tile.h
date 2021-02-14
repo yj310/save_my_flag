@@ -3,14 +3,12 @@
 class Tile
 {
 public:
-	Tile();
+	Tile(float x, float y);
 	void Render();
 	void Update();
 
 	float posX;
 	float posY;
-	float width;
-	float height;
 
 	D3DXVECTOR2 getPos();
 	D3DXVECTOR2 getSize();

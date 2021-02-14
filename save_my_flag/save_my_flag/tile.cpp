@@ -4,14 +4,15 @@
 #define TILE_WIDTH 100
 #define TILE_HEIGHT 100
 
-Tile::Tile()
+Tile::Tile(float x, float y)
 {
-
+	posX = x;
+	posY = y;
 }
 
 void Tile::Render()
 {
-	TextureElement* element = textureManager.getTexture(TEX_PLAYER);
+	TextureElement* element = textureManager.getTexture(TEX_BRICK);
 
 	RECT rc;
 	D3DXVECTOR3 pos;
