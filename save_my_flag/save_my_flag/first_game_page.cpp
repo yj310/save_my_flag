@@ -4,6 +4,7 @@
 
 FirstGamePage::FirstGamePage()
 {
+	//gameSystem.player = &player;
 	classType = FIRST_GAME_PAGE;
 }
 

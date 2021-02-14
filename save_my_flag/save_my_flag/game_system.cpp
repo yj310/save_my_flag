@@ -28,5 +28,8 @@ void GameSystem::Update()
 
 void GameSystem::Render()
 {
-
+	for (int i = 0; i < tiles.size(); i++)
+	{
+		tiles[i]->Render();
+	}
 }

@@ -10,6 +10,7 @@
 #include "input_manager.h"
 #include "page_manager.h"
 #include "data_manager.h"
+#include "game_system.h"
 
 
 
@@ -64,7 +65,8 @@ extern TextureManager textureManager;
 extern InputManager inputManager;
 extern PageManager pageManager;
 extern DataManager dataManager;
-
+extern DataManager dataManager;
+extern GameSystem gameSystem;
 
 // Other
 extern HWND hWnd;
