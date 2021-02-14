@@ -2,6 +2,10 @@
 #include "page.h"
 #include <d3dx9.h>
 #include "enemy_a.h"
+#include "tile.h"
+#include <vector>
+
+using namespace std;
 
 
 class TitlePage : public Page
@@ -27,6 +31,7 @@ public:
 	int enemy_speed;
 
 	EnemyA* enemyA;
+	vector<Tile*> tiles;
 
 
 	/* Update */

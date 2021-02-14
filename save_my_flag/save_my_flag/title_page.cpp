@@ -2,27 +2,27 @@
 #include "global.h"
 
 
-#define START_BUTTON_WIDTH 400
-#define START_BUTTON_HEIGHT 150
+#define START_BUTTON_WIDTH 300
+#define START_BUTTON_HEIGHT 100
 #define START_BUTTON_X WINDOW_WIDTH/2
-#define START_BUTTON_Y 600
+#define START_BUTTON_Y 620
 #define START_BUTTON_HALF_WIDTH START_BUTTON_WIDTH / 2
 #define START_BUTTON_HALF_HEIGHT START_BUTTON_HEIGHT / 2
 
 
-#define EXIT_BUTTON_WIDTH 400
-#define EXIT_BUTTON_HEIGHT 150
+#define EXIT_BUTTON_WIDTH 300
+#define EXIT_BUTTON_HEIGHT 100
 #define EXIT_BUTTON_X WINDOW_WIDTH/2
-#define EXIT_BUTTON_Y 800
+#define EXIT_BUTTON_Y 750
 #define EXIT_BUTTON_HALF_WIDTH EXIT_BUTTON_WIDTH / 2
 #define EXIT_BUTTON_HALF_HEIGHT EXIT_BUTTON_HEIGHT / 2
 
 #define CLOUD_A_X 1400
-#define CLOUD_A_Y 80
+#define CLOUD_A_Y 100
 #define CLOUD_A_WIDTH 415
 #define CLOUD_A_HEIGHT 195
 
-#define CLOUD_B_X 40
+#define CLOUD_B_X 60
 #define CLOUD_B_Y 200
 #define CLOUD_B_WIDTH 340
 #define CLOUD_B_HEIGHT 190
@@ -34,7 +34,6 @@
 
 TitlePage::TitlePage()
 {
-
 	classType = TITLE_PAGE;
 	StartButtonState = TEX_START_BUTTON_NOMAL;
 	ExitButtonState = TEX_EXIT_BUTTON_NOMAL;
@@ -43,7 +42,18 @@ TitlePage::TitlePage()
 	cloud_a_Y_direction = 1;
 	cloud_b_Y_direction = 1;
 
-	enemyA = new EnemyA(1700, 910, -1);
+	enemyA = new EnemyA(1700, 990, -1);
+	for (int i = 0; i < 20; i++)
+	{
+		Tile* tile = new Tile(i * 100, 990);
+		tiles.push_back(tile);
+	}
+
+	for (int i = 0; i < 6; i++)
+	{
+		Tile* tile = new Tile((i+14) * 100, 590);
+		tiles.push_back(tile);
+	}
 }
 
 void TitlePage::Update()
@@ -70,7 +80,6 @@ void TitlePage::Render()
 	CloudRender();
 	EnemyRender();
 	TileRender();
-
 }
 
 /* Update*/
@@ -209,7 +218,6 @@ void TitlePage::TitleRender()
 	pos = { 0, 0, 0 };
 
 	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
-
 	element->sprite->End();
 
 }
@@ -293,22 +301,11 @@ void TitlePage::EnemyRender()
 
 void TitlePage::TileRender()
 {
-	TextureElement* element;
 
-	RECT rc;
-	D3DXVECTOR3 pos;
-	D3DXVECTOR3 cen;
-
-
-	element = textureManager.getTexture(TEX_BRICK);
-	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
-	rc.left = 0;	rc.top = 0;		rc.right = 100;	rc.bottom = 100;
-	for (float i = 0; i < 20; i++)
+	for (int i = 0; i < tiles.size(); i++)
 	{
-		pos = { i * 100, 910, 0 };
-		element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+		tiles[i]->Render();
 	}
-	element->sprite->End();
 	
 
 }
