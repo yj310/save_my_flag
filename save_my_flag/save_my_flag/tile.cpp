@@ -25,10 +25,10 @@ void Tile::Render()
 	rc.right = TILE_WIDTH;
 	rc.bottom = TILE_HEIGHT;
 
-	cen = { TILE_WIDTH / 2, TILE_HEIGHT / 2, 0 };
+	//cen = { TILE_WIDTH / 2, TILE_HEIGHT / 2, 0 };
 	pos = { posX, posY, 0 };
 
-	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
 }

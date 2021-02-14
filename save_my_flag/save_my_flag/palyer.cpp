@@ -2,19 +2,21 @@
 
 #define PLAYER_WIDTH 100
 #define PLAYER_HEIGHT 100
+#define PLAYER_BOTTOM 860
 
 Player::Player()
 {
-	posX = 500;
-	posY = 500;
+	posX = 110;
+	posY = PLAYER_BOTTOM;
+	jumpStartPosY = posY;
 	radious = 100;
+	isJump = false;
 	isDead = false;
+	speed = 5;
+	jumpHeight = 0;
+	jumpTime = 0.0f;
+	jumpPower = 40.0f;
 	
-}
-
-void Player::Update()
-{
-
 }
 
 void Player::Render()
@@ -38,6 +40,52 @@ void Player::Render()
 	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
+}
+
+void Player::Update()
+{
+	if (inputManager.keyBuffer[VK_LEFT] == 1)
+	{
+		posX -= speed;
+	}
+	else if (inputManager.keyBuffer[VK_RIGHT] == 1)
+	{
+		posX += speed;
+	}
+
+	if (inputManager.keyBuffer[VK_UP] == 1 && !isJump)
+	{
+		jumpStartPosY = posY;
+		isJump = true;
+	}
+
+	if (isJump)
+	{
+		Jump();
+	}
+	posY = jumpStartPosY + jumpHeight;
+}
+
+
+
+void Player::Jump()
+{
+	jumpHeight = jumpTime * jumpTime - jumpPower * jumpTime;
+
+	jumpTime += 1.0f;
+
+	if (jumpTime >= jumpPower)
+	{
+		jumpTime = 0.f;
+		jumpHeight = 0.f;
+
+		isJump = false;
+	}
+}
+
+float Player::getSpeed()
+{
+	return speed;
 }
 
 D3DXVECTOR2 Player::getPos()

@@ -12,12 +12,14 @@ void FirstGamePage::Update()
 {
 	BackgroundUpdate();
 	player.Update();
+	gameSystem.Update();
 }
 
 void FirstGamePage::Render()
 {
 	BackgroundRender();
 	player.Render();
+	gameSystem.Render();
 	
 }
 
