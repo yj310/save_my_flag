@@ -64,6 +64,7 @@ void TitlePage::Render()
 	ExitButtonRender();
 	CloudRender();
 	EnemyRender();
+	TileRender();
 
 }
 
@@ -301,8 +302,12 @@ void TitlePage::TileRender()
 	element = textureManager.getTexture(TEX_BRICK);
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 	rc.left = 0;	rc.top = 0;		rc.right = 100;	rc.bottom = 100;
-	pos = { 0, 900, 0 };
-	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	for (float i = 0; i < 20; i++)
+	{
+		pos = { i * 100, 910, 0 };
+		element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	}
 	element->sprite->End();
+	
 
 }

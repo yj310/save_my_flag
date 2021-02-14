@@ -1,4 +1,2 @@
-﻿  palyer.cpp
-C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\palyer.cpp(33,13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\palyer.cpp(34,14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  save_my_flag.vcxproj -> C:\Users\qwer1\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
+﻿  title_page.cpp
+  save_my_flag.vcxproj -> D:\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
