@@ -4,12 +4,13 @@
 
 FirstGamePage::FirstGamePage()
 {
-	//gameSystem.player = &player;
+	gameSystem.player = &player;
 	classType = FIRST_GAME_PAGE;
 }
 
 void FirstGamePage::Update()
 {
+	
 	BackgroundUpdate();
 	player.Update();
 	gameSystem.Update();
