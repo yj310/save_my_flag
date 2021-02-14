@@ -9,10 +9,23 @@ FirstGamePage::FirstGamePage()
 
 void FirstGamePage::Update()
 {
-
+	BackgroundUpdate();
+	player.Update();
 }
 
 void FirstGamePage::Render()
+{
+	BackgroundRender();
+	player.Render();
+	
+}
+
+void FirstGamePage::BackgroundUpdate()
+{
+
+}
+
+void FirstGamePage::BackgroundRender()
 {
 	TextureElement* element = textureManager.getTexture(TEX_FIRST_GAME_PAGE_BACKGROUND);
 
@@ -32,14 +45,4 @@ void FirstGamePage::Render()
 	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
-}
-
-void FirstGamePage::BackgroundUpdate()
-{
-
-}
-
-void FirstGamePage::BackgroundRender()
-{
-
 }
