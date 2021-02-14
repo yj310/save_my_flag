@@ -1,7 +1,14 @@
 #pragma once
+#include "player.h"
 
 class GameSystem
 {
 public:
-	void 
+	GameSystem();
+	void CreateMap();
+
+	void Update();
+	void Render();
+
+	Player* player;
 };

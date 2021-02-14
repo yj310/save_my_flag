@@ -1,2 +1,15 @@
+<<<<<<< Updated upstream
 ﻿  title_page.cpp
   save_my_flag.vcxproj -> D:\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
+=======
+﻿  first_game_page.cpp
+  page_manager.cpp
+  palyer.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\palyer.cpp(33,13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\palyer.cpp(34,14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  texture_manager.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\texture_manager.cpp(15,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  title_page.cpp
+  코드를 생성하고 있습니다...
+  save_my_flag.vcxproj -> C:\Users\qwer1\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
+>>>>>>> Stashed changes
