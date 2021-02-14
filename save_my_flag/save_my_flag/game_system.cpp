@@ -3,6 +3,8 @@
 #include "player.h"
 #include "tile.h"
 
+#define START_BOTTOM 910
+
 GameSystem::GameSystem()
 {
 	CreateMap();
@@ -27,11 +29,11 @@ void GameSystem::GenerateTiles()
 		for (int j = 0; j < 10; j++)
 		{
 			posX = i * 100;
-			posY = 910 + j*100;
+			posY = START_BOTTOM + j*100;
 			MakeTile(posX, posY);
 		}
 	}
-	MakeTile(15 * 100, 910 - 100 * 1);
+	MakeTile(15 * 100, START_BOTTOM - 100 * 1);
 
 	/*떨어지는 블럭*/
 	for (int i = 16; i < 19; i++)
@@ -39,7 +41,7 @@ void GameSystem::GenerateTiles()
 		for (int j = 0; j < 10; j++)
 		{
 			posX = i * 100;
-			posY = 910 + j * 100;
+			posY = START_BOTTOM + j * 100;
 			MakeTile(posX, posY);
 		}
 	}
@@ -49,7 +51,7 @@ void GameSystem::GenerateTiles()
 		for (int j = 0; j < 10; j++)
 		{
 			posX = i * 100;
-			posY = 910 + j * 100;
+			posY = START_BOTTOM + j * 100;
 			MakeTile(posX, posY);
 		}
 	}
@@ -60,7 +62,7 @@ void GameSystem::GenerateTiles()
 			if ((i == 35 && (j == 2 || j == 3)) || ((i==36) && (j==3)))
 				continue;
 			posX = i * 100;
-			posY = 910 - j * 100;
+			posY = START_BOTTOM - j * 100;
 			MakeTile(posX, posY);
 		}
 	}
@@ -73,7 +75,42 @@ void GameSystem::GenerateTiles()
 			if (i == 38 && j == 0)
 				continue;
 			posX = i * 100;
-			posY = (910 - 5 * 100) + j*100;
+			posY = (START_BOTTOM - 5 * 100) + j*100;
+			MakeTile(posX, posY);
+		}
+	}
+
+	for (int i = 40; i < 40 + 3; i++)
+	{
+		for (int j = 0; j < 18; j++)
+		{
+			if ((i == 40 && (j == 0 || j == 1 )) || ((i == 41) && (j == 0)))
+				continue;
+			posX = i * 100;
+			posY = (START_BOTTOM - 8 * 100) + j * 100;
+			MakeTile(posX, posY);
+		}
+	}
+
+	for (int i = 46; i < 46 + 28; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			posX = i * 100;
+			posY = START_BOTTOM + j * 100;
+			MakeTile(posX, posY);
+		}
+	}
+	MakeTile(45 * 100, START_BOTTOM + 100 * 3);
+	MakeTile(68 * 100, START_BOTTOM - 100 * 1);
+
+	/*떨어지는 블럭*/
+	for (int i = 74; i < 74 + 4; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			posX = i * 100;
+			posY = START_BOTTOM + j * 100;
 			MakeTile(posX, posY);
 		}
 	}
