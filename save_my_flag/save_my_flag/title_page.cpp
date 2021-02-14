@@ -45,8 +45,8 @@ TitlePage::TitlePage()
 	enemy_X = ENEMY_X;
 	enemy_state = TEX_ENEMY_A;
 	enemy_count = 0;
-	enemy_X_direction = -1;
-	enemy_speed = 1;
+	enemy_speed = 3;
+	enemy_X_direction = enemy_speed * -1;
 }
 
 void TitlePage::Update()
@@ -151,15 +151,15 @@ void TitlePage::EnemyUpdate()
 {
 
 	enemy_X += enemy_X_direction;
-	if (enemy_X <= 0)
+	if (enemy_X <= ENEMY_WIDTH / 2)
 	{
-		enemy_speed * 2;
 		enemy_X_direction = enemy_speed;
+		enemy_state = TEX_ENEMY_C;
 	}
-	if (enemy_X >= WINDOW_WIDTH)
+	if (enemy_X >= WINDOW_WIDTH - ENEMY_WIDTH / 2)
 	{
-		enemy_speed * 2;
 		enemy_X_direction = enemy_speed * -1;
+		enemy_state = TEX_ENEMY_A;
 	}
 
 
@@ -167,14 +167,29 @@ void TitlePage::EnemyUpdate()
 	if (enemy_count == 20)
 	{
 		enemy_count = 0;
-		if (enemy_state == TEX_ENEMY_A)
+		if (enemy_X_direction < 0)
 		{
-			enemy_state = TEX_ENEMY_B;
-		} 
-		else if (enemy_state == TEX_ENEMY_B)
-		{
-			enemy_state = TEX_ENEMY_A;
+			if (enemy_state == TEX_ENEMY_B)
+			{
+				enemy_state = TEX_ENEMY_A;
+			}
+			else if (enemy_state == TEX_ENEMY_A)
+			{
+				enemy_state = TEX_ENEMY_B;
+			}
 		}
+		else
+		{
+			if (enemy_state == TEX_ENEMY_D)
+			{
+				enemy_state = TEX_ENEMY_C;
+			}
+			else if (enemy_state == TEX_ENEMY_C)
+			{
+				enemy_state = TEX_ENEMY_D;
+			}
+		}
+		
 	}
 
 
