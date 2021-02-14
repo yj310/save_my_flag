@@ -66,6 +66,9 @@
     <ClInclude Include="first_game_page.h">
       <Filter>헤더 파일\Page</Filter>
     </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="save_my_flag.cpp">
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="first_game_page.cpp">
       <Filter>소스 파일\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="palyer.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

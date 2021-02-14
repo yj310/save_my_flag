@@ -163,6 +163,7 @@
     <ClInclude Include="input_manager.h" />
     <ClInclude Include="page.h" />
     <ClInclude Include="page_manager.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="texture_manager.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="save_my_flag.h" />
@@ -174,6 +175,7 @@
     <ClCompile Include="Fading.cpp" />
     <ClCompile Include="first_game_page.cpp" />
     <ClCompile Include="page_manager.cpp" />
+    <ClCompile Include="palyer.cpp" />
     <ClCompile Include="save_my_flag.cpp" />
     <ClCompile Include="texture_manager.cpp" />
     <ClCompile Include="title_page.cpp" />

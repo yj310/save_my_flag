@@ -13,8 +13,8 @@ public:
 	int getRadious();
 	bool getIsDead();
 
-	int posX;
-	int posY;
+	float posX;
+	float posY;
 	int radious;
 	int width;
 	int height;

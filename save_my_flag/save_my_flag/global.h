@@ -36,6 +36,7 @@
 #define TEX_CLOUD_B_BAD 2003
 #define TEX_ENEMY_A 2004
 #define TEX_ENEMY_B 2005
+#define TEX_PLAYER 2006
 
 // UI
 #define TEX_TITLE_PAGE_TITLE 3000
