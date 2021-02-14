@@ -84,7 +84,7 @@ void InitMyStuff()
     //background
     textureManager.LoadTexture(L"source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
     textureManager.LoadTexture(L"source/image/background/first_game_page.png", TEX_FIRST_GAME_PAGE_BACKGROUND);
-
+	
 	// object
 	textureManager.LoadTexture(L"source/image/object/cloud_a.png", TEX_CLOUD_A);
 	textureManager.LoadTexture(L"source/image/object/cloud_a_bad.png", TEX_CLOUD_A_BAD);
@@ -96,6 +96,13 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/object/enemy_d.png", TEX_ENEMY_D);
 	textureManager.LoadTexture(L"source/image/character/player.png", TEX_PLAYER);
 	textureManager.LoadTexture(L"source/image/object/Brick.png", TEX_BRICK);
+	textureManager.LoadTexture(L"source/image/object/glod/glod_a.png", TEX_GOLD_A);
+	textureManager.LoadTexture(L"source/image/object/glod/glod_b.png", TEX_GOLD_B);
+	textureManager.LoadTexture(L"source/image/object/glod/glod_c.png", TEX_GOLD_C);
+	textureManager.LoadTexture(L"source/image/object/glod/glod_d.png", TEX_GOLD_D);
+	textureManager.LoadTexture(L"source/image/object/glod/glod_e.png", TEX_GOLD_E);
+	textureManager.LoadTexture(L"source/image/object/glod/glod_f.png", TEX_GOLD_F);
+	textureManager.LoadTexture(L"source/image/object/glod/glod_g.png", TEX_GOLD_G);
 
     //ui
     textureManager.LoadTexture(L"source/image/ui/title_page/title.png", TEX_TITLE_PAGE_TITLE);

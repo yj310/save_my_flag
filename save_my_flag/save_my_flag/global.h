@@ -41,6 +41,13 @@
 #define TEX_ENEMY_D 2007
 #define TEX_PLAYER 2008
 #define TEX_BRICK 2009
+#define TEX_GOLD_A 2010
+#define TEX_GOLD_B 2011
+#define TEX_GOLD_C 2012
+#define TEX_GOLD_D 2013
+#define TEX_GOLD_E 2014
+#define TEX_GOLD_F 2015
+#define TEX_GOLD_G 2016
 
 // UI
 #define TEX_TITLE_PAGE_TITLE 3000
