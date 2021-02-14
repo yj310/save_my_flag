@@ -1,2 +1,25 @@
+<<<<<<< Updated upstream
 ﻿  title_page.cpp
   save_my_flag.vcxproj -> C:\Users\qwer1\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
+=======
+﻿  data_manager.cpp
+  enemy_a.cpp
+D:\2021\save_my_flag\save_my_flag\save_my_flag\enemy_a.cpp(28,13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Fading.cpp
+  first_game_page.cpp
+  game_system.cpp
+D:\2021\save_my_flag\save_my_flag\save_my_flag\enemy_a.cpp(29,14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(20,12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(25,40): warning C4244: '인수': 'unsigned int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(32,12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  page_manager.cpp
+  palyer.cpp
+  save_my_flag.cpp
+  texture_manager.cpp
+D:\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(48,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  tile.cpp
+  title_page.cpp
+  코드를 생성하고 있습니다...
+D:\2021\save_my_flag\save_my_flag\save_my_flag\texture_manager.cpp(15,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  save_my_flag.vcxproj -> D:\2021\save_my_flag\save_my_flag\Debug\save_my_flag.exe
+>>>>>>> Stashed changes
