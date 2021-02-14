@@ -55,18 +55,18 @@ HRESULT InitD3D(HWND hWnd)
     // using more complex geometry, we will create a device with a zbuffer.
     D3DPRESENT_PARAMETERS d3dpp;
     ZeroMemory(&d3dpp, sizeof(d3dpp));
-    d3dpp.Windowed = TRUE;
+    /*d3dpp.Windowed = TRUE;
     d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
     d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
     d3dpp.EnableAutoDepthStencil = TRUE;
-    d3dpp.AutoDepthStencilFormat = D3DFMT_D16;
+    d3dpp.AutoDepthStencilFormat = D3DFMT_D16;*/
 
 
-	/*d3dpp.Windowed = false;
+	d3dpp.Windowed = false;
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
 	d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8;
 	d3dpp.BackBufferWidth = WINDOW_WIDTH;
-	d3dpp.BackBufferHeight = WINDOW_HEIGHT;*/
+	d3dpp.BackBufferHeight = WINDOW_HEIGHT;
 
     // Create the D3DDevice
     if (FAILED(g_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd,
