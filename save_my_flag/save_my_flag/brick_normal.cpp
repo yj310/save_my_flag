@@ -1,16 +1,19 @@
-#include "tile.h"
+#include "brick_normal.h"
 #include "global.h"
 
-#define TILE_WIDTH 100
-#define TILE_HEIGHT 100
 
-Tile::Tile(float x, float y)
+BrickNormal::BrickNormal(float x, float y)
 {
 	posX = x;
 	posY = y;
 }
 
-void Tile::Render()
+void BrickNormal::Update()
+{
+
+}
+
+void BrickNormal::Render()
 {
 	TextureElement* element = textureManager.getTexture(TEX_BRICK);
 
@@ -31,29 +34,4 @@ void Tile::Render()
 	element->sprite->Draw(element->texture, &rc, nullptr, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
-}
-
-void Tile::Update()
-{
-	
-	/*if (inputManager.keyBuffer[VK_LEFT] == 1)
-	{
-		posX += 10;
-	}*/
-}
-
-D3DXVECTOR2 Tile::getPos()
-{
-	return { posX, posY };
-}
-
-void Tile::setPos(float x, float y)
-{
-	posX = x;
-	posY = y;
-}
-
-D3DXVECTOR2 Tile::getSize()
-{
-	return { TILE_WIDTH, TILE_HEIGHT };
 }

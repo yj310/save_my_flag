@@ -34,6 +34,21 @@
     <Filter Include="소스 파일\object\enemy">
       <UniqueIdentifier>{f0de6ae7-08e6-40a5-b129-0dacea8e62eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\other">
+      <UniqueIdentifier>{192289e8-1646-4ec1-9c3f-23952e4b48e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\other">
+      <UniqueIdentifier>{c2fbc7e2-aeef-4ef8-822a-a6c6ecd5e992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\object\tile">
+      <UniqueIdentifier>{4e069a40-0824-4fcc-9bf8-277bb0f7a332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\enemy">
+      <UniqueIdentifier>{d1cdbf0a-5bad-4c1c-9548-3b7037639606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\tile">
+      <UniqueIdentifier>{b8a1e2f0-9632-4fcc-9ec4-dbde70390572}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -81,17 +96,23 @@
     <ClInclude Include="game_system.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="tile.h">
-      <Filter>헤더 파일\object</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy.h">
-      <Filter>헤더 파일\object</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy_a.h">
-      <Filter>헤더 파일\object</Filter>
-    </ClInclude>
     <ClInclude Include="gold.h">
       <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="math_util.h">
+      <Filter>헤더 파일\other</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>헤더 파일\object\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_a.h">
+      <Filter>헤더 파일\object\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="brick_normal.h">
+      <Filter>헤더 파일\object\tile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -119,17 +140,20 @@
     <ClCompile Include="palyer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="game_system.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="tile.cpp">
-      <Filter>소스 파일\object</Filter>
-    </ClCompile>
     <ClCompile Include="enemy_a.cpp">
       <Filter>소스 파일\object\enemy</Filter>
     </ClCompile>
     <ClCompile Include="gold.cpp">
       <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="game_system.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="math_util.cpp">
+      <Filter>소스 파일\other</Filter>
+    </ClCompile>
+    <ClCompile Include="brick_normal.cpp">
+      <Filter>소스 파일\object\tile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

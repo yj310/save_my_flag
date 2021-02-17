@@ -2,6 +2,8 @@
 #include "global.h"
 #include "player.h"
 #include "tile.h"
+#include"brick_normal.h"
+#include "math_util.h"
 
 #define START_BOTTOM 910
 
@@ -17,7 +19,7 @@ void GameSystem::CreateMap()
 
 void GameSystem::MakeTile(float x, float y)
 {
-	Tile* tile = new Tile(x, y);
+	Tile* tile = new BrickNormal(x, y);
 	tiles.push_back(tile);
 }
 
@@ -119,37 +121,7 @@ void GameSystem::GenerateTiles()
 
 void GameSystem::Update()
 {
-	//float speed = 0;
-	//if (inputManager.keyBuffer[VK_LEFT] == 1)
-	//{
-	//	//speed = 10 * 1;
-	//	for (int i = 0; i < tiles.size(); i++)
-	//	{
-	//		tiles[i]->setPos(tiles[i]->getPos().x + speed, tiles[i]->getPos().y);
-	//	}
-	//}
-	//else if (inputManager.keyBuffer[VK_RIGHT] == 1)
-	//{
-	//	//speed = 10 * -1;
-	//	for (int i = 0; i < tiles.size(); i++)
-	//	{
-	//		tiles[i]->setPos(tiles[i]->getPos().x - speed, tiles[i]->getPos().y);
-	//	}
-	//}
-	//else if (inputManager.keyBuffer[VK_UP] == 1)
-	//{
-	//	for (int i = 0; i < tiles.size(); i++)
-	//	{
-	//		tiles[i]->setPos(tiles[i]->getPos().x, tiles[i]->getPos().y + speed);
-	//	}
-	//}
-	//else if (inputManager.keyBuffer[VK_DOWN] == 1)
-	//{
-	//	for (int i = 0; i < tiles.size(); i++)
-	//	{
-	//		tiles[i]->setPos(tiles[i]->getPos().x , tiles[i]->getPos().y - speed);
-	//	}
-	//}
+	//map <- ->
 	float row_speed = 0;
 	float column_speed = 0;
 	float speed = 20;
@@ -169,6 +141,22 @@ void GameSystem::Update()
 	player->setPos(player->getPos().x + row_speed, player->getPos().y + column_speed);
 
 
+	//충돌처리
+	for (int i = 0; i < tiles.size(); i++)
+	{
+		if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y , player->getRadious(),
+			tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
+		{
+			player->state = 0;
+			player->isDown = false;
+			break;
+		}
+		else
+		{
+			player->isDown = true;
+			player->state = 255;
+		}
+	}
 
 	for (int i = 0; i < tiles.size(); i++)
 	{

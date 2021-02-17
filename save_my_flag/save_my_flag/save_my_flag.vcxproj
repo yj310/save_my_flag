@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="brick_normal.h" />
     <ClInclude Include="data_manager.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemy_a.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="global.h" />
     <ClInclude Include="gold.h" />
     <ClInclude Include="input_manager.h" />
+    <ClInclude Include="math_util.h" />
     <ClInclude Include="page.h" />
     <ClInclude Include="page_manager.h" />
     <ClInclude Include="player.h" />
@@ -176,17 +178,18 @@
     <ClInclude Include="title_page.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="brick_normal.cpp" />
     <ClCompile Include="data_manager.cpp" />
     <ClCompile Include="enemy_a.cpp" />
     <ClCompile Include="Fading.cpp" />
     <ClCompile Include="first_game_page.cpp" />
     <ClCompile Include="game_system.cpp" />
     <ClCompile Include="gold.cpp" />
+    <ClCompile Include="math_util.cpp" />
     <ClCompile Include="page_manager.cpp" />
     <ClCompile Include="palyer.cpp" />
     <ClCompile Include="save_my_flag.cpp" />
     <ClCompile Include="texture_manager.cpp" />
-    <ClCompile Include="tile.cpp" />
     <ClCompile Include="title_page.cpp" />
   </ItemGroup>
   <ItemGroup>

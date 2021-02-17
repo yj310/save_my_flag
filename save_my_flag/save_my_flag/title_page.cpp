@@ -1,5 +1,6 @@
 #include "title_page.h"
 #include "global.h"
+#include "brick_normal.h"
 
 
 #define START_BUTTON_WIDTH 300
@@ -45,13 +46,13 @@ TitlePage::TitlePage()
 	enemyA = new EnemyA(1700, 990, -1);
 	for (int i = 0; i < 20; i++)
 	{
-		Tile* tile = new Tile(i * 100, 990);
+		Tile* tile = new BrickNormal(i * 100, 990);
 		tiles.push_back(tile);
 	}
 
 	for (int i = 0; i < 6; i++)
 	{
-		Tile* tile = new Tile((i+14) * 100, 590);
+		Tile* tile = new BrickNormal((i + 14) * 100, 590);
 		tiles.push_back(tile);
 	}
 	gold = new Gold(1750, 590);

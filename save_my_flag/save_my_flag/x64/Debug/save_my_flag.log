@@ -1,9 +1,24 @@
-﻿  save_my_flag.cpp
-save_my_flag.obj : error LNK2019: Direct3DCreate9"long __cdecl InitD3D(struct HWND__ *)" (?InitD3D@@YAJPEAUHWND__@@@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
-C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\d3d9.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\d3dx10d.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\d3dx9d.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\dxerr.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\dxguid.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86\dsound.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\Users\qwer1\2021\save_my_flag\save_my_flag\x64\Debug\save_my_flag.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
+﻿  data_manager.cpp
+  enemy_a.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\enemy_a.h(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  Fading.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\global.h(3,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  first_game_page.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\first_game_page.h(3,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  game_system.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\tile.h(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  gold.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\gold.h(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  page_manager.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\global.h(3,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  palyer.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\global.h(3,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  save_my_flag.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\save_my_flag.cpp(10,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  texture_manager.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\texture_manager.h(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  tile.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\tile.h(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  title_page.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\title_page.h(3,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9.h': No such file or directory
+  코드를 생성하고 있습니다...

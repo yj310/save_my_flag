@@ -7,16 +7,19 @@
 
 Player::Player()
 {
-	posX = 110;
+	posX = 50;
 	posY = PLAYER_BOTTOM;
 	jumpStartPosY = posY;
-	radious = 100;
+	radious = 50;
 	isJump = false;
 	isDead = false;
-	speed = 5;
+	speed = 15;
 	jumpHeight = 0;
 	jumpTime = 0.0f;
 	jumpPower = 40.0f;
+	isDown = false;
+	//
+	state = 255;
 	
 }
 
@@ -38,13 +41,14 @@ void Player::Render()
 	cen = { PLAYER_WIDTH / 2, PLAYER_HEIGHT / 2, 0 };
 	pos = { posX, posY, 0 };
 
-	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, state, 255, 255));
 
 	element->sprite->End();
 }
 
 void Player::Update()
 {
+	//player ¿Ãµø
 	if (inputManager.keyBuffer['A'] == 1)
 	{
 		posX -= speed;
@@ -53,22 +57,40 @@ void Player::Update()
 	{
 		posX += speed;
 	}
-
+	else if (inputManager.keyBuffer['S'] == 1)
+	{
+		posY += speed;
+	}
 	if (inputManager.keyBuffer['W'] == 1 && !isJump)
 	{
 		jumpStartPosY = posY;
 		isJump = true;
 	}
 
+	//jump
 	if (isJump)
 	{
 		Jump();
 		posY = jumpStartPosY + jumpHeight;
 	}
+	else
+	{
+		if (isDown)
+		{
+			Down();
+		}
+	}
+
 	
+	
+	
+
 }
 
-
+void Player::Down()
+{
+	posY += 15;
+}
 
 void Player::Jump()
 {
@@ -83,6 +105,11 @@ void Player::Jump()
 
 		isJump = false;
 	}
+}
+
+D3DXVECTOR2 Player::getCenter()
+{
+	return { PLAYER_WIDTH / 2, PLAYER_HEIGHT / 2 };
 }
 
 float Player::getSpeed()
