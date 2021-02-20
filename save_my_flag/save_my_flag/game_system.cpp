@@ -44,7 +44,6 @@ void GameSystem::GenerateTiles()
 	float posX, posY;
 
 
-	
 	for (int i = 0; i < 16; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -54,8 +53,6 @@ void GameSystem::GenerateTiles()
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
-
-
 	MakeNomalBrickTile(500, START_BOTTOM - 100);
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
@@ -215,8 +212,8 @@ void GameSystem::Update()
 				player->state = 255;
 			}
 
-
-
+			
+			
 			int playerX = player->getPos().x;
 			int playerY = player->getPos().y;
 			int playerRadius = player->getRadious();
@@ -228,7 +225,7 @@ void GameSystem::Update()
 			if (playerX - playerRadius < tileX + tileWidth
 				&& playerX + playerRadius > tileX)
 			{
-
+				
 				if (playerY - playerRadius  < tileY + tileHeight
 					&& playerY + playerRadius > tileY + tileHeight)
 				{
@@ -262,7 +259,7 @@ void GameSystem::Update()
 				}
 			}
 
-
+			
 
 
 		}
@@ -303,7 +300,6 @@ void GameSystem::deleteData()
 	player = new Player();
 	delete gameOverPage;
 	gameOverPage = new GameOver();
-	group_number = -1;
 	int size = tiles.size();
 	for (int i = 0; i < size; i++)
 	{

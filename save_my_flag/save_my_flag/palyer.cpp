@@ -31,6 +31,11 @@ void Player::Update()
 	//posY += accumulatedGravityPower;
 
 	//player 
+	if (inputManager.keyBuffer['W'] == 1 && !isJump)
+	{
+		isJump = true;
+		jumpStartPosY = jumpStartPosY;
+	}
 	if (inputManager.keyBuffer['A'] == 1)
 	{
 		posX -= speed;
@@ -43,11 +48,7 @@ void Player::Update()
 	{
 		posY += speed;
 	}
-	if (inputManager.keyBuffer['W'] == 1 && !isJump)
-	{
-		isJump = true;
-		jumpStartPosY = jumpStartPosY;
-	}
+	
 
 	//jump
 	if (isJump)
