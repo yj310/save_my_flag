@@ -34,19 +34,19 @@ void GameSystem::MakeDamageTile(float x, float y)
 
 void GameSystem::GenerateTiles()
 {
-	float posX, posY ;
+	float posX, posY;
 	for (int i = 0; i < 16; i++)
 	{
 		for (int j = 0; j < 10; j++)
 		{
 			posX = i * 100;
-			posY = START_BOTTOM + j*100;
+			posY = START_BOTTOM + j * 100;
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
-	/*떨어지는 블럭*/
+	/*떨어지는 타일*/
 	for (int i = 16; i < 19; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -57,7 +57,7 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-	for (int i = 19; i < 19+19; i++)
+	for (int i = 19; i < 19 + 19; i++)
 	{
 		for (int j = 0; j < 10; j++)
 		{
@@ -68,17 +68,17 @@ void GameSystem::GenerateTiles()
 	}
 	for (int i = 35; i < 35 + 3; i++)
 	{
-		for (int j = 1; j < 1+3; j++)
+		for (int j = 1; j < 1 + 3; j++)
 		{
-			if ((i == 35 && (j == 2 || j == 3)) || ((i==36) && (j==3)))
+			if ((i == 35 && (j == 2 || j == 3)) || ((i == 36) && (j == 3)))
 				continue;
 			posX = i * 100;
 			posY = START_BOTTOM - j * 100;
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
-	
-	/*떨어지는 블럭*/
+
+	/*떨어지는 타일*/
 	for (int i = 38; i < 38 + 2; i++)
 	{
 		for (int j = 0; j < 15; j++)
@@ -86,7 +86,7 @@ void GameSystem::GenerateTiles()
 			if (i == 38 && j == 0)
 				continue;
 			posX = i * 100;
-			posY = (START_BOTTOM - 5 * 100) + j*100;
+			posY = (START_BOTTOM - 5 * 100) + j * 100;
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
@@ -95,7 +95,7 @@ void GameSystem::GenerateTiles()
 	{
 		for (int j = 0; j < 18; j++)
 		{
-			if ((i == 40 && (j == 0 || j == 1 )) || ((i == 41) && (j == 0)))
+			if ((i == 40 && (j == 0 || j == 1)) || ((i == 41) && (j == 0)))
 				continue;
 			posX = i * 100;
 			posY = (START_BOTTOM - 8 * 100) + j * 100;
@@ -115,7 +115,7 @@ void GameSystem::GenerateTiles()
 	MakeNomalBrickTile(45 * 100, START_BOTTOM + 100 * 3);
 	MakeNomalBrickTile(68 * 100, START_BOTTOM - 100 * 1);
 
-	/*떨어지는 블럭*/
+	/*떨어지는 타일*/
 	for (int i = 74; i < 74 + 4; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -132,7 +132,7 @@ void GameSystem::GenerateTiles()
 	// damage tile
 	for (int i = 0; i < 100; i++)
 	{
-		MakeDamageTile(i*100, START_BOTTOM+1000);
+		MakeDamageTile(i * 100, START_BOTTOM + 1000);
 	}
 	for (int i = 0; i < 30; i++)
 	{
@@ -158,17 +158,16 @@ void GameSystem::Update()
 		if (inputManager.keyBuffer[VK_DOWN] == 1)
 			column_speed = speed * -1;
 
-		tiles[i]->setPos(tiles[i]->getPos().x + row_speed , tiles[i]->getPos().y + column_speed);
+		tiles[i]->setPos(tiles[i]->getPos().x + row_speed, tiles[i]->getPos().y + column_speed);
 	}
 	player->setPos(player->getPos().x + row_speed, player->getPos().y + column_speed);
 
 	if (!player->isDead)
 	{
 		player->Update();
-		//충돌처리
+		
 		for (int i = 0; i < tiles.size(); i++)
 		{
-<<<<<<< Updated upstream
 			if (tiles[i]->getTileType() == DAMAGE_TILE)
 			{
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
@@ -189,18 +188,6 @@ void GameSystem::Update()
 				player->isDown = true;
 				player->state = 255;
 			}
-=======
-			player->state = 0;
-			/*player->isJump = false;
-			player->isDown = false;*/
-
-			if (player->getPos().y < tiles[i]->getPos().x)
-			{
-
-			}
-
-			break;
->>>>>>> Stashed changes
 		}
 
 		for (int i = 0; i < tiles.size(); i++)
@@ -212,7 +199,7 @@ void GameSystem::Update()
 	{
 		gameOverPage->Update();
 	}
-	
+
 }
 
 void GameSystem::Render()
