@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일\Manager">
+      <UniqueIdentifier>{80e61067-b6ac-4d29-bf57-f4a6fc004754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{95effa3e-d175-4859-a014-b33596c1106e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Page">
+      <UniqueIdentifier>{7690db3e-9ad7-4824-a4b0-6ffe33fb626d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Page">
+      <UniqueIdentifier>{aab5d0b9-8fad-445f-93c2-b7f54489d76e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\object">
+      <UniqueIdentifier>{da69033f-8506-48a7-ac54-50615ac8aedb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object">
+      <UniqueIdentifier>{3e2a422a-e06a-4bb0-b8aa-e01b518a7e0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\object\enemy">
+      <UniqueIdentifier>{f0de6ae7-08e6-40a5-b129-0dacea8e62eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\other">
+      <UniqueIdentifier>{192289e8-1646-4ec1-9c3f-23952e4b48e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\other">
+      <UniqueIdentifier>{c2fbc7e2-aeef-4ef8-822a-a6c6ecd5e992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\object\tile">
+      <UniqueIdentifier>{4e069a40-0824-4fcc-9bf8-277bb0f7a332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\enemy">
+      <UniqueIdentifier>{d1cdbf0a-5bad-4c1c-9548-3b7037639606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\tile">
+      <UniqueIdentifier>{b8a1e2f0-9632-4fcc-9ec4-dbde70390572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\not use">
+      <UniqueIdentifier>{fb39d875-831c-4eda-9d10-9a39bb1ef8eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\popup">
+      <UniqueIdentifier>{eecbe4a1-d461-4058-90c9-766544763906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\popup">
+      <UniqueIdentifier>{46b2c0cd-43c0-4dda-af12-93c8ec431bf2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="texture_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="input_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="page_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="page.h">
+      <Filter>헤더 파일\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="title_page.h">
+      <Filter>헤더 파일\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="Fading.h">
+      <Filter>헤더 파일\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="data_manager.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="first_game_page.h">
+      <Filter>헤더 파일\Page</Filter>
+    </ClInclude>
+    <ClInclude Include="gold.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="math_util.h">
+      <Filter>헤더 파일\other</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>헤더 파일\object\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_a.h">
+      <Filter>헤더 파일\object\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="brick_normal.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="cheat.h">
+      <Filter>헤더 파일\other</Filter>
+    </ClInclude>
+    <ClInclude Include="damage_tile.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="game_system.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>헤더 파일\other</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일\not use</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일\not use</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일\not use</Filter>
+    </ClInclude>
+    <ClInclude Include="save_my_flag.h">
+      <Filter>헤더 파일\not use</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over.h">
+      <Filter>헤더 파일\popup</Filter>
+    </ClInclude>
+    <ClInclude Include="게임시스템.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="save_my_flag.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_manager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="page_manager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Fading.cpp">
+      <Filter>소스 파일\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="title_page.cpp">
+      <Filter>소스 파일\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="data_manager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="first_game_page.cpp">
+      <Filter>소스 파일\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy_a.cpp">
+      <Filter>소스 파일\object\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="gold.cpp">
+      <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="game_system.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="math_util.cpp">
+      <Filter>소스 파일\other</Filter>
+    </ClCompile>
+    <ClCompile Include="brick_normal.cpp">
+      <Filter>소스 파일\object\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="cheat.cpp">
+      <Filter>소스 파일\other</Filter>
+    </ClCompile>
+    <ClCompile Include="damage_tile.cpp">
+      <Filter>소스 파일\object\tile</Filter>
+    </ClCompile>
+    <ClCompile Include="palyer.cpp">
+      <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="game_over.cpp">
+      <Filter>소스 파일\popup</Filter>
+    </ClCompile>
+    <ClCompile Include="게임시스템.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="save_my_flag.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="save_my_flag.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
