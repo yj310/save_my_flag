@@ -158,6 +158,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="brick_drop.h" />
     <ClInclude Include="brick_normal.h" />
     <ClInclude Include="cheat.h" />
     <ClInclude Include="damage_tile.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="title_page.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="brick_drop.cpp" />
     <ClCompile Include="brick_normal.cpp" />
     <ClCompile Include="cheat.cpp" />
     <ClCompile Include="damage_tile.cpp" />
