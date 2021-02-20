@@ -53,7 +53,7 @@
 #define TEX_GOLD_F 2015
 #define TEX_GOLD_G 2016
 #define TEX_DAMAGE_TILE 2017
-
+//주석주석
 // UI
 #define TEX_TITLE_PAGE_TITLE 3000
 #define TEX_START_BUTTON_NOMAL 3001
