@@ -215,3 +215,15 @@ void GameSystem::Render()
 		gameOverPage->Render();
 	}
 }
+
+void GameSystem::deleteData()
+{
+	delete player;
+	player = new Player();
+	delete gameOverPage;
+	gameOverPage = new GameOver();
+	for (int i = 0; i < tiles.size; i++)
+	{
+		tiles.pop_back();
+	}
+}

@@ -17,6 +17,7 @@ public:
 	void MakeDamageTile(float x, float y);
 	void Update();
 	void Render();
+	void deleteData();
 
 	Player* player;
 	vector<Tile*> tiles;
