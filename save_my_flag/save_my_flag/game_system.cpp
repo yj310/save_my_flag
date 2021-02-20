@@ -168,6 +168,7 @@ void GameSystem::Update()
 		//충돌처리
 		for (int i = 0; i < tiles.size(); i++)
 		{
+<<<<<<< Updated upstream
 			if (tiles[i]->getTileType() == DAMAGE_TILE)
 			{
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
@@ -188,6 +189,18 @@ void GameSystem::Update()
 				player->isDown = true;
 				player->state = 255;
 			}
+=======
+			player->state = 0;
+			/*player->isJump = false;
+			player->isDown = false;*/
+
+			if (player->getPos().y < tiles[i]->getPos().x)
+			{
+
+			}
+
+			break;
+>>>>>>> Stashed changes
 		}
 
 		for (int i = 0; i < tiles.size(); i++)
