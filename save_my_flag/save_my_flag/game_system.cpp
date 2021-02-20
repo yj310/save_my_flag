@@ -14,6 +14,7 @@ GameSystem::GameSystem()
 	CreateMap();
 	player = new Player();
 	gameOverPage = new GameOver();
+	group_number = -1;
 }
 
 void GameSystem::CreateMap()
@@ -27,9 +28,9 @@ void GameSystem::MakeNomalBrickTile(float x, float y)
 	tiles.push_back(tile);
 }
 
-void GameSystem::MakeDropBrickTile(float x, float y)
+void GameSystem::MakeDropBrickTile(float x, float y, int group)
 {
-	Tile* tile = new BrickDrop(x, y);
+	Tile* tile = new BrickDrop(x, y, group);
 	tiles.push_back(tile);
 }
 
@@ -60,7 +61,7 @@ void GameSystem::GenerateTiles()
 		{
 			posX = i * 100;
 			posY = START_BOTTOM + j * 100;
-			MakeDropBrickTile(posX, posY);
+			MakeDropBrickTile(posX, posY, 0);
 		}
 	}
 
@@ -94,7 +95,7 @@ void GameSystem::GenerateTiles()
 				continue;
 			posX = i * 100;
 			posY = (START_BOTTOM - 5 * 100) + j * 100;
-			MakeDropBrickTile(posX, posY);
+			MakeDropBrickTile(posX, posY,1);
 		}
 	}
 
@@ -129,11 +130,9 @@ void GameSystem::GenerateTiles()
 		{
 			posX = i * 100;
 			posY = START_BOTTOM + j * 100;
-			MakeDropBrickTile(posX, posY);
+			MakeDropBrickTile(posX, posY,2);
 		}
 	}
-
-
 
 
 	// damage tile
@@ -172,7 +171,7 @@ void GameSystem::Update()
 	if (!player->isDead)
 	{
 		player->Update();
-		//面倒贸府
+		
 		for (int i = 0; i < tiles.size(); i++)
 		{
 			if (tiles[i]->getTileType() == DAMAGE_TILE)
@@ -183,9 +182,16 @@ void GameSystem::Update()
 					player->isDead = true;
 				}
 			}
+
+			//面倒贸府
 			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
 			{
+				
+				if (tiles[i]->getTileType() == DROP_BRICK)
+				{
+					group_number = tiles[i]->group;
+				}
 				player->state = 0;
 				player->isDown = false;
 				break;
@@ -199,6 +205,10 @@ void GameSystem::Update()
 
 		for (int i = 0; i < tiles.size(); i++)
 		{
+			if (tiles[i]->group == group_number)
+			{
+				tiles[i]->posY += 100;
+			}
 			tiles[i]->Update();
 		}
 	}

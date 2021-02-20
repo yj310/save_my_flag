@@ -17,6 +17,7 @@ public:
 	int height;
 
 	int tileType;
+	int group;
 
 	D3DXVECTOR2 getPos() { return { posX, posY }; }
 	void setPos(float x, float y) { posX = x; posY = y; }
