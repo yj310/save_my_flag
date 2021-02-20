@@ -43,5 +43,5 @@ public:
 	bool isTouch_bottom;
 	bool isTouch_right;
 	bool isTouch_left;
-	
+
 };

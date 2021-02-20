@@ -1,3 +1,5 @@
+
+
 #include "game_system.h"
 #include "global.h"
 #include "player.h"
@@ -56,7 +58,7 @@ void GameSystem::GenerateTiles()
 	MakeNomalBrickTile(500, START_BOTTOM - 100);
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
-	/*떨어지는 블럭*/
+	/*drop tile*/
 	for (int i = 16; i < 19; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -88,7 +90,7 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-	/*떨어지는 블럭*/
+	/*drop tile*/
 	for (int i = 38; i < 38 + 2; i++)
 	{
 		for (int j = 0; j < 15; j++)
@@ -125,7 +127,7 @@ void GameSystem::GenerateTiles()
 	MakeNomalBrickTile(45 * 100, START_BOTTOM + 100 * 3);
 	MakeNomalBrickTile(68 * 100, START_BOTTOM - 100 * 1);
 
-	/*떨어지는 블럭*/
+	/*drop tile*/
 	for (int i = 74; i < 74 + 4; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -191,7 +193,7 @@ void GameSystem::Update()
 
 		for (int i = 0; i < tiles.size(); i++)
 		{
-			// 장외 처리
+			
 			if (tiles[i]->getTileType() == DAMAGE_TILE)
 			{
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
@@ -201,7 +203,7 @@ void GameSystem::Update()
 				}
 			}
 
-			//충돌처리
+			
 			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
 			{
@@ -220,8 +222,8 @@ void GameSystem::Update()
 			}
 
 
-			
-			
+
+
 			int playerX = player->getPos().x;
 			int playerY = player->getPos().y;
 			int playerRadius = player->getRadious();
@@ -234,29 +236,19 @@ void GameSystem::Update()
 				&& playerX + playerRadius > tileX)
 			{
 
-				if (playerY - playerRadius  <= tileY + tileHeight
+				if (playerY - playerRadius <= tileY + tileHeight
 					&& playerY + playerRadius >= tileY + tileHeight)
 				{
-<<<<<<< Updated upstream
 					player->isTouch_top = true;
 					player->setPos(playerX, tileY + tileHeight + playerRadius);
-=======
->>>>>>> Stashed changes
 					player->isJump = false;
-					player->setPos(playerX, tileY + tileHeight + playerRadius);
-					
 				}
-				if (playerY - playerRadius  <= tileY
+				if (playerY - playerRadius <= tileY
 					&& playerY + playerRadius >= tileY)
 				{
-<<<<<<< Updated upstream
 					player->isTouch_bottom = true;
 					player->setPos(playerX, tileY - playerRadius);
-=======
->>>>>>> Stashed changes
 					player->isJump = false;
-					player->setPos(playerX, tileY - playerRadius);
-					
 				}
 			}
 
@@ -265,38 +257,23 @@ void GameSystem::Update()
 			if (playerY - playerRadius < tileY + tileHeight
 				&& playerY + playerRadius > tileY)
 			{
-				if (playerX - playerRadius  <= tileX + tileWidth
+				if (playerX - playerRadius <= tileX + tileWidth
 					&& playerX + playerRadius >= tileX + tileWidth)
 				{
-<<<<<<< Updated upstream
 					player->isTouch_left = true;
 					player->setPos(tileX + tileWidth + playerRadius, playerY);
-=======
->>>>>>> Stashed changes
 					player->isJump = false;
-					player->setPos(tileX + tileWidth + playerRadius, playerY);
-					
 				}
-				else if (playerX - playerRadius  <= tileX
+				else if (playerX - playerRadius <= tileX
 					&& playerX + playerRadius >= tileX)
 				{
-<<<<<<< Updated upstream
 					player->isTouch_right = true;
 					player->setPos(tileX - playerRadius, playerY);
-=======
->>>>>>> Stashed changes
 					player->isJump = false;
-					player->setPos(tileX - playerRadius, playerY);
-	
 				}
 			}
+
 		
-
-
-			
-
-
-
 
 		}
 
