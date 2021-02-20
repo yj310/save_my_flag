@@ -14,7 +14,7 @@ Player::Player()
 	radious = 50;
 	isJump = false;
 	isDead = false;
-	speed = 15;
+	speed = 5;
 	isDown = false;
 	//gravity = 150.5;	//중력가속도
 	jumpTime = 0.0f;	//점프 이후 경과시간
@@ -49,7 +49,7 @@ void Player::Update()
 	if (inputManager.keyBuffer['W'] == 1 && !isJump)
 	{
 		isJump = true;
-		jumpStartPosY = jumpStartPosY;
+		jumpStartPosY = posY;
 	}
 
 	//jump
@@ -95,7 +95,7 @@ void Player::Render()
 
 void Player::Down()
 {
-	posY += 15;
+	//posY += 15;
 }
 
 void Player::Jump()
