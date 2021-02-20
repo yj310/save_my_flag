@@ -238,10 +238,9 @@ void GameSystem::deleteData()
 	player = new Player();
 	delete gameOverPage;
 	gameOverPage = new GameOver();
-	for (int i = 0; i < tiles.size(); i++)
+	int size = tiles.size();
+	for (int i = 0; i < size; i++)
 	{
 		tiles.pop_back();
 	}
-
-	int a;
 }
