@@ -11,7 +11,6 @@
 
 GameSystem::GameSystem()
 {
-	CreateMap();
 	player = new Player();
 	gameOverPage = new GameOver();
 }
@@ -233,4 +232,6 @@ void GameSystem::deleteData()
 	{
 		tiles.pop_back();
 	}
+
+	int a;
 }
