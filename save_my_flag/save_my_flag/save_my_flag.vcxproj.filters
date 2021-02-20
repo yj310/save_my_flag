@@ -54,34 +54,80 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="brick_drop.h" />
-    <ClInclude Include="brick_normal.h" />
-    <ClInclude Include="cheat.h" />
-    <ClInclude Include="damage_tile.h" />
-    <ClInclude Include="data_manager.h" />
-    <ClInclude Include="enemy.h" />
-    <ClInclude Include="enemy_a.h" />
-    <ClInclude Include="Fading.h" />
-    <ClInclude Include="first_game_page.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="game_over.h" />
-    <ClInclude Include="game_system.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="gold.h" />
-    <ClInclude Include="input_manager.h" />
-    <ClInclude Include="math_util.h" />
-    <ClInclude Include="page.h" />
-    <ClInclude Include="page_manager.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="texture_manager.h" />
-    <ClInclude Include="save_my_flag.h" />
-    <ClInclude Include="tile.h" />
-    <ClInclude Include="title_page.h" />
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일\not use</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일\not use</Filter>
+    </ClInclude>
+    <ClInclude Include="brick_drop.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="brick_normal.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="cheat.h">
+      <Filter>헤더 파일\other</Filter>
+    </ClInclude>
+    <ClInclude Include="damage_tile.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="data_manager.h">
+      <Filter>헤더 파일\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>헤더 파일\object\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy_a.h">
+      <Filter>헤더 파일\object\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="first_game_page.h">
+      <Filter>헤더 파일\page</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일\not use</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over.h">
+      <Filter>헤더 파일\page</Filter>
+    </ClInclude>
+    <ClInclude Include="Fading.h">
+      <Filter>헤더 파일\page\popup</Filter>
+    </ClInclude>
+    <ClInclude Include="game_system.h">
+      <Filter>헤더 파일\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>헤더 파일\other</Filter>
+    </ClInclude>
+    <ClInclude Include="gold.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="input_manager.h">
+      <Filter>헤더 파일\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="math_util.h">
+      <Filter>헤더 파일\other</Filter>
+    </ClInclude>
+    <ClInclude Include="page.h">
+      <Filter>헤더 파일\page</Filter>
+    </ClInclude>
+    <ClInclude Include="page_manager.h">
+      <Filter>헤더 파일\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="save_my_flag.h">
+      <Filter>헤더 파일\not use</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_manager.h">
+      <Filter>헤더 파일\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>헤더 파일\object\tile</Filter>
+    </ClInclude>
+    <ClInclude Include="title_page.h">
+      <Filter>헤더 파일\object\tile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +168,27 @@
     </Filter>
     <Filter Include="헤더 파일\not use">
       <UniqueIdentifier>{dd7ac4b8-ed4f-4941-a83b-2396c7744987}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\page">
+      <UniqueIdentifier>{bfa50474-8b61-46d0-a533-36af752303fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object">
+      <UniqueIdentifier>{d103a640-aada-4fda-8393-be72af235fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\tile">
+      <UniqueIdentifier>{f1a60070-2df0-45b3-ac5e-820c662ca76f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\enemy">
+      <UniqueIdentifier>{62fefb0d-2449-4ce1-a0b4-c5d825d9fd75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\other">
+      <UniqueIdentifier>{0767b25c-4b9c-4e3a-ad58-2b3a8627ed2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\manager">
+      <UniqueIdentifier>{6ef9778c-0e6f-44bf-a54e-31625994816b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\page\popup">
+      <UniqueIdentifier>{20737562-0228-4165-aba4-2d9e12786872}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

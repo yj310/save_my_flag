@@ -40,16 +40,17 @@ void Player::Update()
 	//posY += accumulatedGravityPower;
 
 	//player 
-	if (inputManager.keyBuffer['W'] == 1 && !isJump && !isTouch_top)
+	if (inputManager.keyBuffer['W'] == 1 && !isJump && !isTouch_top && isTouch_bottom)
 	{
 		isJump = true;
+		jumpTime = 1.f;
 		jumpStartPosY = posY;
 	}
 	if (inputManager.keyBuffer['A'] == 1 && !isTouch_left)
 	{
 		posX -= speed;
 	}
-	else if (inputManager.keyBuffer['D'] == 1 && !isTouch_right)
+	if (inputManager.keyBuffer['D'] == 1 && !isTouch_right)
 	{
 		posX += speed;
 	}

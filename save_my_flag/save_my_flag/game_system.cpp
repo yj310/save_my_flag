@@ -230,10 +230,11 @@ void GameSystem::Update()
 			int tileWidth = tiles[i]->getSize().x;
 			int tileHeight = tiles[i]->getSize().y;
 
-			if (playerX - playerRadius < tileX + tileWidth
-				&& playerX + playerRadius > tileX)
+			if (playerX - playerRadius  +5 < tileX + tileWidth
+				&& playerX + playerRadius -5 > tileX)
 			{
-
+				
+				
 				if (playerY - playerRadius  <= tileY + tileHeight
 					&& playerY + playerRadius >= tileY + tileHeight)
 				{
@@ -241,13 +242,14 @@ void GameSystem::Update()
 					player->setPos(playerX, tileY + tileHeight + playerRadius);
 					player->isJump = false;
 				}
-				if (playerY - playerRadius  <= tileY
+				if (playerY - playerRadius <= tileY
 					&& playerY + playerRadius >= tileY)
 				{
 					player->isTouch_bottom = true;
 					player->setPos(playerX, tileY - playerRadius);
 					player->isJump = false;
 				}
+				
 			}
 
 			playerX = player->getPos().x;
@@ -259,15 +261,13 @@ void GameSystem::Update()
 					&& playerX + playerRadius >= tileX + tileWidth)
 				{
 					player->isTouch_left = true;
-					player->setPos(tileX + tileWidth + playerRadius, playerY);
-					player->isJump = false;
+					player->setPos(tileX + tileWidth + playerRadius , playerY);
 				}
 				else if (playerX - playerRadius  <= tileX
 					&& playerX + playerRadius >= tileX)
 				{
 					player->isTouch_right = true;
-					player->setPos(tileX - playerRadius, playerY);
-					player->isJump = false;
+					player->setPos(tileX - playerRadius , playerY);
 				}
 			}
 		
