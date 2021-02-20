@@ -36,5 +36,5 @@ public:
 	bool isDown;
 	//
 	int state;
-
+	
 };

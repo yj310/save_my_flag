@@ -42,6 +42,9 @@ void GameSystem::MakeDamageTile(float x, float y)
 void GameSystem::GenerateTiles()
 {
 	float posX, posY;
+
+
+	
 	for (int i = 0; i < 16; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -51,6 +54,9 @@ void GameSystem::GenerateTiles()
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
+
+
+	MakeNomalBrickTile(500, START_BOTTOM - 100);
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
 	/*떨어지는 블럭*/
@@ -94,7 +100,7 @@ void GameSystem::GenerateTiles()
 				continue;
 			posX = i * 100;
 			posY = (START_BOTTOM - 5 * 100) + j * 100;
-			MakeDropBrickTile(posX, posY,1);
+			MakeDropBrickTile(posX, posY, 1);
 		}
 	}
 
@@ -129,7 +135,7 @@ void GameSystem::GenerateTiles()
 		{
 			posX = i * 100;
 			posY = START_BOTTOM + j * 100;
-			MakeDropBrickTile(posX, posY,2);
+			MakeDropBrickTile(posX, posY, 2);
 		}
 	}
 
@@ -148,6 +154,8 @@ void GameSystem::GenerateTiles()
 
 void GameSystem::Update()
 {
+
+
 	//map <- ->
 	float row_speed = 0;
 	float column_speed = 0;
@@ -167,12 +175,19 @@ void GameSystem::Update()
 	}
 	player->setPos(player->getPos().x + row_speed, player->getPos().y + column_speed);
 
+
+
+
+
+
 	if (!player->isDead)
 	{
 		player->Update();
-		
+
+
 		for (int i = 0; i < tiles.size(); i++)
 		{
+			// 장외 처리
 			if (tiles[i]->getTileType() == DAMAGE_TILE)
 			{
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
@@ -186,20 +201,70 @@ void GameSystem::Update()
 			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
 			{
-				
+
 				if (tiles[i]->getTileType() == DROP_BRICK)
 				{
 					group_number = tiles[i]->group;
 				}
-				player->state = 0;
-				player->isDown = false;
-				break;
+				/*player->state = 0;
+				player->isDown = false;*/
 			}
 			else
 			{
 				player->isDown = true;
 				player->state = 255;
 			}
+
+
+
+			int playerX = player->getPos().x;
+			int playerY = player->getPos().y;
+			int playerRadius = player->getRadious();
+			int tileX = tiles[i]->getPos().x;
+			int tileY = tiles[i]->getPos().y;
+			int tileWidth = tiles[i]->getSize().x;
+			int tileHeight = tiles[i]->getSize().y;
+
+			if (playerX - playerRadius < tileX + tileWidth
+				&& playerX + playerRadius > tileX)
+			{
+
+				if (playerY - playerRadius  < tileY + tileHeight
+					&& playerY + playerRadius > tileY + tileHeight)
+				{
+					player->setPos(playerX, tileY + tileHeight + playerRadius);
+					player->isJump = false;
+				}
+				if (playerY - playerRadius  < tileY
+					&& playerY + playerRadius > tileY)
+				{
+					player->setPos(playerX, tileY - playerRadius);
+					player->isJump = false;
+				}
+			}
+
+			playerX = player->getPos().x;
+			playerY = player->getPos().y;
+			if (playerY - playerRadius < tileY + tileHeight
+				&& playerY + playerRadius > tileY)
+			{
+				if (playerX - playerRadius  < tileX + tileWidth
+					&& playerX + playerRadius > tileX + tileWidth)
+				{
+					player->setPos(tileX + tileWidth + playerRadius, playerY);
+					player->isJump = false;
+				}
+				else if (playerX - playerRadius  < tileX
+					&& playerX + playerRadius > tileX)
+				{
+					player->setPos(tileX - playerRadius, playerY);
+					player->isJump = false;
+				}
+			}
+
+
+
+
 		}
 
 		for (int i = 0; i < tiles.size(); i++)
@@ -238,6 +303,7 @@ void GameSystem::deleteData()
 	player = new Player();
 	delete gameOverPage;
 	gameOverPage = new GameOver();
+	group_number = -1;
 	int size = tiles.size();
 	for (int i = 0; i < size; i++)
 	{

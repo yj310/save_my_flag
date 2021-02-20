@@ -68,7 +68,7 @@
 
 // Other
 
-
+extern float deltaTime;
 
 /* global */
 // basic
