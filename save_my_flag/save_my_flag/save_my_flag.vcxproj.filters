@@ -132,6 +132,9 @@
     <ClInclude Include="game_over.h">
       <Filter>헤더 파일\popup</Filter>
     </ClInclude>
+    <ClInclude Include="게임시스템.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="save_my_flag.cpp">
@@ -181,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="game_over.cpp">
       <Filter>소스 파일\popup</Filter>
+    </ClCompile>
+    <ClCompile Include="게임시스템.cpp">
+      <Filter>소스 파일\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

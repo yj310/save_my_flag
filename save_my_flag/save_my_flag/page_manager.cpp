@@ -6,7 +6,12 @@
 
 void PageManager::CreateTitlePage()
 {
-	if (currentPage != nullptr) {
+	if (currentPage != nullptr) 
+	{
+		if (currentPage->classType == FIRST_GAME_PAGE)
+		{
+			gameSystem.deleteData();
+		}
 		delete currentPage;
 	}
 	TitlePage* newPage = new TitlePage();
@@ -15,7 +20,12 @@ void PageManager::CreateTitlePage()
 
 void PageManager::CreateFirstGamePage()
 {
-	if (currentPage != nullptr) {
+	if (currentPage != nullptr) 
+	{
+		if (currentPage->classType == FIRST_GAME_PAGE)
+		{
+			gameSystem.deleteData();
+		}
 		delete currentPage;
 	}
 	FirstGamePage* newPage = new FirstGamePage();
@@ -26,6 +36,10 @@ void PageManager::Update()
 {
 	if (currentPage != nullptr)
 	{
+		if (currentPage->classType == FIRST_GAME_PAGE)
+		{
+			gameSystem.deleteData();
+		}
 		currentPage->Update();
 		/*if (pageState == FadeOut)
 		{

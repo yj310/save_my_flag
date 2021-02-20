@@ -1,5 +1,5 @@
 #include "game_system.h"
-#include "global.h"
+//#include "global.h"
 #include "player.h"
 #include "tile.h"
 #include "brick_normal.h"

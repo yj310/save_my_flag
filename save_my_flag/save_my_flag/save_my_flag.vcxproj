@@ -182,6 +182,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="title_page.h" />
+    <ClInclude Include="게임시스템.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="brick_normal.cpp" />
@@ -200,6 +201,7 @@
     <ClCompile Include="save_my_flag.cpp" />
     <ClCompile Include="texture_manager.cpp" />
     <ClCompile Include="title_page.cpp" />
+    <ClCompile Include="게임시스템.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="save_my_flag.rc" />
