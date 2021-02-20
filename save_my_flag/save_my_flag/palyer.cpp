@@ -15,7 +15,7 @@ Player::Player()
 	isDead = false;
 	speed = 15;
 	isDown = false;
-	//gravity = 150.5;	//중력가속도
+	gravity = 20.5;	//중력가속도
 	jumpTime = 0.0f;	//점프 이후 경과시간
 	jumpPower = 40.0f;	//점프력
 	jumpHeight = 0;
@@ -26,7 +26,7 @@ Player::Player()
 
 void Player::Update()
 {
-	posY += 20;
+	posY += gravity;
 	//accumulatedGravityPower = deltaTime * gravity;
 	//posY += accumulatedGravityPower;
 
