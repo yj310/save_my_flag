@@ -4,6 +4,7 @@
 #include "first_game_page.h"
 
 
+
 void PageManager::CreateTitlePage()
 {
 	if (currentPage != nullptr) 

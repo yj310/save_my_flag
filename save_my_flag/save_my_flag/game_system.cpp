@@ -3,6 +3,7 @@
 #include "player.h"
 #include "tile.h"
 #include "brick_normal.h"
+#include "brick_drop.h"
 #include "math_util.h"
 #include "damage_tile.h"
 
@@ -23,6 +24,12 @@ void GameSystem::CreateMap()
 void GameSystem::MakeNomalBrickTile(float x, float y)
 {
 	Tile* tile = new BrickNormal(x, y);
+	tiles.push_back(tile);
+}
+
+void GameSystem::MakeDropBrickTile(float x, float y)
+{
+	Tile* tile = new BrickDrop(x, y);
 	tiles.push_back(tile);
 }
 
@@ -53,7 +60,7 @@ void GameSystem::GenerateTiles()
 		{
 			posX = i * 100;
 			posY = START_BOTTOM + j * 100;
-			MakeNomalBrickTile(posX, posY);
+			MakeDropBrickTile(posX, posY);
 		}
 	}
 
@@ -87,7 +94,7 @@ void GameSystem::GenerateTiles()
 				continue;
 			posX = i * 100;
 			posY = (START_BOTTOM - 5 * 100) + j * 100;
-			MakeNomalBrickTile(posX, posY);
+			MakeDropBrickTile(posX, posY);
 		}
 	}
 
@@ -122,7 +129,7 @@ void GameSystem::GenerateTiles()
 		{
 			posX = i * 100;
 			posY = START_BOTTOM + j * 100;
-			MakeNomalBrickTile(posX, posY);
+			MakeDropBrickTile(posX, posY);
 		}
 	}
 

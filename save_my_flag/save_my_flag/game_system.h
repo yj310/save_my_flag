@@ -14,6 +14,7 @@ public:
 	void CreateMap();
 	void GenerateTiles();
 	void MakeNomalBrickTile(float x, float y);
+	void MakeDropBrickTile(float x, float y);
 	void MakeDamageTile(float x, float y);
 	void Update();
 	void Render();
