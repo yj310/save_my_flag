@@ -30,6 +30,11 @@
 #define DAMAGE_TILE 1
 #define DROP_BRICK 2
 
+
+#define START_BOTTOM 910
+#define FINISH_TILE_RIGHT 7700
+#define FINISH_TILE_BOTTOM START_BOTTOM + 1000
+
 /* Texture ID */
 // Background
 #define TEX_TITLE_PAGE_BACKGROUND 1000

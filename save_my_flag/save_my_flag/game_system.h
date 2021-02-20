@@ -19,6 +19,7 @@ public:
 	void Update();
 	void Render();
 	void deleteData();
+	D3DXVECTOR2 getPrintPos(float x, float y);
 	
 	int group_number;
 

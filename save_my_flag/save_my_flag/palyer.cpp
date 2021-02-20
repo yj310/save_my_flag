@@ -14,7 +14,7 @@ Player::Player()
 	radious = 50;
 	isJump = false;
 	isDead = false;
-	speed = 5;
+	speed = 10;
 	isDown = false;
 	gravity = 20.5;	//중력가속도
 	jumpTime = 0.0f;	//점프 이후 경과시간
@@ -22,6 +22,8 @@ Player::Player()
 	jumpHeight = 0;
 	//
 	state = 255;
+	printX = posX;
+	printY = posY;
 	srand((unsigned int)time(NULL));
 	randCharacter = TEX_PLAYER_A + rand() % 6;
 
@@ -92,8 +94,9 @@ void Player::Render()
 	rc.right = PLAYER_WIDTH;
 	rc.bottom = PLAYER_HEIGHT;
 
+
 	cen = { PLAYER_WIDTH / 2, PLAYER_HEIGHT / 2, 0 };
-	pos = { posX, posY, 0 };
+	pos = { printX, printY, 0 };
 
 	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, state, 255, 255));
 
@@ -156,4 +159,45 @@ int  Player::getRadious()
 bool Player::getIsDead()
 {
 	return isDead;
+}
+
+void Player::setPrintPos()
+{
+
+	// printX
+	if (posX <= WINDOW_WIDTH / 2)
+	{
+		printX = posX;
+	}
+	else
+	{
+		if (posX > FINISH_TILE_RIGHT - (WINDOW_WIDTH / 2))
+		{
+			printX = (WINDOW_WIDTH / 2) + ((WINDOW_WIDTH / 2) - (FINISH_TILE_RIGHT - posX));
+		}
+		else
+		{
+			printX = posX - (posX - (WINDOW_WIDTH / 2));
+		}
+	}
+
+	// printY
+	if (posY >= WINDOW_HEIGHT/2 && posY <= START_BOTTOM)
+	{
+		printY = posY - (START_BOTTOM - ((WINDOW_HEIGHT / 2) + 300)) + 50;
+	}
+	else if (posY < WINDOW_HEIGHT / 2)
+	{
+		printY = WINDOW_HEIGHT / 2;
+	}
+	else if(posY > START_BOTTOM)
+	{
+		if (posY + (WINDOW_HEIGHT - START_BOTTOM) > FINISH_TILE_BOTTOM) {
+			printY = START_BOTTOM + ((WINDOW_HEIGHT-START_BOTTOM) - (FINISH_TILE_BOTTOM - posY));
+		}
+		else
+		{
+			printY = START_BOTTOM;
+		}
+	}
 }
