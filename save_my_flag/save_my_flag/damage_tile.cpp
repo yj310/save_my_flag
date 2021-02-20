@@ -1,22 +1,22 @@
-#include "brick_normal.h"
+#include "damage_tile.h"
 #include "global.h"
 
 
-BrickNormal::BrickNormal(float x, float y)
+DamageTile::DamageTile(float x, float y)
 {
 	posX = x;
 	posY = y;
-	tileType = NOMAL_BRICK;
+	tileType = DAMAGE_TILE;
 }
 
-void BrickNormal::Update()
+void DamageTile::Update()
 {
 
 }
 
-void BrickNormal::Render()
+void DamageTile::Render()
 {
-	TextureElement* element = textureManager.getTexture(TEX_BRICK);
+	TextureElement* element = textureManager.getTexture(TEX_DAMAGE_TILE);
 
 	RECT rc;
 	D3DXVECTOR3 pos;

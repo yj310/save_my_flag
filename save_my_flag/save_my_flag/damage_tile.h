@@ -3,10 +3,10 @@
 #include <d3dx9.h>
 #include "global.h"
 
-class BrickNormal :public Tile
+class DamageTile :public Tile
 {
 public:
-	BrickNormal(float x, float y);
+	DamageTile(float x, float y);
 	void Update() override;
 	void Render() override;
 };

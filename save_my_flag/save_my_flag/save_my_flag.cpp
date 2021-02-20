@@ -1,5 +1,5 @@
 ﻿// save_my_flag.cpp : 애플리케이션에 대한 진입점을 정의합니다.
-// 냨
+// 
 
 
 #include "framework.h"
@@ -43,6 +43,7 @@ GameSystem gameSystem;
 // Other
 float deltaTime = 0.3f;
 DWORD prevTime;
+Cheat cheat;
 //GameSystem gameSystem;
 
 HRESULT InitD3D(HWND hWnd)
@@ -94,8 +95,10 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/object/enemy_b.png", TEX_ENEMY_B);
 	textureManager.LoadTexture(L"source/image/object/enemy_c.png", TEX_ENEMY_C);
 	textureManager.LoadTexture(L"source/image/object/enemy_d.png", TEX_ENEMY_D);
-	textureManager.LoadTexture(L"source/image/character/player.png", TEX_PLAYER);
-	textureManager.LoadTexture(L"source/image/object/Brick.png", TEX_BRICK);
+
+	textureManager.LoadTexture(L"source/image/object/tile/brick_nomal.png", TEX_BRICK);
+	textureManager.LoadTexture(L"source/image/object/tile/damage_tile.png", TEX_DAMAGE_TILE);
+
 	textureManager.LoadTexture(L"source/image/object/gold/gold_a.png", TEX_GOLD_A);
 	textureManager.LoadTexture(L"source/image/object/gold/gold_b.png", TEX_GOLD_B);
 	textureManager.LoadTexture(L"source/image/object/gold/gold_c.png", TEX_GOLD_C);
@@ -110,7 +113,12 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/ui/title_page/start_button_mouseover.png", TEX_START_BUTTON_BORD);
 	textureManager.LoadTexture(L"source/image/ui/title_page/exit_button_nomal.png", TEX_EXIT_BUTTON_NOMAL);
 	textureManager.LoadTexture(L"source/image/ui/title_page/exit_button_mouseover.png", TEX_EXIT_BUTTON_BORD);
+	textureManager.LoadTexture(L"source/image/ui/popup/game_over_A.png", TEX_GAME_OVER_A);
+	textureManager.LoadTexture(L"source/image/ui/popup/game_over_B.png", TEX_GAME_OVER_B);
+
     
+	// character
+	textureManager.LoadTexture(L"source/image/character/player.png", TEX_PLAYER);
     
 
     pageManager.CreateTitlePage();
@@ -145,7 +153,6 @@ void Update()
     }
     prevTime = cur;
 
-
     if (inputManager.prevKeyBuffer[VK_ESCAPE] == 1 && inputManager.keyBuffer[VK_ESCAPE] == 0)
     {
        PostQuitMessage(0);
@@ -153,7 +160,7 @@ void Update()
     }
 
     pageManager.Update();
-    //cheats.Update();
+    cheat.Update();
     inputManager.Update();
 }
 

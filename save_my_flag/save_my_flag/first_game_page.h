@@ -2,6 +2,7 @@
 #include "page.h"
 #include <d3dx9.h>
 #include "player.h"
+#include "game_over.h"
 
 
 class FirstGamePage : public Page
@@ -18,7 +19,6 @@ public:
 	/* Render */
 	void BackgroundRender();
 
-	Player player;
 
 protected:
 

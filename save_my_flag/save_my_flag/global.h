@@ -12,7 +12,7 @@
 #include "data_manager.h"
 #include "game_system.h"
 
-
+#include "cheat.h"
 
 
 
@@ -23,7 +23,11 @@
 // page
 #define TEX_FADING 0
 #define TITLE_PAGE 1
-#define FIRST_GAME_PAGE 1
+#define FIRST_GAME_PAGE 2
+
+// tile
+#define NOMAL_BRICK 0
+#define DAMAGE_TILE 1
 
 /* Texture ID */
 // Background
@@ -48,6 +52,7 @@
 #define TEX_GOLD_E 2014
 #define TEX_GOLD_F 2015
 #define TEX_GOLD_G 2016
+#define TEX_DAMAGE_TILE 2017
 
 // UI
 #define TEX_TITLE_PAGE_TITLE 3000
@@ -55,6 +60,8 @@
 #define TEX_START_BUTTON_BORD 3002
 #define TEX_EXIT_BUTTON_NOMAL 3003
 #define TEX_EXIT_BUTTON_BORD 3004
+#define TEX_GAME_OVER_A 3005
+#define TEX_GAME_OVER_B 3006
 
 // Character
 
@@ -79,6 +86,7 @@ extern GameSystem gameSystem;
 // Other
 extern HWND hWnd;
 extern float deltaTime;
+extern Cheat cheat;
 
 
 

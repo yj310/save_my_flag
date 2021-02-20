@@ -16,7 +16,11 @@ public:
 	int width;
 	int height;
 
+	int tileType;
+
 	D3DXVECTOR2 getPos() { return { posX, posY }; }
 	void setPos(float x, float y) { posX = x; posY = y; }
 	D3DXVECTOR2 getSize() { return { TILE_WIDTH, TILE_HEIGHT }; }
+	int getTileType() { return tileType; }
+	void setTileType(int tileType) { this->tileType = tileType; }
 };
