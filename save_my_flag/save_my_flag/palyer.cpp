@@ -7,16 +7,19 @@
 
 Player::Player()
 {
-	posX = 50;
+	//accumulatedGravityPower = 
+	posX = 250;
 	posY = PLAYER_BOTTOM;
 	jumpStartPosY = posY;
 	radious = 50;
 	isJump = false;
 	isDead = false;
 	speed = 15;
-	jumpHeight = 0;
-	jumpTime = 0.0f;
-	jumpPower = 40.0f;
+	gravity = 9.8;		//중력가속도
+	jumpHeight = 0;	
+	jumpTime = 0.0f;	//점프 이후 경과시간
+	jumpPower = 40.0f;	//점프력
+
 	isDown = false;
 	//
 	state = 255;
@@ -75,10 +78,10 @@ void Player::Update()
 	}
 	else
 	{
-		if (isDown)
+		/*if (isDown)
 		{
 			Down();
-		}
+		}*/
 	}
 
 	

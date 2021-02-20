@@ -20,9 +20,11 @@ public:
 	D3DXVECTOR2 getSize();
 	D3DXVECTOR2 getCenter();
 
+	float accumulatedGravityPower;
 	float jumpHeight;
 	float jumpTime;
 	float jumpPower;
+	float gravity;
 	float speed;
 	bool isJump;
 	bool isHit;
