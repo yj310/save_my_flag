@@ -1,5 +1,5 @@
 #include "game_system.h"
-//#include "global.h"
+#include "global.h"
 #include "player.h"
 #include "tile.h"
 #include "brick_normal.h"
@@ -222,7 +222,7 @@ void GameSystem::deleteData()
 	player = new Player();
 	delete gameOverPage;
 	gameOverPage = new GameOver();
-	for (int i = 0; i < tiles.size; i++)
+	for (int i = 0; i < tiles.size(); i++)
 	{
 		tiles.pop_back();
 	}

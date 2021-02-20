@@ -36,10 +36,6 @@ void PageManager::Update()
 {
 	if (currentPage != nullptr)
 	{
-		if (currentPage->classType == FIRST_GAME_PAGE)
-		{
-			gameSystem.deleteData();
-		}
 		currentPage->Update();
 		/*if (pageState == FadeOut)
 		{
