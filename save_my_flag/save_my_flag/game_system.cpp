@@ -46,7 +46,7 @@ void GameSystem::GenerateTiles()
 	}
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
-	/*떨어지는 타일*/
+	/*떨어지는 블럭*/
 	for (int i = 16; i < 19; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -78,7 +78,7 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-	/*떨어지는 타일*/
+	/*떨어지는 블럭*/
 	for (int i = 38; i < 38 + 2; i++)
 	{
 		for (int j = 0; j < 15; j++)
@@ -115,7 +115,7 @@ void GameSystem::GenerateTiles()
 	MakeNomalBrickTile(45 * 100, START_BOTTOM + 100 * 3);
 	MakeNomalBrickTile(68 * 100, START_BOTTOM - 100 * 1);
 
-	/*떨어지는 타일*/
+	/*떨어지는 블럭*/
 	for (int i = 74; i < 74 + 4; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -165,7 +165,7 @@ void GameSystem::Update()
 	if (!player->isDead)
 	{
 		player->Update();
-		
+		//충돌처리
 		for (int i = 0; i < tiles.size(); i++)
 		{
 			if (tiles[i]->getTileType() == DAMAGE_TILE)
