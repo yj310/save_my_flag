@@ -1,9 +1,11 @@
 #include "game_over.h"
 #include "global.h"
+#include <ctime>
 
 GameOver::GameOver()
 {
-
+	srand((unsigned int)time(NULL));
+	randPage = TEX_GAME_OVER_A + rand() % 2;
 }
 
 void GameOver::Update()
@@ -13,7 +15,7 @@ void GameOver::Update()
 
 void GameOver::Render()
 {
-	TextureElement* element = textureManager.getTexture(TEX_GAME_OVER_A);
+	TextureElement* element = textureManager.getTexture(randPage);
 
 	RECT rc;
 	D3DXVECTOR3 pos;

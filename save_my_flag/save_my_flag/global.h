@@ -65,6 +65,12 @@
 #define TEX_GAME_OVER_B 3006
 
 // Character
+#define TEX_PLAYER_A 4000
+#define TEX_PLAYER_B 4001
+#define TEX_PLAYER_C 4002
+#define TEX_PLAYER_D 4003
+#define TEX_PLAYER_E 4004
+#define TEX_PLAYER_F 4005
 
 // Other
 

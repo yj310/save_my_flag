@@ -1,5 +1,6 @@
 ﻿#include "player.h"
 #include "global.h"
+#include <ctime>
 
 #define PLAYER_WIDTH 100
 #define PLAYER_HEIGHT 100
@@ -21,6 +22,8 @@ Player::Player()
 	jumpHeight = 0;
 	//
 	state = 255;
+	srand((unsigned int)time(NULL));
+	randCharacter = TEX_PLAYER_A + rand() % 6;
 
 }
 
@@ -70,7 +73,7 @@ void Player::Update()
 
 void Player::Render()
 {
-	TextureElement* element = textureManager.getTexture(TEX_PLAYER);
+	TextureElement* element = textureManager.getTexture(randCharacter);
 
 	RECT rc;
 	D3DXVECTOR3 pos;
