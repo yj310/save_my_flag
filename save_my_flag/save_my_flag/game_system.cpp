@@ -135,7 +135,11 @@ void GameSystem::GenerateTiles()
 			MakeDropBrickTile(posX, posY, 2);
 		}
 	}
+	for (int i = 5; i < 7; i++)
+	{
 
+		MakeNomalBrickTile(i * 100, START_BOTTOM - 100 * 2);
+	}
 
 	// damage tile
 	for (int i = 0; i < 100; i++)
@@ -180,7 +184,10 @@ void GameSystem::Update()
 	if (!player->isDead)
 	{
 		player->Update();
-
+		player->isTouch_top = false;
+		player->isTouch_bottom = false;
+		player->isTouch_right = false;
+		player->isTouch_left = false;
 
 		for (int i = 0; i < tiles.size(); i++)
 		{
@@ -213,7 +220,8 @@ void GameSystem::Update()
 			}
 
 
-
+			
+			
 			int playerX = player->getPos().x;
 			int playerY = player->getPos().y;
 			int playerRadius = player->getRadious();
@@ -226,15 +234,17 @@ void GameSystem::Update()
 				&& playerX + playerRadius > tileX)
 			{
 
-				if (playerY - playerRadius  < tileY + tileHeight
-					&& playerY + playerRadius > tileY + tileHeight)
+				if (playerY - playerRadius  <= tileY + tileHeight
+					&& playerY + playerRadius >= tileY + tileHeight)
 				{
+					player->isTouch_top = true;
 					player->setPos(playerX, tileY + tileHeight + playerRadius);
 					player->isJump = false;
 				}
-				if (playerY - playerRadius  < tileY
-					&& playerY + playerRadius > tileY)
+				if (playerY - playerRadius  <= tileY
+					&& playerY + playerRadius >= tileY)
 				{
+					player->isTouch_bottom = true;
 					player->setPos(playerX, tileY - playerRadius);
 					player->isJump = false;
 				}
@@ -245,19 +255,25 @@ void GameSystem::Update()
 			if (playerY - playerRadius < tileY + tileHeight
 				&& playerY + playerRadius > tileY)
 			{
-				if (playerX - playerRadius  < tileX + tileWidth
-					&& playerX + playerRadius > tileX + tileWidth)
+				if (playerX - playerRadius  <= tileX + tileWidth
+					&& playerX + playerRadius >= tileX + tileWidth)
 				{
+					player->isTouch_left = true;
 					player->setPos(tileX + tileWidth + playerRadius, playerY);
 					player->isJump = false;
 				}
-				else if (playerX - playerRadius  < tileX
-					&& playerX + playerRadius > tileX)
+				else if (playerX - playerRadius  <= tileX
+					&& playerX + playerRadius >= tileX)
 				{
+					player->isTouch_right = true;
 					player->setPos(tileX - playerRadius, playerY);
 					player->isJump = false;
 				}
 			}
+		
+
+
+			
 
 
 
@@ -305,4 +321,5 @@ void GameSystem::deleteData()
 	{
 		tiles.pop_back();
 	}
+	group_number = -1;
 }

@@ -25,41 +25,38 @@ Player::Player()
 	srand((unsigned int)time(NULL));
 	randCharacter = TEX_PLAYER_A + rand() % 6;
 
+	isTouch_top = true;
+	isTouch_bottom = true;
+	isTouch_right = true;
+	isTouch_left = true;
+
 }
 
 void Player::Update()
 {
-	posY += gravity;
+	if(!isTouch_bottom)
+		posY += gravity;
 	//accumulatedGravityPower = deltaTime * gravity;
 	//posY += accumulatedGravityPower;
 
 	//player 
-	if (inputManager.keyBuffer['W'] == 1 && !isJump)
-	{
-		isJump = true;
-		jumpStartPosY = jumpStartPosY;
-	}
-	if (inputManager.keyBuffer['A'] == 1)
-	{
-		posX -= speed;
-	}
-	else if (inputManager.keyBuffer['D'] == 1)
-	{
-		posX += speed;
-	}
-	else if (inputManager.keyBuffer['S'] == 1)
-	{
-		posY += speed;
-	}
-<<<<<<< HEAD
-	if (inputManager.keyBuffer['W'] == 1 && !isJump)
+	if (inputManager.keyBuffer['W'] == 1 && !isJump && !isTouch_top)
 	{
 		isJump = true;
 		jumpStartPosY = posY;
 	}
-=======
-	
->>>>>>> master
+	if (inputManager.keyBuffer['A'] == 1 && !isTouch_left)
+	{
+		posX -= speed;
+	}
+	else if (inputManager.keyBuffer['D'] == 1 && !isTouch_right)
+	{
+		posX += speed;
+	}
+	else if (inputManager.keyBuffer['S'] == 1 && !isTouch_bottom)
+	{
+		posY += speed;
+	}
 
 	//jump
 	if (isJump)

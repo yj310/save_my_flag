@@ -37,5 +37,11 @@ public:
 	//
 	int state;
 	int randCharacter;
+
+
+	bool isTouch_top;
+	bool isTouch_bottom;
+	bool isTouch_right;
+	bool isTouch_left;
 	
 };
