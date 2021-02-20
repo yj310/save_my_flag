@@ -62,8 +62,10 @@ void Player::Update()
 	if (isJump)
 	{
 		Jump();
-		posY = jumpStartPosY + jumpHeight;
+		
 	}
+	jumpStartPosY = jumpStartPosY;
+	posY = jumpStartPosY + jumpHeight;
 	/*else
 	{
 		if (isDown)

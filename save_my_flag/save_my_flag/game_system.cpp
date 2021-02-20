@@ -237,16 +237,26 @@ void GameSystem::Update()
 				if (playerY - playerRadius  <= tileY + tileHeight
 					&& playerY + playerRadius >= tileY + tileHeight)
 				{
+<<<<<<< Updated upstream
 					player->isTouch_top = true;
 					player->setPos(playerX, tileY + tileHeight + playerRadius);
+=======
+>>>>>>> Stashed changes
 					player->isJump = false;
+					player->setPos(playerX, tileY + tileHeight + playerRadius);
+					
 				}
 				if (playerY - playerRadius  <= tileY
 					&& playerY + playerRadius >= tileY)
 				{
+<<<<<<< Updated upstream
 					player->isTouch_bottom = true;
 					player->setPos(playerX, tileY - playerRadius);
+=======
+>>>>>>> Stashed changes
 					player->isJump = false;
+					player->setPos(playerX, tileY - playerRadius);
+					
 				}
 			}
 
@@ -258,16 +268,26 @@ void GameSystem::Update()
 				if (playerX - playerRadius  <= tileX + tileWidth
 					&& playerX + playerRadius >= tileX + tileWidth)
 				{
+<<<<<<< Updated upstream
 					player->isTouch_left = true;
 					player->setPos(tileX + tileWidth + playerRadius, playerY);
+=======
+>>>>>>> Stashed changes
 					player->isJump = false;
+					player->setPos(tileX + tileWidth + playerRadius, playerY);
+					
 				}
 				else if (playerX - playerRadius  <= tileX
 					&& playerX + playerRadius >= tileX)
 				{
+<<<<<<< Updated upstream
 					player->isTouch_right = true;
 					player->setPos(tileX - playerRadius, playerY);
+=======
+>>>>>>> Stashed changes
 					player->isJump = false;
+					player->setPos(tileX - playerRadius, playerY);
+	
 				}
 			}
 		
