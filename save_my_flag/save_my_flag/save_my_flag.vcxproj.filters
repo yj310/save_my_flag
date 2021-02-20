@@ -132,6 +132,15 @@
     <ClInclude Include="game_over.h">
       <Filter>헤더 파일\popup</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="게임시스템.h">
+      <Filter>헤더 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="brick_drop.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="save_my_flag.cpp">
@@ -182,6 +191,12 @@
     <ClCompile Include="game_over.cpp">
       <Filter>소스 파일\popup</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="brick_drop.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="save_my_flag.rc">
