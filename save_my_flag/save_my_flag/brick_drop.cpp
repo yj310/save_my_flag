@@ -1,11 +1,12 @@
 #include "brick_drop.h"
 #include "global.h"
 
-BrickDrop::BrickDrop(float x, float y)
+BrickDrop::BrickDrop(float x, float y, int tile_group)
 {
 	posX = x;
 	posY = y;
 	tileType = DROP_BRICK;
+	group = tile_group;
 }
 
 void BrickDrop::Update()

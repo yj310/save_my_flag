@@ -6,7 +6,9 @@
 class BrickDrop :public Tile
 {
 public:
-	BrickDrop(float x, float y);
+	BrickDrop(float x, float y, int tile_group);
 	void Update() override;
 	void Render() override;
+
+	
 };
