@@ -212,8 +212,8 @@ void GameSystem::Update()
 				player->state = 255;
 			}
 
-			
-			
+
+
 			int playerX = player->getPos().x;
 			int playerY = player->getPos().y;
 			int playerRadius = player->getRadious();
@@ -225,7 +225,7 @@ void GameSystem::Update()
 			if (playerX - playerRadius < tileX + tileWidth
 				&& playerX + playerRadius > tileX)
 			{
-				
+
 				if (playerY - playerRadius  < tileY + tileHeight
 					&& playerY + playerRadius > tileY + tileHeight)
 				{
@@ -259,7 +259,7 @@ void GameSystem::Update()
 				}
 			}
 
-			
+
 
 
 		}
@@ -305,4 +305,5 @@ void GameSystem::deleteData()
 	{
 		tiles.pop_back();
 	}
+}
 }
