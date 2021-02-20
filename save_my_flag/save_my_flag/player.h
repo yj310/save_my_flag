@@ -19,6 +19,8 @@ public:
 	bool getIsDead();
 	D3DXVECTOR2 getSize();
 	D3DXVECTOR2 getCenter();
+	void setPrintPos();
+	D3DXVECTOR2 getPrintPos() { return { printX, printY }; }
 
 	float accumulatedGravityPower;
 	float jumpHeight;
@@ -37,6 +39,8 @@ public:
 	//
 	int state;
 	int randCharacter;
+	float printX;
+	float printY;
 
 
 	bool isTouch_top;

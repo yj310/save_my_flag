@@ -7,7 +7,7 @@
 #include "math_util.h"
 #include "damage_tile.h"
 
-#define START_BOTTOM 910
+
 
 GameSystem::GameSystem()
 {
@@ -54,6 +54,7 @@ void GameSystem::GenerateTiles()
 		}
 	}
 	MakeNomalBrickTile(500, START_BOTTOM - 100);
+	MakeNomalBrickTile(FINISH_TILE_RIGHT, START_BOTTOM - 300);
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
 	/*떨어지는 블럭*/
@@ -144,7 +145,7 @@ void GameSystem::GenerateTiles()
 	// damage tile
 	for (int i = 0; i < 100; i++)
 	{
-		MakeDamageTile(i * 100, START_BOTTOM + 1000);
+		MakeDamageTile(i * 100, FINISH_TILE_BOTTOM);
 	}
 	for (int i = 0; i < 30; i++)
 	{
@@ -273,12 +274,9 @@ void GameSystem::Update()
 		
 
 
-			
-
-
-
-
 		}
+
+		player->setPrintPos();
 
 		for (int i = 0; i < tiles.size(); i++)
 		{
@@ -322,4 +320,9 @@ void GameSystem::deleteData()
 		tiles.pop_back();
 	}
 	group_number = -1;
+}
+
+D3DXVECTOR2 GameSystem::getPrintPos(float x, float y)
+{
+	return { x - (player->getPos().x - player->getPrintPos().x), y - (player->getPos().y - player->getPrintPos().y) };
 }
