@@ -36,5 +36,6 @@ public:
 	bool isDown;
 	//
 	int state;
+	int randCharacter;
 	
 };

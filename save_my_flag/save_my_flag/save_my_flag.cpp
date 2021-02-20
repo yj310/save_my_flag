@@ -119,6 +119,12 @@ void InitMyStuff()
     
 	// character
 	textureManager.LoadTexture(L"source/image/character/player.png", TEX_PLAYER);
+	textureManager.LoadTexture(L"source/image/character/player_a.png", TEX_PLAYER_A);
+	textureManager.LoadTexture(L"source/image/character/player_b.png", TEX_PLAYER_B);
+	textureManager.LoadTexture(L"source/image/character/player_c.png", TEX_PLAYER_C);
+	textureManager.LoadTexture(L"source/image/character/player_d.png", TEX_PLAYER_D);
+	textureManager.LoadTexture(L"source/image/character/player_e.png", TEX_PLAYER_E);
+	textureManager.LoadTexture(L"source/image/character/player_f.png", TEX_PLAYER_F);
     
 
     pageManager.CreateTitlePage();
