@@ -184,12 +184,7 @@ void GameSystem::GenerateTiles()
 
 void GameSystem::GenerateEnemys()
 {
-<<<<<<< HEAD
-	MakeEnemyA(10 * 100, START_BOTTOM - 50, -1);
-
-=======
 	MakeEnemyA(8 * 100, START_BOTTOM - 50, -1);
->>>>>>> master
 
 }
 
