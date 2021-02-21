@@ -15,7 +15,7 @@ Player::Player()
 	isJump = false;
 	isDead = false;
 	speed = 10;
-	gravity = 20.5;	//중력가속도
+	gravity = GRAVITY;	//중력가속도
 
 	jumpTime = 0.0f;	//점프 이후 경과시간
 	jumpPower = 40.0f;	//점프력
