@@ -166,12 +166,12 @@ void TitlePage::EnemyUpdate()
 	if (enemyA->posX <= enemyA->width / 2)
 	{
 		enemyA->direction = 1;
-		enemyA->state = TEX_ENEMY_C;
+		enemyA->state = TEX_ENEMY_A_3;
 	}
 	if (enemyA->posX >= WINDOW_WIDTH - enemyA->width / 2)
 	{
 		enemyA->direction = -1;
-		enemyA->state = TEX_ENEMY_A;
+		enemyA->state = TEX_ENEMY_A_1;
 	}
 
 

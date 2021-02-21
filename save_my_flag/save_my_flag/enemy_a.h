@@ -23,7 +23,6 @@ public:
 	float getSpeed() override;
 	void setSpeed(float speed) override;
 
-	// int state[4] = { TEX_ENEMY_A, TEX_ENEMY_B, TEX_ENEMY_C , TEX_ENEMY_D };
 	int state;
 	int state_count;
 

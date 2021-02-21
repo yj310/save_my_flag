@@ -91,10 +91,10 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/object/cloud_a_bad.png", TEX_CLOUD_A_BAD);
 	textureManager.LoadTexture(L"source/image/object/cloud_b.png", TEX_CLOUD_B);
 	textureManager.LoadTexture(L"source/image/object/cloud_b_bad.png", TEX_CLOUD_B_BAD);
-	textureManager.LoadTexture(L"source/image/object/enemy_a.png", TEX_ENEMY_A);
-	textureManager.LoadTexture(L"source/image/object/enemy_b.png", TEX_ENEMY_B);
-	textureManager.LoadTexture(L"source/image/object/enemy_c.png", TEX_ENEMY_C);
-	textureManager.LoadTexture(L"source/image/object/enemy_d.png", TEX_ENEMY_D);
+	textureManager.LoadTexture(L"source/image/object/enemy/enemy_a.png", TEX_ENEMY_A_1);
+	textureManager.LoadTexture(L"source/image/object/enemy/enemy_b.png", TEX_ENEMY_A_2);
+	textureManager.LoadTexture(L"source/image/object/enemy/enemy_c.png", TEX_ENEMY_A_3);
+	textureManager.LoadTexture(L"source/image/object/enemy/enemy_d.png", TEX_ENEMY_A_4);
 
 	textureManager.LoadTexture(L"source/image/object/tile/brick_nomal.png", TEX_BRICK);
 	textureManager.LoadTexture(L"source/image/object/tile/damage_tile.png", TEX_DAMAGE_TILE);
