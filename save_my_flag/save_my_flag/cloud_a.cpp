@@ -17,6 +17,8 @@ CloudA::CloudA(float x, float y, int state, int type)
 	img_type = type;
 	cloud_Y_direction = 1;
 
+	width = CLOUD_WIDTH;
+	height = CLOUD_HEIGHT;
 	speed = 10;
 }
 

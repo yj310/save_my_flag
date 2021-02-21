@@ -23,6 +23,7 @@ public:
 	float getSpeed() override;
 	void setSpeed(float speed) override;
 
+
 	float start_posY;
 	float posX;
 	float posY;
