@@ -21,9 +21,13 @@ public:
 	int getState() override;
 	void setState(int state) override;
 	float getSpeed() override;
-	void setSpeed(float speed) override;
+	void setSpeed(float speed) ;
+	int getStartPosY() override;
+	void setStartPosY(int s) override;
+	bool getIsStart() override;
+	void setIsStart(bool start) override;
 
-
+	bool isStart;
 	float start_posY;
 	float posX;
 	float posY;

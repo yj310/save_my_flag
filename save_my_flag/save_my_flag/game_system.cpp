@@ -62,7 +62,7 @@ void GameSystem::GenerateTiles()
 
 
 	/* Damage Tile */
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 300; i++)
 	{
 		MakeDamageTile(i * 100, FINISH_TILE_BOTTOM);
 	}
@@ -101,7 +101,7 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-	for (int i = 21; i < 21 + 19; i++)
+	for (int i = 21; i < 21 + 17; i++)
 	{
 		for (int j = 0; j < 10; j++)
 		{
@@ -174,12 +174,31 @@ void GameSystem::GenerateTiles()
 	{
 		for (int j = 0; j < 10; j++)
 		{
+			if (((i == 83) || (i == 84) || (i == 85)) && ((j == 7) || (j == 8)))
+				continue;
+				posX = i * 100;
+				posY = START_BOTTOM + j * 100;
+				MakeNomalBrickTile(posX, posY);
+		}
+	}
+	MakeNomalBrickTile(86*100, START_BOTTOM+9*100);
+
+	for (int i = 87; i < 87 + 14; i++)
+	{
+		posX = i * 100;
+		posY = START_BOTTOM -  4* 100;
+		MakeNomalBrickTile(posX, posY);
+	}
+
+	for (int i = 87+15; i < 87+15+ 6; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
 			posX = i * 100;
 			posY = START_BOTTOM + j * 100;
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
-
 }
 
 void GameSystem::GenerateEnemys()
@@ -192,6 +211,8 @@ void GameSystem::GenerateClouds()
 {
 	MakeCloud(300, 30, normal, TEX_CLOUD_A);
 	MakeCloud(2000, 80, normal, TEX_CLOUD_B);
+	MakeCloud(3500, -200, down, TEX_CLOUD_A);
+	MakeCloud(4700, 80, down, TEX_CLOUD_B);
 }
 
 
@@ -219,10 +240,11 @@ void GameSystem::Update()
 	}
 	for (int i = 0; i < clouds.size(); i++)
 	{
+		clouds[i]->setStartPosY(clouds[i]->getStartPosY() + column_speed);
 		clouds[i]->setPos(clouds[i]->getPos().x + row_speed, clouds[i]->getPos().y + column_speed);
 	}
 	player->setPos(player->getPos().x + row_speed, player->getPos().y + column_speed);
-
+	
 
 
 
@@ -242,7 +264,14 @@ void GameSystem::Update()
 			enemys[i]->Update();
 		}
 		for (int i = 0; i < clouds.size(); i++)
-		{
+		{	
+			if (clouds[i]->getState() != normal)
+			{
+				if (player->getPos().x > clouds[i]->getPos().x)
+				{
+					clouds[i]->setIsStart(true);
+				}
+			}
 			clouds[i]->Update();
 		}
 
@@ -396,15 +425,11 @@ void GameSystem::Update()
 
 		for (int i = 0; i < clouds.size(); i++)
 		{
-			if (clouds[i]->getState() != normal)
+			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
+				clouds[i]->getPos().x, clouds[i]->getPos().y, clouds[i]->getSize().x, clouds[i]->getSize().y))
 			{
-				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
-					clouds[i]->getPos().x, clouds[i]->getPos().y, clouds[i]->getSize().x, clouds[i]->getSize().y))
-				{
-
-				}
+				player->IsDead();
 			}
-			
 		}
 
 		player->setPrintPos();

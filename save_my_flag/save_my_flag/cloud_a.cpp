@@ -20,23 +20,26 @@ CloudA::CloudA(float x, float y, int state, int type)
 	width = CLOUD_WIDTH;
 	height = CLOUD_HEIGHT;
 	speed = 10;
+	isStart = false;
 }
 
 void CloudA::Update()
 {
 	
-	if (_state == normal)
+	Normal();
+
+	if (isStart)
 	{
-		Normal();
+		if (_state == down)
+		{
+			Down();
+		}
+		if (_state == updown)
+		{
+			UpDown();
+		}
 	}
-	if (_state == down)
-	{
-		Down();
-	}
-	if (_state == updown)
-	{
-		UpDown();
-	}
+	
 }
 
 void CloudA::Normal()
@@ -133,3 +136,22 @@ void CloudA::setSpeed(float speed)
 	this->speed = speed;
 }
 
+int CloudA::getStartPosY()
+{
+	return start_posY;
+}
+
+void CloudA::setStartPosY(int s)
+{
+	start_posY = s;
+}
+
+bool CloudA::getIsStart()
+{
+	return isStart;
+}
+
+void CloudA::setIsStart(bool start)
+{
+	isStart = start;
+}

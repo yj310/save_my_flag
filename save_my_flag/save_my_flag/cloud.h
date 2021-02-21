@@ -17,4 +17,8 @@ public:
 	virtual void setState(int state) = 0;
 	virtual float getSpeed() = 0;
 	virtual void setSpeed(float speed) = 0;
+	virtual int getStartPosY() = 0;
+	virtual void setStartPosY(int s) = 0;
+	virtual bool getIsStart() = 0;
+	virtual void setIsStart(bool start) = 0;
 };
