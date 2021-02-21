@@ -19,7 +19,7 @@ CloudA::CloudA(float x, float y, int state, int type)
 
 	width = CLOUD_WIDTH;
 	height = CLOUD_HEIGHT;
-	speed = 10;
+	speed = GRAVITY+10;
 	isStart = false;
 }
 
