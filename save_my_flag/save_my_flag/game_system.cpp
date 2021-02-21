@@ -425,11 +425,15 @@ void GameSystem::Update()
 
 		for (int i = 0; i < clouds.size(); i++)
 		{
-			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
-				clouds[i]->getPos().x, clouds[i]->getPos().y, clouds[i]->getSize().x, clouds[i]->getSize().y))
+			if (clouds[i]->getState() != normal)
 			{
-				player->IsDead();
+				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
+					clouds[i]->getPos().x, clouds[i]->getPos().y, clouds[i]->getSize().x, clouds[i]->getSize().y))
+				{
+					player->IsDead();
+				}
 			}
+			
 		}
 
 		player->setPrintPos();
