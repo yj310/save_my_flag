@@ -5,11 +5,14 @@ class CloudA : public Cloud
 {
 public:
 
-	CloudA(float x, float y, float direction);
+	CloudA(float x, float y, int direction, int type);
 	void Render() override;
 	void Update() override;
 
-
+	/*update*/
+	void Normal();
+	void Down();
+	void UpDown();
 
 	D3DXVECTOR2 getPos() override;
 	void setPos(float x, float y) override;
@@ -22,16 +25,25 @@ public:
 	float getSpeed() override;
 	void setSpeed(float speed) override;
 
-	int state;
-	int state_count;
-
+	
 	float posX;
 	float posY;
 
 	float width;
 	float height;
 
-	float direction;
 	float speed;
+
+	int img_type;
+	int _state;
+
+	int cloud_Y_direction;
+
+	enum cloud_state
+	{
+		normal,
+		down,
+		updown
+	};
 
 };
