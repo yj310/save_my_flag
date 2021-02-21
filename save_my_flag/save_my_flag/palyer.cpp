@@ -154,6 +154,7 @@ bool Player::getIsDead()
 	return isDead;
 }
 
+
 void Player::setPrintPos()
 {
 
@@ -175,18 +176,18 @@ void Player::setPrintPos()
 	}
 
 	// printY
-	if (posY >= WINDOW_HEIGHT/2 && posY <= START_BOTTOM)
+	if (posY >= WINDOW_HEIGHT / 2 - 100 && posY <= START_BOTTOM)
 	{
 		printY = posY - (START_BOTTOM - ((WINDOW_HEIGHT / 2) + 300)) + 50;
 	}
-	else if (posY < WINDOW_HEIGHT / 2)
+	else if (posY < WINDOW_HEIGHT / 2 - 100)
 	{
-		printY = WINDOW_HEIGHT / 2;
+		printY = WINDOW_HEIGHT / 2 - 100;
 	}
-	else if(posY > START_BOTTOM)
+	else if (posY > START_BOTTOM)
 	{
 		if (posY + (WINDOW_HEIGHT - START_BOTTOM) > FINISH_TILE_BOTTOM) {
-			printY = START_BOTTOM + ((WINDOW_HEIGHT-START_BOTTOM) - (FINISH_TILE_BOTTOM - posY));
+			printY = START_BOTTOM + ((WINDOW_HEIGHT - START_BOTTOM) - (FINISH_TILE_BOTTOM - posY));
 		}
 		else
 		{
