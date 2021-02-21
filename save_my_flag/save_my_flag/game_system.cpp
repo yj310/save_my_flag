@@ -1,4 +1,4 @@
-#include "game_system.h"
+ï»¿#include "game_system.h"
 #include "global.h"
 #include "player.h"
 #include "tile.h"
@@ -6,6 +6,7 @@
 #include "brick_drop.h"
 #include "math_util.h"
 #include "damage_tile.h"
+#include "enemy_a.h"
 
 
 
@@ -19,6 +20,7 @@ GameSystem::GameSystem()
 void GameSystem::CreateMap()
 {
 	GenerateTiles();
+	GenerateEnemys();
 }
 
 void GameSystem::MakeNomalBrickTile(float x, float y)
@@ -39,6 +41,12 @@ void GameSystem::MakeDamageTile(float x, float y)
 	tiles.push_back(tile);
 }
 
+void GameSystem::MakeEnemyA(float x, float y, float direction)
+{
+	Enemy* enemy = new EnemyA(x, y, direction);
+	enemys.push_back(enemy);
+}
+
 void GameSystem::GenerateTiles()
 {
 	float posX, posY;
@@ -53,8 +61,8 @@ void GameSystem::GenerateTiles()
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
-	
-	for (int i = 5; i <5+ 2; i++)
+
+	for (int i = 5; i < 5 + 2; i++)
 	{
 		posX = i * 100;
 		posY = START_BOTTOM - 2 * 100;
@@ -63,7 +71,7 @@ void GameSystem::GenerateTiles()
 
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
-	/*¶³¾îÁö´Â ºí·°*/
+	/* Drop Brick Tile */
 	for (int i = 16; i < 19; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -95,7 +103,7 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-	/*¶³¾îÁö´Â ºí·°*/
+	/* Drop Brick Tile */
 	for (int i = 38; i < 38 + 2; i++)
 	{
 		for (int j = 0; j < 15; j++)
@@ -132,7 +140,7 @@ void GameSystem::GenerateTiles()
 	MakeNomalBrickTile(45 * 100, START_BOTTOM + 100 * 3);
 	MakeNomalBrickTile(68 * 100, START_BOTTOM - 100 * 1);
 
-	/*¶³¾îÁö´Â ºí·°*/
+	/* Drop Brick Tile */
 	for (int i = 74; i < 74 + 4; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -142,9 +150,9 @@ void GameSystem::GenerateTiles()
 			MakeDropBrickTile(posX, posY, 2);
 		}
 	}
-	
 
-	// damage tile
+
+	/* Damage Tile */
 	for (int i = 0; i < 100; i++)
 	{
 		MakeDamageTile(i * 100, FINISH_TILE_BOTTOM);
@@ -153,6 +161,11 @@ void GameSystem::GenerateTiles()
 	{
 		MakeDamageTile(-100, START_BOTTOM - 1900 + i * 100);
 	}
+
+}
+
+void GameSystem::GenerateEnemys()
+{
 
 }
 
@@ -212,8 +225,8 @@ void GameSystem::Update()
 				}
 			}
 
-			
-			
+
+
 			int playerX = player->getPos().x;
 			int playerY = player->getPos().y;
 			int playerRadius = player->getRadious();
@@ -222,12 +235,12 @@ void GameSystem::Update()
 			int tileWidth = tiles[i]->getSize().x;
 			int tileHeight = tiles[i]->getSize().y;
 
-			if (playerX - playerRadius  +5 < tileX + tileWidth
-				&& playerX + playerRadius -5 > tileX)
+			if (playerX - playerRadius + 5 < tileX + tileWidth
+				&& playerX + playerRadius - 5 > tileX)
 			{
-				
-				
-				if (playerY - playerRadius  <= tileY + tileHeight
+
+
+				if (playerY - playerRadius <= tileY + tileHeight
 					&& playerY + playerRadius >= tileY + tileHeight)
 				{
 					player->isTouch_top = true;
@@ -241,7 +254,7 @@ void GameSystem::Update()
 					player->setPos(playerX, tileY - playerRadius);
 					player->isJump = false;
 				}
-				
+
 			}
 
 			playerX = player->getPos().x;
@@ -249,20 +262,20 @@ void GameSystem::Update()
 			if (playerY - playerRadius < tileY + tileHeight
 				&& playerY + playerRadius > tileY)
 			{
-				if (playerX - playerRadius  <= tileX + tileWidth
+				if (playerX - playerRadius <= tileX + tileWidth
 					&& playerX + playerRadius >= tileX + tileWidth)
 				{
 					player->isTouch_left = true;
-					player->setPos(tileX + tileWidth + playerRadius , playerY);
+					player->setPos(tileX + tileWidth + playerRadius, playerY);
 				}
-				else if (playerX - playerRadius  <= tileX
+				else if (playerX - playerRadius <= tileX
 					&& playerX + playerRadius >= tileX)
 				{
 					player->isTouch_right = true;
-					player->setPos(tileX - playerRadius , playerY);
+					player->setPos(tileX - playerRadius, playerY);
 				}
 			}
-		
+
 
 
 		}
@@ -282,7 +295,7 @@ void GameSystem::Update()
 	{
 		gameOverPage->Update();
 	}
-
+	
 }
 
 void GameSystem::Render()

@@ -5,7 +5,7 @@ EnemyA::EnemyA(float x, float y, float direction)
 {
 	posX = x;
 	posY = y;
-	state = TEX_ENEMY_A;
+	state = TEX_ENEMY_A_1;
 	state_count = 20;
 	width = 100;
 	height = 100;
@@ -48,24 +48,24 @@ void EnemyA::Update()
 		state_count = 0;
 		if (direction < 0)
 		{
-			if (state != TEX_ENEMY_A)
+			if (state != TEX_ENEMY_A_1)
 			{
-				state = TEX_ENEMY_A;
+				state = TEX_ENEMY_A_1;
 			}
-			else if (state != TEX_ENEMY_B)
+			else if (state != TEX_ENEMY_A_2)
 			{
-				state = TEX_ENEMY_B;
+				state = TEX_ENEMY_A_2;
 			}
 		}
 		else
 		{
-			if (state != TEX_ENEMY_C)
+			if (state != TEX_ENEMY_A_3)
 			{
-				state = TEX_ENEMY_C;
+				state = TEX_ENEMY_A_3;
 			}
-			else if (state != TEX_ENEMY_D)
+			else if (state != TEX_ENEMY_A_4)
 			{
-				state = TEX_ENEMY_D;
+				state = TEX_ENEMY_A_4;
 			}
 		}
 

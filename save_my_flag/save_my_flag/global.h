@@ -30,55 +30,62 @@
 #define DAMAGE_TILE 1
 #define DROP_BRICK 2
 
-
+// map
 #define START_BOTTOM 910
 #define FINISH_TILE_RIGHT 7700
 #define FINISH_TILE_BOTTOM START_BOTTOM + 1000
+
 
 /* Texture ID */
 // Background
 #define TEX_TITLE_PAGE_BACKGROUND 1000
 #define TEX_FIRST_GAME_PAGE_BACKGROUND 1100
 
+
 // Object
-#define TEX_CLOUD_A 2000
-#define TEX_CLOUD_A_BAD 2001
-#define TEX_CLOUD_B 2002
-#define TEX_CLOUD_B_BAD 2003
-#define TEX_ENEMY_A 2004
-#define TEX_ENEMY_B 2005
-#define TEX_ENEMY_C 2006
-#define TEX_ENEMY_D 2007
-#define TEX_PLAYER 2008
-#define TEX_BRICK 2009
-#define TEX_GOLD_A 2010
-#define TEX_GOLD_B 2011
-#define TEX_GOLD_C 2012
-#define TEX_GOLD_D 2013
-#define TEX_GOLD_E 2014
-#define TEX_GOLD_F 2015
-#define TEX_GOLD_G 2016
-#define TEX_DAMAGE_TILE 2017
+#define TEX_CLOUD_A				2000
+#define TEX_CLOUD_A_BAD			2001
+#define TEX_CLOUD_B				2002
+#define TEX_CLOUD_B_BAD			2003
+
+#define TEX_ENEMY_A_1			2010
+#define TEX_ENEMY_A_2			2011
+#define TEX_ENEMY_A_3			2012
+#define TEX_ENEMY_A_4			2013
+
+#define TEX_GOLD_A				2030
+#define TEX_GOLD_B				2031
+#define TEX_GOLD_C				2032
+#define TEX_GOLD_D				2033
+#define TEX_GOLD_E				2034
+#define TEX_GOLD_F				2035
+#define TEX_GOLD_G				2036
+
+#define TEX_BRICK				2050
+#define TEX_DAMAGE_TILE			2051
+
 
 // UI
-#define TEX_TITLE_PAGE_TITLE 3000
-#define TEX_START_BUTTON_NOMAL 3001
-#define TEX_START_BUTTON_BORD 3002
-#define TEX_EXIT_BUTTON_NOMAL 3003
-#define TEX_EXIT_BUTTON_BORD 3004
-#define TEX_GAME_OVER_A 3005
-#define TEX_GAME_OVER_B 3006
+#define TEX_TITLE_PAGE_TITLE	3000
+#define TEX_START_BUTTON_NOMAL	3001
+#define TEX_START_BUTTON_BORD	3002
+#define TEX_EXIT_BUTTON_NOMAL	3003
+#define TEX_EXIT_BUTTON_BORD	3004
+#define TEX_GAME_OVER_A			3005
+#define TEX_GAME_OVER_B			3006
+
 
 // Character
-#define TEX_PLAYER_A 4000
-#define TEX_PLAYER_B 4001
-#define TEX_PLAYER_C 4002
-#define TEX_PLAYER_D 4003
-#define TEX_PLAYER_E 4004
-#define TEX_PLAYER_F 4005
+#define TEX_PLAYER				4000
+#define TEX_PLAYER_A			4001
+#define TEX_PLAYER_B			4002
+#define TEX_PLAYER_C			4003
+#define TEX_PLAYER_D			4004
+#define TEX_PLAYER_E			4005
+#define TEX_PLAYER_F			4006
+
 
 // Other
-
 extern float deltaTime;
 
 /* global */
