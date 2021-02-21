@@ -10,7 +10,7 @@ public:
 	void Render();
 
 	void Jump();
-	void Down();
+	void Gravity();
 
 	void setPos(float x, float y);
 	D3DXVECTOR2 getPos();
@@ -35,9 +35,7 @@ public:
 	float jumpStartPosY;
 	int radious;
 	bool isDead;
-	bool isDown;
 	//
-	int state;
 	int randCharacter;
 	float printX;
 	float printY;

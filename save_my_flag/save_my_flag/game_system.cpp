@@ -158,8 +158,6 @@ void GameSystem::GenerateTiles()
 
 void GameSystem::Update()
 {
-
-
 	//map <- ->
 	float row_speed = 0;
 	float column_speed = 0;
@@ -182,11 +180,10 @@ void GameSystem::Update()
 
 
 
-
-
 	if (!player->isDead)
 	{
 		player->Update();
+
 		player->isTouch_top = false;
 		player->isTouch_bottom = false;
 		player->isTouch_right = false;
@@ -194,7 +191,7 @@ void GameSystem::Update()
 
 		for (int i = 0; i < tiles.size(); i++)
 		{
-			// 厘寇 贸府
+			// area over
 			if (tiles[i]->getTileType() == DAMAGE_TILE)
 			{
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
@@ -204,7 +201,7 @@ void GameSystem::Update()
 				}
 			}
 
-			//面倒贸府
+			// Collision
 			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
 			{
@@ -213,15 +210,7 @@ void GameSystem::Update()
 				{
 					group_number = tiles[i]->group;
 				}
-				/*player->state = 0;
-				player->isDown = false;*/
 			}
-			else
-			{
-				player->isDown = true;
-				player->state = 255;
-			}
-
 
 			
 			
