@@ -403,6 +403,11 @@ void GameSystem::deleteData()
 	{
 		tiles.pop_back();
 	}
+	size = enemys.size();
+	for (int i = 0; i < size; i++)
+	{
+		enemys.pop_back();
+	}
 	group_number = -1;
 }
 
