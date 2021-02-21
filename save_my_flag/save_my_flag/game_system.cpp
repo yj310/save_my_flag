@@ -52,6 +52,16 @@ void GameSystem::GenerateTiles()
 	float posX, posY;
 
 
+	/* Damage Tile */
+	for (int i = 0; i < 100; i++)
+	{
+		MakeDamageTile(i * 100, FINISH_TILE_BOTTOM);
+	}
+	for (int i = 0; i < 30; i++)
+	{
+		MakeDamageTile(-100, START_BOTTOM - 1900 + i * 100);
+	}
+
 	for (int i = 0; i < 16; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -152,20 +162,14 @@ void GameSystem::GenerateTiles()
 	}
 
 
-	/* Damage Tile */
-	for (int i = 0; i < 100; i++)
-	{
-		MakeDamageTile(i * 100, FINISH_TILE_BOTTOM);
-	}
-	for (int i = 0; i < 30; i++)
-	{
-		MakeDamageTile(-100, START_BOTTOM - 1900 + i * 100);
-	}
 
 }
 
 void GameSystem::GenerateEnemys()
 {
+	MakeEnemyA(5 * 100, START_BOTTOM - 50, -1);
+
+
 
 }
 
@@ -196,11 +200,25 @@ void GameSystem::Update()
 	if (!player->isDead)
 	{
 		player->Update();
+		for (int i = 0; i < tiles.size(); i++)
+		{
+			if (tiles[i]->group == group_number)
+			{
+				tiles[i]->posY += 100;
+			}
+			tiles[i]->Update();
+		}
+		for (int i = 0; i < enemys.size(); i++)
+		{
+			enemys[i]->Update();
+		}
+
 
 		player->isTouch_top = false;
 		player->isTouch_bottom = false;
 		player->isTouch_right = false;
 		player->isTouch_left = false;
+
 
 		for (int i = 0; i < tiles.size(); i++)
 		{
@@ -210,15 +228,14 @@ void GameSystem::Update()
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 					tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
 				{
-					player->isDead = true;
+					player->IsDead();
 				}
 			}
 
-			// Collision
+			// Collision player and dropbrick
 			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
 			{
-
 				if (tiles[i]->getTileType() == DROP_BRICK)
 				{
 					group_number = tiles[i]->group;
@@ -227,6 +244,7 @@ void GameSystem::Update()
 
 
 
+			// Collision player and tiles
 			int playerX = player->getPos().x;
 			int playerY = player->getPos().y;
 			int playerRadius = player->getRadious();
@@ -238,8 +256,6 @@ void GameSystem::Update()
 			if (playerX - playerRadius + 5 < tileX + tileWidth
 				&& playerX + playerRadius - 5 > tileX)
 			{
-
-
 				if (playerY - playerRadius <= tileY + tileHeight
 					&& playerY + playerRadius >= tileY + tileHeight)
 				{
@@ -278,31 +294,95 @@ void GameSystem::Update()
 
 
 
+			// Collision enemy and tile
+			for (int j = 0; j < enemys.size(); j++)
+			{
+				int enemyX = enemys[j]->getPos().x;
+				int enemyY = enemys[j]->getPos().y;
+				int enemyRadius = enemys[j]->getRadious();
+
+				if (enemyX - enemyRadius + 5 < tileX + tileWidth
+					&& enemyX + enemyRadius - 5 > tileX)
+				{
+					if (enemyY - enemyRadius <= tileY + tileHeight
+						&& enemyY + enemyRadius >= tileY + tileHeight)
+					{
+						enemys[j]->isTouch_top = true;
+						enemys[j]->setPos(enemyX, tileY + tileHeight + enemyRadius);
+					}
+					if (enemyY - enemyRadius <= tileY
+						&& enemyY + enemyRadius >= tileY)
+					{
+						enemys[j]->isTouch_bottom = true;
+						enemys[j]->setPos(enemyX, tileY - enemyRadius);
+					}
+
+				}
+				
+
+				enemyX = enemys[j]->getPos().x;
+				enemyY = enemys[j]->getPos().y;
+				if (enemyY - enemyRadius < tileY + tileHeight
+					&& enemyY + enemyRadius > tileY)
+				{
+					if (enemyX - enemyRadius <= tileX + tileWidth
+						&& enemyX + enemyRadius >= tileX + tileWidth)
+					{
+						enemys[j]->direction = 1;
+						if(enemys[j]->getState() == TEX_ENEMY_A_1)
+							enemys[j]->state = TEX_ENEMY_A_3;
+						else
+							enemys[j]->state = TEX_ENEMY_A_4;
+						enemys[j]->setPos(tileX + tileWidth + enemyRadius, enemyY);
+					}
+					else if (enemyX - enemyRadius <= tileX
+						&& enemyX + enemyRadius >= tileX)
+					{
+						enemys[j]->direction = -1; 
+						if (enemys[j]->getState() == TEX_ENEMY_A_3)
+							enemys[j]->state = TEX_ENEMY_A_1;
+						else
+							enemys[j]->state = TEX_ENEMY_A_2;
+						enemys[j]->setPos(tileX - enemyRadius, enemyY);
+					}
+				}
+				
+			}
+
+
+		}
+
+		for (int i = 0; i < enemys.size(); i++)
+		{
+			if (isCircleCollided(player->getPos().x, player->getPos().y, player->getRadious(),
+				enemys[i]->getPos().x, enemys[i]->getPos().y, enemys[i]->getRadious()))
+			{
+				player->IsDead();
+			}
 		}
 
 		player->setPrintPos();
 
-		for (int i = 0; i < tiles.size(); i++)
-		{
-			if (tiles[i]->group == group_number)
-			{
-				tiles[i]->posY += 100;
-			}
-			tiles[i]->Update();
-		}
 	}
 	else
 	{
 		gameOverPage->Update();
 	}
+
+
 	
 }
 
 void GameSystem::Render()
 {
+
+	player->Render();
+	for (int i = 0; i < enemys.size(); i++)
+	{
+		enemys[i]->Render();
+	}
 	for (int i = 0; i < tiles.size(); i++)
 	{
-		player->Render();
 		tiles[i]->Render();
 	}
 
@@ -328,5 +408,6 @@ void GameSystem::deleteData()
 
 D3DXVECTOR2 GameSystem::getPrintPos(float x, float y)
 {
+	//return { x, y };
 	return { x - (player->getPos().x - player->getPrintPos().x), y - (player->getPos().y - player->getPrintPos().y) };
 }

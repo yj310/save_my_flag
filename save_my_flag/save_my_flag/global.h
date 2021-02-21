@@ -35,6 +35,7 @@
 #define FINISH_TILE_RIGHT 7700
 #define FINISH_TILE_BOTTOM START_BOTTOM + 1000
 
+#define GRAVITY 20.5
 
 /* Texture ID */
 // Background

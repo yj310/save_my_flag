@@ -43,7 +43,7 @@ TitlePage::TitlePage()
 	cloud_a_Y_direction = 1;
 	cloud_b_Y_direction = 1;
 
-	enemyA = new EnemyA(1700, 990, -1);
+	enemyA = new EnemyA(1700, 990 - 50, -1);
 	for (int i = 0; i < 20; i++)
 	{
 		Tile* tile = new BrickNormal(i * 100, 990);
@@ -160,15 +160,14 @@ void TitlePage::CloudUpdate()
 
 void TitlePage::EnemyUpdate()
 {
-	//if(enemyA)
 	enemyA->Update();
 
-	if (enemyA->posX <= enemyA->width / 2)
+	if (enemyA->posX <= enemyA->getRadious())
 	{
 		enemyA->direction = 1;
 		enemyA->state = TEX_ENEMY_A_3;
 	}
-	if (enemyA->posX >= WINDOW_WIDTH - enemyA->width / 2)
+	if (enemyA->posX >= WINDOW_WIDTH - enemyA->getRadious())
 	{
 		enemyA->direction = -1;
 		enemyA->state = TEX_ENEMY_A_1;
