@@ -52,6 +52,9 @@
     <ClCompile Include="game_system.cpp">
       <Filter>소스파일\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="cloud_a.cpp">
+      <Filter>소스파일\object\cloud</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -129,10 +132,10 @@
     <ClInclude Include="title_page.h">
       <Filter>헤더 파일\object\tile</Filter>
     </ClInclude>
-    <ClInclude Include="clooud.h">
+    <ClInclude Include="cloud_a.h">
       <Filter>헤더 파일\object\cloud</Filter>
     </ClInclude>
-    <ClInclude Include="cloud_a.h">
+    <ClInclude Include="cloud.h">
       <Filter>헤더 파일\object\cloud</Filter>
     </ClInclude>
   </ItemGroup>
@@ -198,6 +201,9 @@
     </Filter>
     <Filter Include="헤더 파일\object\cloud">
       <UniqueIdentifier>{e1e5231a-4b56-4b3d-a44b-b23119b3c5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\object\cloud">
+      <UniqueIdentifier>{b67d1da9-0e50-40af-8fc8-564609d6fde5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

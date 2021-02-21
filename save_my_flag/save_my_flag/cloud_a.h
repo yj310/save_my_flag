@@ -1,5 +1,5 @@
 #pragma once
-#include "clooud.h"
+#include "cloud.h"
 
 class CloudA : public Cloud
 {
@@ -20,12 +20,10 @@ public:
 	void setSize(float width, float height) override;
 	int getState() override;
 	void setState(int state) override;
-	float getDirection() override;
-	void setDirection(float direction) override;
 	float getSpeed() override;
 	void setSpeed(float speed) override;
 
-	
+	float start_posY;
 	float posX;
 	float posY;
 
