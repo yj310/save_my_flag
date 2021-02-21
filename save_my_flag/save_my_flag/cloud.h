@@ -1,6 +1,5 @@
 #pragma once
 #include <d3dx9.h>
-#include "global.h"
 
 class Cloud
 {
@@ -16,8 +15,6 @@ public:
 	virtual void setSize(float width, float height) = 0;
 	virtual int getState() = 0;
 	virtual void setState(int state) = 0;
-	virtual float getDirection() = 0;
-	virtual void setDirection(float direction) = 0;
 	virtual float getSpeed() = 0;
 	virtual void setSpeed(float speed) = 0;
 };

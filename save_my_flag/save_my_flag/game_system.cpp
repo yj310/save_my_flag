@@ -7,6 +7,7 @@
 #include "math_util.h"
 #include "damage_tile.h"
 #include "enemy_a.h"
+#include "cloud_a.h"
 
 
 
@@ -21,6 +22,7 @@ void GameSystem::CreateMap()
 {
 	GenerateTiles();
 	GenerateEnemys();
+	GenerateClouds();
 }
 
 void GameSystem::MakeNomalBrickTile(float x, float y)
@@ -46,6 +48,13 @@ void GameSystem::MakeEnemyA(float x, float y, float direction)
 	Enemy* enemy = new EnemyA(x, y, direction);
 	enemys.push_back(enemy);
 }
+
+void GameSystem::MakeCloud(float x, float y, int state, int type)
+{
+	Cloud* cloud = new CloudA(x, y, state, type);
+	clouds.push_back(cloud);
+}
+
 
 void GameSystem::GenerateTiles()
 {
@@ -82,7 +91,7 @@ void GameSystem::GenerateTiles()
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
 	/* Drop Brick Tile */
-	for (int i = 16; i < 19; i++)
+	for (int i = 16; i < 21; i++)
 	{
 		for (int j = 0; j < 10; j++)
 		{
@@ -92,7 +101,7 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-	for (int i = 19; i < 19 + 19; i++)
+	for (int i = 21; i < 21 + 19; i++)
 	{
 		for (int j = 0; j < 10; j++)
 		{
@@ -161,17 +170,35 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-
+	for (int i = 78; i < 78 + 8; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			posX = i * 100;
+			posY = START_BOTTOM + j * 100;
+			MakeNomalBrickTile(posX, posY);
+		}
+	}
 
 }
 
 void GameSystem::GenerateEnemys()
 {
+<<<<<<< HEAD
 	MakeEnemyA(10 * 100, START_BOTTOM - 50, -1);
 
-
+=======
+	MakeEnemyA(8 * 100, START_BOTTOM - 50, -1);
+>>>>>>> master
 
 }
+
+void GameSystem::GenerateClouds()
+{
+	MakeCloud(300, 30, normal, TEX_CLOUD_A);
+	MakeCloud(2000, 80, normal, TEX_CLOUD_B);
+}
+
 
 void GameSystem::Update()
 {
@@ -179,18 +206,25 @@ void GameSystem::Update()
 	float row_speed = 0;
 	float column_speed = 0;
 	float speed = 20;
+	if (inputManager.keyBuffer[VK_LEFT] == 1)
+		row_speed = speed * 1;
+	if (inputManager.keyBuffer[VK_RIGHT] == 1)
+		row_speed = speed * -1;
+	if (inputManager.keyBuffer[VK_UP] == 1)
+		column_speed = speed * 1;
+	if (inputManager.keyBuffer[VK_DOWN] == 1)
+		column_speed = speed * -1;
 	for (int i = 0; i < tiles.size(); i++)
-	{
-		if (inputManager.keyBuffer[VK_LEFT] == 1)
-			row_speed = speed * 1;
-		if (inputManager.keyBuffer[VK_RIGHT] == 1)
-			row_speed = speed * -1;
-		if (inputManager.keyBuffer[VK_UP] == 1)
-			column_speed = speed * 1;
-		if (inputManager.keyBuffer[VK_DOWN] == 1)
-			column_speed = speed * -1;
-
+	{	
 		tiles[i]->setPos(tiles[i]->getPos().x + row_speed, tiles[i]->getPos().y + column_speed);
+	}
+	for (int i = 0; i < enemys.size(); i++)
+	{
+		enemys[i]->setPos(enemys[i]->getPos().x + row_speed, enemys[i]->getPos().y + column_speed);
+	}
+	for (int i = 0; i < clouds.size(); i++)
+	{
+		clouds[i]->setPos(clouds[i]->getPos().x + row_speed, clouds[i]->getPos().y + column_speed);
 	}
 	player->setPos(player->getPos().x + row_speed, player->getPos().y + column_speed);
 
@@ -211,6 +245,10 @@ void GameSystem::Update()
 		for (int i = 0; i < enemys.size(); i++)
 		{
 			enemys[i]->Update();
+		}
+		for (int i = 0; i < clouds.size(); i++)
+		{
+			clouds[i]->Update();
 		}
 
 
@@ -361,6 +399,19 @@ void GameSystem::Update()
 			}
 		}
 
+		for (int i = 0; i < clouds.size(); i++)
+		{
+			if (clouds[i]->getState() != normal)
+			{
+				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
+					clouds[i]->getPos().x, clouds[i]->getPos().y, clouds[i]->getSize().x, clouds[i]->getSize().y))
+				{
+
+				}
+			}
+			
+		}
+
 		player->setPrintPos();
 
 	}
@@ -385,6 +436,10 @@ void GameSystem::Render()
 	{
 		tiles[i]->Render();
 	}
+	for (int i = 0; i < clouds.size(); i++)
+	{
+		clouds[i]->Render();
+	}
 
 	if (player->isDead)
 	{
@@ -407,6 +462,11 @@ void GameSystem::deleteData()
 	for (int i = 0; i < size; i++)
 	{
 		enemys.pop_back();
+	}
+	size = clouds.size();
+	for (int i = 0; i < size; i++)
+	{
+		clouds.pop_back();
 	}
 	group_number = -1;
 }

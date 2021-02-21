@@ -161,7 +161,7 @@
     <ClInclude Include="brick_drop.h" />
     <ClInclude Include="brick_normal.h" />
     <ClInclude Include="cheat.h" />
-    <ClInclude Include="clooud.h" />
+    <ClInclude Include="cloud.h" />
     <ClInclude Include="cloud_a.h" />
     <ClInclude Include="damage_tile.h" />
     <ClInclude Include="data_manager.h" />
@@ -191,6 +191,7 @@
     <ClCompile Include="brick_drop.cpp" />
     <ClCompile Include="brick_normal.cpp" />
     <ClCompile Include="cheat.cpp" />
+    <ClCompile Include="cloud_a.cpp" />
     <ClCompile Include="damage_tile.cpp" />
     <ClCompile Include="data_manager.cpp" />
     <ClCompile Include="enemy_a.cpp" />
