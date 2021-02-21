@@ -53,8 +53,14 @@ void GameSystem::GenerateTiles()
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
-	MakeNomalBrickTile(500, START_BOTTOM - 100);
-	MakeNomalBrickTile(FINISH_TILE_RIGHT, START_BOTTOM - 300);
+	
+	for (int i = 5; i <5+ 2; i++)
+	{
+		posX = i * 100;
+		posY = START_BOTTOM - 2 * 100;
+		MakeNomalBrickTile(posX, posY);
+	}
+
 	MakeNomalBrickTile(15 * 100, START_BOTTOM - 100 * 1);
 
 	/*떨어지는 블럭*/
@@ -136,11 +142,7 @@ void GameSystem::GenerateTiles()
 			MakeDropBrickTile(posX, posY, 2);
 		}
 	}
-	for (int i = 5; i < 7; i++)
-	{
-
-		MakeNomalBrickTile(i * 100, START_BOTTOM - 100 * 2);
-	}
+	
 
 	// damage tile
 	for (int i = 0; i < 100; i++)
