@@ -17,6 +17,7 @@ public:
 	int getRadious();
 	float getSpeed();
 	bool getIsDead();
+	void IsDead() { isDead = true; }
 	D3DXVECTOR2 getSize();
 	D3DXVECTOR2 getCenter();
 	void setPrintPos();
@@ -32,8 +33,8 @@ public:
 	bool isHit;
 	float posX;
 	float posY;
-	float jumpStartPosY;
 	int radious;
+	float jumpStartPosY;
 	bool isDead;
 	//
 	int randCharacter;

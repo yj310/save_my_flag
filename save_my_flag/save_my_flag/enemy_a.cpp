@@ -7,9 +7,11 @@ EnemyA::EnemyA(float x, float y, float direction)
 	posY = y;
 	state = TEX_ENEMY_A_1;
 	state_count = 20;
+	radious = 50;
 	width = 100;
 	height = 100;
 	speed = 3;
+	gravity = GRAVITY;
 	this->direction = direction;
 }
 
@@ -28,8 +30,8 @@ void EnemyA::Render()
 	rc.right = width;
 	rc.bottom = height;
 
-	cen = { width / 2, height, 0 };
-	pos = { posX, posY, 0 };
+	cen = { width / 2, height / 2, 0 };
+	pos = { gameSystem.getPrintPos(posX, posY).x, gameSystem.getPrintPos(posX, posY).y, 0 };
 
 	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
@@ -38,9 +40,8 @@ void EnemyA::Render()
 
 void EnemyA::Update()
 {
+	Gravity();
 	posX += direction * speed;
-
-
 
 	state_count += 1;
 	if (state_count >= 20)
@@ -70,60 +71,5 @@ void EnemyA::Update()
 		}
 
 	}
-}
-
-
-
-
-D3DXVECTOR2 EnemyA::getPos()
-{
-	return { posX, posY };
-}
-
-void EnemyA::setPos(float x, float y)
-{
-	posX = x;
-	posY = y;
-}
-
-D3DXVECTOR2 EnemyA::getSize()
-{
-	return { width, height };
-}
-
-void EnemyA::setSize(float width, float height)
-{
-	this->width = width;
-	this->height = height;
-}
-
-int EnemyA::getState()
-{
-	return state;
-}
-
-void EnemyA::setState(int state)
-{
-	this->state = state;
-}
-
-float EnemyA::getDirection()
-{
-	return direction;
-}
-
-void EnemyA::setDirection(float direction)
-{
-	this->direction = direction;
-}
-
-float EnemyA::getSpeed()
-{
-	return speed;
-}
-
-void EnemyA::setSpeed(float speed)
-{
-	this->speed = speed;
 }
 
