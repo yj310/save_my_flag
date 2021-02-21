@@ -9,21 +9,21 @@
 Player::Player()
 {
 	posX = 250;
-	jumpStartPosY = PLAYER_BOTTOM;
+	jumpStartPosY = START_BOTTOM - 50;
 	posY = jumpStartPosY;
 	radious = 50;
 	isJump = false;
 	isDead = false;
 	speed = 10;
-	isDown = false;
 	gravity = 20.5;	//중력가속도
+
 	jumpTime = 0.0f;	//점프 이후 경과시간
 	jumpPower = 40.0f;	//점프력
 	jumpHeight = 0;
 	//
-	state = 255;
 	printX = posX;
 	printY = posY;
+
 	srand((unsigned int)time(NULL));
 	randCharacter = TEX_PLAYER_A + rand() % 6;
 
@@ -36,12 +36,9 @@ Player::Player()
 
 void Player::Update()
 {
-	if(!isTouch_bottom)
-		posY += gravity;
-	//accumulatedGravityPower = deltaTime * gravity;
-	//posY += accumulatedGravityPower;
+	Gravity();
 
-	//player 
+	//player motion
 	if (inputManager.keyBuffer['W'] == 1 && !isJump && !isTouch_top && isTouch_bottom)
 	{
 		isJump = true;
@@ -56,10 +53,10 @@ void Player::Update()
 	{
 		posX += speed;
 	}
-	else if (inputManager.keyBuffer['S'] == 1 && !isTouch_bottom)
+	/*if (inputManager.keyBuffer['S'] == 1 && !isTouch_bottom)
 	{
 		posY += speed;
-	}
+	}*/
 
 	//jump
 	if (isJump)
@@ -67,25 +64,18 @@ void Player::Update()
 		Jump();
 		posY = jumpStartPosY + jumpHeight;
 	}
-	/*else
-	{
-		if (isDown)
-		{
-			Down();
-		}
-	}*/
-
 
 
 }
 
 void Player::Render()
 {
-	TextureElement* element = textureManager.getTexture(randCharacter);
-
+	TextureElement* element;
 	RECT rc;
 	D3DXVECTOR3 pos;
 	D3DXVECTOR3 cen;
+
+	element = textureManager.getTexture(randCharacter);
 
 	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
@@ -94,18 +84,21 @@ void Player::Render()
 	rc.right = PLAYER_WIDTH;
 	rc.bottom = PLAYER_HEIGHT;
 
-
 	cen = { PLAYER_WIDTH / 2, PLAYER_HEIGHT / 2, 0 };
 	pos = { printX, printY, 0 };
 
-	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, state, 255, 255));
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	element->sprite->End();
 }
 
-void Player::Down()
+void Player::Gravity()
 {
 	//posY += 15;
+	if (!isTouch_bottom)
+		posY += gravity;
+	//accumulatedGravityPower = deltaTime * gravity;
+	//posY += accumulatedGravityPower;
 }
 
 void Player::Jump()
