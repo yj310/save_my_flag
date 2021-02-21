@@ -44,46 +44,51 @@
 
 
 // Object
-#define TEX_CLOUD_A				2000
-#define TEX_CLOUD_A_BAD			2001
-#define TEX_CLOUD_B				2002
-#define TEX_CLOUD_B_BAD			2003
+#define TEX_CLOUD_A					2000
+#define TEX_CLOUD_A_BAD				2001
+#define TEX_CLOUD_B					2002
+#define TEX_CLOUD_B_BAD				2003
 
-#define TEX_ENEMY_A_1			2010
-#define TEX_ENEMY_A_2			2011
-#define TEX_ENEMY_A_3			2012
-#define TEX_ENEMY_A_4			2013
+#define TEX_ENEMY_A_1				2010
+#define TEX_ENEMY_A_2				2011
+#define TEX_ENEMY_A_3				2012
+#define TEX_ENEMY_A_4				2013
 
-#define TEX_GOLD_A				2030
-#define TEX_GOLD_B				2031
-#define TEX_GOLD_C				2032
-#define TEX_GOLD_D				2033
-#define TEX_GOLD_E				2034
-#define TEX_GOLD_F				2035
-#define TEX_GOLD_G				2036
+#define TEX_GOLD_A					2030
+#define TEX_GOLD_B					2031
+#define TEX_GOLD_C					2032
+#define TEX_GOLD_D					2033
+#define TEX_GOLD_E					2034
+#define TEX_GOLD_F					2035
+#define TEX_GOLD_G					2036
 
-#define TEX_BRICK				2050
-#define TEX_DAMAGE_TILE			2051
+#define TEX_BRICK					2050
+#define TEX_DAMAGE_TILE				2051
 
 
 // UI
-#define TEX_TITLE_PAGE_TITLE	3000
-#define TEX_START_BUTTON_NOMAL	3001
-#define TEX_START_BUTTON_BORD	3002
-#define TEX_EXIT_BUTTON_NOMAL	3003
-#define TEX_EXIT_BUTTON_BORD	3004
-#define TEX_GAME_OVER_A			3005
-#define TEX_GAME_OVER_B			3006
+#define TEX_TITLE_PAGE_TITLE		3000
+#define TEX_START_BUTTON_NOMAL		3001
+#define TEX_START_BUTTON_BORD		3002
+#define TEX_EXIT_BUTTON_NOMAL		3003
+#define TEX_EXIT_BUTTON_BORD		3004
+#define TEX_GAME_OVER_A				3005
+#define TEX_GAME_OVER_B				3006
+#define TEX_X						3007
+#define TEX_RETURN_BUTTON_NOMAL		3008
+#define TEX_RETURN_BUTTON_MOUSEOVER	3009
+#define TEX_MAIN_BUTTON_NOMAL		3010
+#define TEX_MAIN_BUTTON_MOUSEOVER	3011
 
 
 // Character
-#define TEX_PLAYER				4000
-#define TEX_PLAYER_A			4001
-#define TEX_PLAYER_B			4002
-#define TEX_PLAYER_C			4003
-#define TEX_PLAYER_D			4004
-#define TEX_PLAYER_E			4005
-#define TEX_PLAYER_F			4006
+#define TEX_PLAYER					4000
+#define TEX_PLAYER_A				4001
+#define TEX_PLAYER_B				4002
+#define TEX_PLAYER_C				4003
+#define TEX_PLAYER_D				4004
+#define TEX_PLAYER_E				4005
+#define TEX_PLAYER_F				4006
 
 
 // Other

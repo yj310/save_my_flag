@@ -52,6 +52,9 @@
     <ClCompile Include="game_system.cpp">
       <Filter>소스파일\Manager</Filter>
     </ClCompile>
+    <ClCompile Include="map_edit_page.cpp">
+      <Filter>소스파일\page</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -87,12 +90,6 @@
     <ClInclude Include="framework.h">
       <Filter>헤더 파일\not use</Filter>
     </ClInclude>
-    <ClInclude Include="game_over.h">
-      <Filter>헤더 파일\page</Filter>
-    </ClInclude>
-    <ClInclude Include="Fading.h">
-      <Filter>헤더 파일\page\popup</Filter>
-    </ClInclude>
     <ClInclude Include="game_system.h">
       <Filter>헤더 파일\manager</Filter>
     </ClInclude>
@@ -126,14 +123,23 @@
     <ClInclude Include="tile.h">
       <Filter>헤더 파일\object\tile</Filter>
     </ClInclude>
-    <ClInclude Include="title_page.h">
-      <Filter>헤더 파일\object\tile</Filter>
-    </ClInclude>
     <ClInclude Include="clooud.h">
       <Filter>헤더 파일\object\cloud</Filter>
     </ClInclude>
     <ClInclude Include="cloud_a.h">
       <Filter>헤더 파일\object\cloud</Filter>
+    </ClInclude>
+    <ClInclude Include="title_page.h">
+      <Filter>헤더 파일\page</Filter>
+    </ClInclude>
+    <ClInclude Include="map_edit_page.h">
+      <Filter>헤더 파일\page</Filter>
+    </ClInclude>
+    <ClInclude Include="Fading.h">
+      <Filter>헤더 파일\page</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over.h">
+      <Filter>헤더 파일\page\popup</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
