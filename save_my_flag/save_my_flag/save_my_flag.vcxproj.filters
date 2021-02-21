@@ -129,6 +129,12 @@
     <ClInclude Include="title_page.h">
       <Filter>헤더 파일\object\tile</Filter>
     </ClInclude>
+    <ClInclude Include="clooud.h">
+      <Filter>헤더 파일\object\cloud</Filter>
+    </ClInclude>
+    <ClInclude Include="cloud_a.h">
+      <Filter>헤더 파일\object\cloud</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="save_my_flag.ico">
@@ -189,6 +195,9 @@
     </Filter>
     <Filter Include="헤더 파일\page\popup">
       <UniqueIdentifier>{20737562-0228-4165-aba4-2d9e12786872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\cloud">
+      <UniqueIdentifier>{e1e5231a-4b56-4b3d-a44b-b23119b3c5d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
