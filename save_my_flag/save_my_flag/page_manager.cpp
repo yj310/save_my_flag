@@ -2,6 +2,7 @@
 #include "global.h"
 #include "title_page.h"
 #include "first_game_page.h"
+#include "map_edit_page.h"
 
 
 
@@ -30,6 +31,20 @@ void PageManager::CreateFirstGamePage()
 		delete currentPage;
 	}
 	FirstGamePage* newPage = new FirstGamePage();
+	currentPage = newPage;
+}
+
+void PageManager::CreateMapEditPage()
+{
+	if (currentPage != nullptr)
+	{
+		if (currentPage->classType == FIRST_GAME_PAGE)
+		{
+			gameSystem.deleteData();
+		}
+		delete currentPage;
+	}
+	MapEditPage* newPage = new MapEditPage();
 	currentPage = newPage;
 }
 

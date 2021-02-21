@@ -175,6 +175,7 @@
     <ClInclude Include="global.h" />
     <ClInclude Include="gold.h" />
     <ClInclude Include="input_manager.h" />
+    <ClInclude Include="map_edit_page.h" />
     <ClInclude Include="math_util.h" />
     <ClInclude Include="page.h" />
     <ClInclude Include="page_manager.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="game_over.cpp" />
     <ClCompile Include="game_system.cpp" />
     <ClCompile Include="gold.cpp" />
+    <ClCompile Include="map_edit_page.cpp" />
     <ClCompile Include="math_util.cpp" />
     <ClCompile Include="page_manager.cpp" />
     <ClCompile Include="palyer.cpp" />

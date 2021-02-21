@@ -25,6 +25,7 @@ public:
 
 	void CreateTitlePage();
 	void CreateFirstGamePage();
+	void CreateMapEditPage();
 
 	void Update();
 	void Render();
