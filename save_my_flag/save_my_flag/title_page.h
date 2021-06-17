@@ -21,6 +21,8 @@ public:
 
 	int StartButtonState;
 	int ExitButtonState;
+	int ManualButtonState;
+	int RankingButtonState;
 	float cloud_a_Y;
 	float cloud_b_Y;
 	float cloud_a_Y_direction;
@@ -39,6 +41,10 @@ public:
 	/* Update */
 	void StartButtonUpdate(POINT pt);
 	void ExitButtonUpdate(POINT pt);
+	void ManualButtonUpdate(POINT pt);
+	void RankingButtonUpdate(POINT pt);
+
+
 	void CloudUpdate();
 	void EnemyUpdate();
 
@@ -47,6 +53,8 @@ public:
 	void TitleRender();
 	void StartButtonRender();
 	void ExitButtonRender();
+	void ManualButtonRender();
+	void RankingButtonRender();
 
 	void CloudRender();
 	void EnemyRender();

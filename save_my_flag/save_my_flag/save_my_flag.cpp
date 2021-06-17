@@ -113,6 +113,10 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/ui/title_page/start_button_mouseover.png", TEX_START_BUTTON_BORD);
 	textureManager.LoadTexture(L"source/image/ui/title_page/exit_button_nomal.png", TEX_EXIT_BUTTON_NOMAL);
 	textureManager.LoadTexture(L"source/image/ui/title_page/exit_button_mouseover.png", TEX_EXIT_BUTTON_BORD);
+    textureManager.LoadTexture(L"source/image/ui/title_page/manual_button_nomal.png", TEX_MANUAL_BUTTON_NOMAL);
+    textureManager.LoadTexture(L"source/image/ui/title_page/manual_button_mouseover.png", TEX_MANUAL_BUTTON_BORD);
+    textureManager.LoadTexture(L"source/image/ui/title_page/ranking_button_nomal.png", TEX_RANKING_BUTTON_NOMAL);
+    textureManager.LoadTexture(L"source/image/ui/title_page/ranking_button_mouseover.png", TEX_RANKING_BUTTON_BORD);
 	textureManager.LoadTexture(L"source/image/ui/popup/game_over_A.png", TEX_GAME_OVER_A);
 	textureManager.LoadTexture(L"source/image/ui/popup/game_over_B.png", TEX_GAME_OVER_B);
 	textureManager.LoadTexture(L"source/image/ui/popup/X.png", TEX_X);

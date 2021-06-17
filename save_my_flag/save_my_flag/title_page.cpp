@@ -10,13 +10,28 @@
 #define START_BUTTON_HALF_WIDTH START_BUTTON_WIDTH / 2
 #define START_BUTTON_HALF_HEIGHT START_BUTTON_HEIGHT / 2
 
+#define RANKING_BUTTON_WIDTH 300
+#define RANKING_BUTTON_HEIGHT 100
+#define RANKING_BUTTON_X WINDOW_WIDTH/2
+#define RANKING_BUTTON_Y 750
+#define RANKING_BUTTON_HALF_WIDTH RANKING_BUTTON_WIDTH / 2
+#define RANKING_BUTTON_HALF_HEIGHT RANKING_BUTTON_HEIGHT / 2
+
 
 #define EXIT_BUTTON_WIDTH 300
 #define EXIT_BUTTON_HEIGHT 100
 #define EXIT_BUTTON_X WINDOW_WIDTH/2
-#define EXIT_BUTTON_Y 750
+#define EXIT_BUTTON_Y 880
 #define EXIT_BUTTON_HALF_WIDTH EXIT_BUTTON_WIDTH / 2
 #define EXIT_BUTTON_HALF_HEIGHT EXIT_BUTTON_HEIGHT / 2
+
+#define MANUAL_BUTTON_WIDTH 300
+#define MANUAL_BUTTON_HEIGHT 100
+#define MANUAL_BUTTON_X WINDOW_WIDTH/2
+#define MANUAL_BUTTON_Y 880
+#define MANUAL_BUTTON_HALF_WIDTH MANUAL_BUTTON_WIDTH / 2
+#define MANUAL_BUTTON_HALF_HEIGHT MANUAL_BUTTON_HEIGHT / 2
+
 
 #define CLOUD_A_X 1400
 #define CLOUD_A_Y 100
@@ -38,6 +53,8 @@ TitlePage::TitlePage()
 	classType = TITLE_PAGE;
 	StartButtonState = TEX_START_BUTTON_NOMAL;
 	ExitButtonState = TEX_EXIT_BUTTON_NOMAL;
+	ManualButtonState = TEX_MANUAL_BUTTON_NOMAL;
+	RankingButtonState = TEX_RANKING_BUTTON_NOMAL;
 	cloud_a_Y = CLOUD_A_Y;
 	cloud_b_Y = CLOUD_B_Y;
 	cloud_a_Y_direction = 1;
@@ -69,7 +86,9 @@ void TitlePage::Update()
 	gold->Update();
 
 	StartButtonUpdate(pt);
+	RankingButtonUpdate(pt);
 	ExitButtonUpdate(pt);
+	//ManualButtonUpdate(pt);
 
 }
 
@@ -79,7 +98,11 @@ void TitlePage::Render()
 	BackgroundRender();
 	TitleRender();
 	StartButtonRender();
+	RankingButtonRender();
 	ExitButtonRender();
+	
+	//ManualButtonRender();
+
 	CloudRender();
 	EnemyRender();
 	TileRender();
@@ -130,6 +153,53 @@ void TitlePage::ExitButtonUpdate(POINT pt)
 	else if (ExitButtonState == TEX_EXIT_BUTTON_BORD)
 	{
 		ExitButtonState = TEX_EXIT_BUTTON_NOMAL;
+	}
+}
+
+void TitlePage::ManualButtonUpdate(POINT pt)
+{
+	
+	if (pt.x > MANUAL_BUTTON_X - MANUAL_BUTTON_HALF_WIDTH && pt.x < MANUAL_BUTTON_X + MANUAL_BUTTON_HALF_WIDTH
+		&& pt.y > MANUAL_BUTTON_Y - MANUAL_BUTTON_HALF_HEIGHT && pt.y < MANUAL_BUTTON_Y + MANUAL_BUTTON_HALF_HEIGHT)
+	{
+		if (ManualButtonState == TEX_MANUAL_BUTTON_NOMAL)
+		{
+			ManualButtonState = TEX_MANUAL_BUTTON_BORD;
+		}
+
+
+		if (inputManager.prevKeyBuffer[VK_LBUTTON] == 1
+			&& inputManager.keyBuffer[VK_LBUTTON] == 0)
+		{
+			PostQuitMessage(0);
+		}
+	}
+	else if (ManualButtonState == TEX_MANUAL_BUTTON_BORD)
+	{
+		ManualButtonState = TEX_MANUAL_BUTTON_NOMAL;
+	}
+}
+
+void TitlePage::RankingButtonUpdate(POINT pt)
+{
+	if (pt.x > RANKING_BUTTON_X - RANKING_BUTTON_HALF_WIDTH && pt.x < RANKING_BUTTON_X + RANKING_BUTTON_HALF_WIDTH
+		&& pt.y > RANKING_BUTTON_Y - RANKING_BUTTON_HALF_HEIGHT && pt.y < RANKING_BUTTON_Y + RANKING_BUTTON_HALF_HEIGHT)
+	{
+		if (RankingButtonState == TEX_RANKING_BUTTON_NOMAL)
+		{
+			RankingButtonState = TEX_RANKING_BUTTON_BORD;
+		}
+
+
+		if (inputManager.prevKeyBuffer[VK_LBUTTON] == 1
+			&& inputManager.keyBuffer[VK_LBUTTON] == 0)
+		{
+			PostQuitMessage(0);
+		}
+	}
+	else if (RankingButtonState == TEX_RANKING_BUTTON_BORD)
+	{
+		RankingButtonState = TEX_RANKING_BUTTON_NOMAL;
 	}
 }
 
@@ -264,6 +334,52 @@ void TitlePage::ExitButtonRender()
 
 	pos = { EXIT_BUTTON_X, EXIT_BUTTON_Y, 0 };
 	cen = { EXIT_BUTTON_HALF_WIDTH, EXIT_BUTTON_HALF_HEIGHT, 0 };
+
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+
+	element->sprite->End();
+}
+
+void TitlePage::RankingButtonRender()
+{
+	TextureElement* element = textureManager.getTexture(RankingButtonState);
+
+	RECT rc;
+	D3DXVECTOR3 pos;
+	D3DXVECTOR3 cen;
+
+	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
+
+	rc.left = 0;
+	rc.top = 0;
+	rc.right = RANKING_BUTTON_WIDTH;
+	rc.bottom = RANKING_BUTTON_HEIGHT;
+
+	pos = { RANKING_BUTTON_X, RANKING_BUTTON_Y, 0 };
+	cen = { RANKING_BUTTON_HALF_WIDTH, RANKING_BUTTON_HALF_HEIGHT, 0 };
+
+	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+
+	element->sprite->End();
+}
+
+void TitlePage::ManualButtonRender()
+{
+	TextureElement* element = textureManager.getTexture(ManualButtonState);
+
+	RECT rc;
+	D3DXVECTOR3 pos;
+	D3DXVECTOR3 cen;
+
+	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
+
+	rc.left = 0;
+	rc.top = 0;
+	rc.right = MANUAL_BUTTON_WIDTH;
+	rc.bottom = MANUAL_BUTTON_HEIGHT;
+
+	pos = { MANUAL_BUTTON_X, MANUAL_BUTTON_Y, 0 };
+	cen = { MANUAL_BUTTON_HALF_WIDTH, MANUAL_BUTTON_HALF_HEIGHT, 0 };
 
 	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
