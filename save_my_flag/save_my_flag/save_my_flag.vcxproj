@@ -159,6 +159,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="brick_drop.h" />
+    <ClInclude Include="brick_hidden.h" />
     <ClInclude Include="brick_normal.h" />
     <ClInclude Include="cheat.h" />
     <ClInclude Include="cloud.h" />
@@ -189,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="brick_drop.cpp" />
+    <ClCompile Include="brick_hidden.cpp" />
     <ClCompile Include="brick_normal.cpp" />
     <ClCompile Include="cheat.cpp" />
     <ClCompile Include="cloud_a.cpp" />

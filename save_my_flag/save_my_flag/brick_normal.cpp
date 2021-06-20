@@ -4,6 +4,7 @@
 
 BrickNormal::BrickNormal(float x, float y)
 {
+	startY = y;
 	posX = x;
 	posY = y;
 	tileType = NOMAL_BRICK;
@@ -11,7 +12,7 @@ BrickNormal::BrickNormal(float x, float y)
 
 void BrickNormal::Update()
 {
-
+	
 }
 
 void BrickNormal::Render()

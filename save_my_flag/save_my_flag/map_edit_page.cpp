@@ -12,7 +12,7 @@ MapEditPage::MapEditPage()
 void MapEditPage::Update()
 {
 
-	POINT pt;
+	/*POINT pt;
 	GetCursorPos(&pt);
 	ScreenToClient(hWnd, &pt);
 
@@ -81,8 +81,7 @@ void MapEditPage::Update()
 	else if (clickState != DAMAGE_TILE)
 	{
 		damageTileState = 255;
-	}
-
+	}*/
 
 
 }

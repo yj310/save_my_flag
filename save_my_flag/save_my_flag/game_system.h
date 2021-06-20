@@ -20,7 +20,9 @@ public:
 	void MakeNomalBrickTile(float x, float y);
 	void MakeDropBrickTile(float x, float y, int group);
 	void MakeDamageTile(float x, float y);
+	void MakeHiddenTile(float x, float y);
 	void MakeEnemyA(float x, float y, float direction);
+	void MakeCoin(float x, float y);
 	void MakeCloud(float x, float y, int state, int type);
 	void Update();
 	void Render();

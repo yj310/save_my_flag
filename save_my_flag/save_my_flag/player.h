@@ -33,6 +33,7 @@ public:
 	bool isHit;
 	float posX;
 	float posY;
+	float bottomY;
 	int radious;
 	float jumpStartPosY;
 	bool isDead;

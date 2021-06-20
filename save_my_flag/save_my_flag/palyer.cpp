@@ -9,7 +9,8 @@
 Player::Player()
 {
 	posX = 250;
-	jumpStartPosY = START_BOTTOM - 50;
+	jumpStartPosY = START_BOTTOM-10;
+	bottomY = START_BOTTOM;
 	posY = jumpStartPosY;
 	radious = 50;
 	isJump = false;
@@ -28,7 +29,7 @@ Player::Player()
 	randCharacter = TEX_PLAYER_A + rand() % 6;
 
 	isTouch_top = true;
-	isTouch_bottom = true;
+	isTouch_bottom = false;
 	isTouch_right = true;
 	isTouch_left = true;
 
@@ -41,6 +42,7 @@ void Player::Update()
 	//player motion
 	if (inputManager.keyBuffer['W'] == 1 && !isJump && !isTouch_top && isTouch_bottom)
 	{
+		isTouch_bottom = false;
 		isJump = true;
 		jumpTime = 1.f;
 		jumpStartPosY = posY;
@@ -95,8 +97,10 @@ void Player::Render()
 void Player::Gravity()
 {
 	//posY += 15;
-	if (!isTouch_bottom)
+	if (!isTouch_bottom) {
 		posY += gravity;
+	}
+		
 	//accumulatedGravityPower = deltaTime * gravity;
 	//posY += accumulatedGravityPower;
 }
@@ -175,7 +179,19 @@ void Player::setPrintPos()
 		}
 	}
 
-	// printY
+
+	/*if (printY <WINDOW_HEIGHT/2 && isTouch_bottom) {
+		bottomY = 100;
+		isTouch_bottom = false;
+	}
+	else {
+		bottomY = 0;
+		
+	}*/
+
+	printY = posY;
+
+	//// printY
 	if (posY >= WINDOW_HEIGHT / 2 - 100 && posY <= START_BOTTOM)
 	{
 		printY = posY - (START_BOTTOM - ((WINDOW_HEIGHT / 2) + 300)) + 50;
@@ -186,13 +202,14 @@ void Player::setPrintPos()
 	}
 	else if (posY > START_BOTTOM)
 	{
-		if (posY + (WINDOW_HEIGHT - START_BOTTOM) > FINISH_TILE_BOTTOM) {
+		printY = posY;
+		/*if (posY + (WINDOW_HEIGHT - START_BOTTOM) > FINISH_TILE_BOTTOM) {
 			printY = START_BOTTOM + ((WINDOW_HEIGHT - START_BOTTOM) - (FINISH_TILE_BOTTOM - posY));
 		}
 		else
 		{
 			printY = START_BOTTOM;
-		}
+		}*/
 	}
 	//printY = posY;
 }

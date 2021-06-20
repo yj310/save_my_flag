@@ -4,10 +4,12 @@
 #include "tile.h"
 #include "brick_normal.h"
 #include "brick_drop.h"
+#include "brick_hidden.h"
 #include "math_util.h"
 #include "damage_tile.h"
 #include "enemy_a.h"
 #include "cloud_a.h"
+
 
 
 
@@ -43,6 +45,12 @@ void GameSystem::MakeDamageTile(float x, float y)
 	tiles.push_back(tile);
 }
 
+void GameSystem::MakeHiddenTile(float x, float y)
+{
+	Tile* tile = new BrickHidden(x, y);
+	tiles.push_back(tile);
+}
+
 void GameSystem::MakeEnemyA(float x, float y, float direction)
 {
 	Enemy* enemy = new EnemyA(x, y, direction);
@@ -53,6 +61,11 @@ void GameSystem::MakeCloud(float x, float y, int state, int type)
 {
 	Cloud* cloud = new CloudA(x, y, state, type);
 	clouds.push_back(cloud);
+}
+
+void GameSystem::MakeCoin(float x, float y)
+{
+	
 }
 
 
@@ -156,8 +169,16 @@ void GameSystem::GenerateTiles()
 			MakeNomalBrickTile(posX, posY);
 		}
 	}
-	MakeNomalBrickTile(45 * 100, START_BOTTOM + 100 * 3);
+
+	MakeNomalBrickTile(53 * 100, START_BOTTOM - 100 * 1);
 	MakeNomalBrickTile(68 * 100, START_BOTTOM - 100 * 1);
+
+	//hidden
+	MakeHiddenTile(59 * 100, START_BOTTOM - 400 * 1);
+	MakeHiddenTile(60 * 100, START_BOTTOM - 400 * 1);
+	/*MakeHiddenTile(66 * 100, START_BOTTOM - 400 * 1);*/
+
+	
 
 	/* Drop Brick Tile */
 	for (int i = 74; i < 74 + 4; i++)
@@ -202,8 +223,14 @@ void GameSystem::GenerateTiles()
 }
 
 void GameSystem::GenerateEnemys()
+//53 * 100
 {
 	MakeEnemyA(8 * 100, START_BOTTOM - 50, -1);
+
+	MakeEnemyA(55 * 100, START_BOTTOM - 50, -1);
+	
+	MakeEnemyA(65 * 100, START_BOTTOM - 50, -1);
+	//MakeEnemyA(55 * 100, START_BOTTOM - 50, -1);
 
 }
 
@@ -284,25 +311,28 @@ void GameSystem::Update()
 
 		for (int i = 0; i < tiles.size(); i++)
 		{
-			// area over
-			if (tiles[i]->getTileType() == DAMAGE_TILE)
-			{
-				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
-					tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
-				{
-					player->IsDead();
-				}
-			}
 
 			// Collision player and dropbrick
 			if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				tiles[i]->getPos().x, tiles[i]->getPos().y, tiles[i]->getSize().x, tiles[i]->getSize().y))
 			{
+
 				if (tiles[i]->getTileType() == DROP_BRICK)
 				{
-					group_number = tiles[i]->group;
+					group_number = tiles[i]->group;			
+				}
+
+				if (tiles[i]->getTileType() == DAMAGE_TILE)
+				{
+					//player->IsDead();
+				}
+				
+				if (tiles[i]->getTileType() == HIDDEN_BRICK) {
+					tiles[i]->isCollided = true;
 				}
 			}
+
+
 
 
 
@@ -419,7 +449,7 @@ void GameSystem::Update()
 			if (isCircleCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				enemys[i]->getPos().x, enemys[i]->getPos().y, enemys[i]->getRadious()))
 			{
-				player->IsDead();
+				//player->IsDead();
 			}
 		}
 
@@ -430,7 +460,7 @@ void GameSystem::Update()
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 					clouds[i]->getPos().x, clouds[i]->getPos().y, clouds[i]->getSize().x, clouds[i]->getSize().y))
 				{
-					player->IsDead();
+					//player->IsDead();
 				}
 			}
 			
@@ -497,6 +527,6 @@ void GameSystem::deleteData()
 
 D3DXVECTOR2 GameSystem::getPrintPos(float x, float y)
 {
-	//return { x, y };
 	return { x - (player->getPos().x - player->getPrintPos().x), y - (player->getPos().y - player->getPrintPos().y) };
+	//return { x - (player->getPos().x - player->getPrintPos().x), y+player->bottomY };
 }

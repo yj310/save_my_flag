@@ -27,8 +27,9 @@
 
 // tile
 #define NOMAL_BRICK 0
-#define DAMAGE_TILE 1
-#define DROP_BRICK 2
+#define HIDDEN_BRICK 2
+#define DAMAGE_TILE 3
+#define DROP_BRICK 4
 
 // map
 #define START_BOTTOM 910
