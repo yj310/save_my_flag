@@ -42,6 +42,7 @@
 // Background
 #define TEX_TITLE_PAGE_BACKGROUND 1000
 #define TEX_FIRST_GAME_PAGE_BACKGROUND 1100
+#define TEX_RANK_PAGE 1200
 
 
 // Object

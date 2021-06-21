@@ -86,7 +86,8 @@ void InitMyStuff()
     //background
     textureManager.LoadTexture(L"source/image/background/title_page.png", TEX_TITLE_PAGE_BACKGROUND);
     textureManager.LoadTexture(L"source/image/background/first_game_page.png", TEX_FIRST_GAME_PAGE_BACKGROUND);
-	
+    textureManager.LoadTexture(L"source/image/background/rank_page.png", TEX_RANK_PAGE);
+    
 	// object
 	textureManager.LoadTexture(L"source/image/object/cloud_a.png", TEX_CLOUD_A);
 	textureManager.LoadTexture(L"source/image/object/cloud_a_bad.png", TEX_CLOUD_A_BAD);
