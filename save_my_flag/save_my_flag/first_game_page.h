@@ -3,6 +3,7 @@
 #include <d3dx9.h>
 #include "player.h"
 #include "game_over.h"
+#include "game_clear.h"
 
 
 class FirstGamePage : public Page
@@ -20,6 +21,7 @@ public:
 	void BackgroundRender();
 
 	GameOver gameOver;
+	GameClear gameClear;
 
 protected:
 

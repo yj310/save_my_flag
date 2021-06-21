@@ -88,6 +88,7 @@
 #define TEX_RANKING_BUTTON_BORD		3023
 #define TEX_SCORE					3024
 #define TEX_NAME					3025
+#define TEX_GAME_CLEAR				3026
 
 // Character
 #define TEX_PLAYER					4000

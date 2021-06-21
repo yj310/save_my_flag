@@ -176,6 +176,7 @@
     <ClInclude Include="first_game_page.h" />
     <ClInclude Include="flag.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="game_clear.h" />
     <ClInclude Include="game_over.h" />
     <ClInclude Include="game_system.h" />
     <ClInclude Include="global.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="Fading.cpp" />
     <ClCompile Include="first_game_page.cpp" />
     <ClCompile Include="flag.cpp" />
+    <ClCompile Include="game_clear.cpp" />
     <ClCompile Include="game_over.cpp" />
     <ClCompile Include="game_system.cpp" />
     <ClCompile Include="gold.cpp" />

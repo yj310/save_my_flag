@@ -17,6 +17,10 @@ void FirstGamePage::Update()
 	{
 		gameOver.Update();
 	}
+	else if (gameSystem.player->isClear)
+	{
+		gameClear.Update();
+	}
 }
 
 void FirstGamePage::Render()
@@ -26,6 +30,10 @@ void FirstGamePage::Render()
 	if (gameSystem.player->isDead)
 	{
 		gameOver.Render();
+	}
+	else if (gameSystem.player->isClear)
+	{
+		gameClear.Render();
 	}
 }
 

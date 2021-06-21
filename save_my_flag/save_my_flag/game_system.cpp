@@ -276,7 +276,7 @@ void GameSystem::Update()
 	
 
 
-	if (!player->isDead)
+	if (!player->isDead && !player->isClear)
 	{
 		flag->Update();
 
