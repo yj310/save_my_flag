@@ -107,7 +107,14 @@ void GameOver::Update()
 		if (inputManager.prevKeyBuffer[VK_LBUTTON] == 1
 			&& inputManager.keyBuffer[VK_LBUTTON] == 0)
 		{
-			pageManager.CreateTitlePage();
+
+			std::string name(cname.begin(), cname.end());
+			strcpy_s(ranking[5].playerName, name.c_str());
+			ranking[5].playerScore = (gameSystem.player->score);
+			ranking[6] = ranking[5];
+			pageManager.CreateRankingPage();
+
+			//pageManager.CreateTitlePage();
 		}
 	}
 	else if (mainButtonState == TEX_MAIN_BUTTON_MOUSEOVER)

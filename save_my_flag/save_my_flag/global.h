@@ -123,7 +123,15 @@ extern float deltaTime;
 extern Cheat cheat;
 
 
+class PlayerInfo
+{
+public:
+	char playerName[128];
+	int playerScore;
+};
 
+
+extern PlayerInfo ranking[7];
 
 
 

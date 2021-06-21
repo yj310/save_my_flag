@@ -194,7 +194,7 @@ void TitlePage::RankingButtonUpdate(POINT pt)
 		if (inputManager.prevKeyBuffer[VK_LBUTTON] == 1
 			&& inputManager.keyBuffer[VK_LBUTTON] == 0)
 		{
-			PostQuitMessage(0);
+			pageManager.CreateRankingPage();
 		}
 	}
 	else if (RankingButtonState == TEX_RANKING_BUTTON_BORD)

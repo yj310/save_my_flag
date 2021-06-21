@@ -3,7 +3,7 @@
 #include "title_page.h"
 #include "first_game_page.h"
 #include "map_edit_page.h"
-
+#include "rank_page.h"
 
 
 void PageManager::CreateTitlePage()
@@ -45,6 +45,20 @@ void PageManager::CreateMapEditPage()
 		delete currentPage;
 	}
 	MapEditPage* newPage = new MapEditPage();
+	currentPage = newPage;
+}
+
+void PageManager::CreateRankingPage()
+{
+	if (currentPage != nullptr)
+	{
+		if (currentPage->classType == FIRST_GAME_PAGE)
+		{
+			gameSystem.deleteData();
+		}
+		delete currentPage;
+	}
+	RankPage* newPage = new RankPage();
 	currentPage = newPage;
 }
 

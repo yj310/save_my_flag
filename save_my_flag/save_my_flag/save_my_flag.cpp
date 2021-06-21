@@ -44,7 +44,8 @@ GameSystem gameSystem;
 float deltaTime = 0.3f;
 DWORD prevTime;
 Cheat cheat;
-//GameSystem gameSystem;
+PlayerInfo ranking[7];
+
 
 HRESULT InitD3D(HWND hWnd)
 {
