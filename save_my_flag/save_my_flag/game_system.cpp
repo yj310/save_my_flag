@@ -16,7 +16,7 @@
 GameSystem::GameSystem()
 {
 	player = new Player();
-	gameOverPage = new GameOver();
+	
 	group_number = -1;
 }
 
@@ -459,11 +459,16 @@ void GameSystem::Update()
 
 		for (int i = 0; i < coins.size(); i++)
 		{
-			if (isCircleCollided(player->getPos().x, player->getPos().y, player->getRadious(),
-				coins[i]->getPos().x, coins[i]->getPos().y, coins[i]->getRadious()))
+			if (!coins[i]->isTouch)
 			{
-				coins[i]->isTouch = true;
+				if (isCircleCollided(player->getPos().x, player->getPos().y, player->getRadious(),
+					coins[i]->getPos().x, coins[i]->getPos().y, coins[i]->getRadious()))
+				{
+					coins[i]->isTouch = true;
+					player->AddCoin();
+				}
 			}
+			
 		}
 
 		for (int i = 0; i < clouds.size(); i++)
@@ -478,13 +483,22 @@ void GameSystem::Update()
 			}
 			
 		}
+		if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
+			flag->getPos().x, flag->getPos().y, flag->getSize().x, flag ->getSize().y))
+		{
+			player->isClear = true;
+		}
 
 		player->setPrintPos();
 
 	}
-	else
+	else if(player->isDead)
 	{
-		gameOverPage->Update();
+		//gameOverPage->Update();
+	}
+	else if (player->isClear)
+	{
+
 	}
 
 
@@ -514,7 +528,7 @@ void GameSystem::Render()
 	}
 	if (player->isDead)
 	{
-		gameOverPage->Render();
+		//gameOverPage->Render();
 	}
 
 	
@@ -524,8 +538,8 @@ void GameSystem::deleteData()
 {
 	delete player;
 	player = new Player();
-	delete gameOverPage;
-	gameOverPage = new GameOver();
+	//delete gameOverPage;
+	//gameOverPage = new GameOver();
 	int size = tiles.size();
 	for (int i = 0; i < size; i++)
 	{

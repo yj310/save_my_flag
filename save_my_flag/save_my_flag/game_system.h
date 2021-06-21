@@ -47,5 +47,5 @@ public:
 	vector<Enemy*> enemys;
 	vector<Cloud*> clouds;
 	vector<Gold*> coins;
-	GameOver* gameOverPage;
+	
 };

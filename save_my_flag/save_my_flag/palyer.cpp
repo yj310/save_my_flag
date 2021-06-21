@@ -8,6 +8,9 @@
 
 Player::Player()
 {
+	score = 0;
+	coin_c = 0;
+
 	posX = 250;
 	jumpStartPosY = START_BOTTOM-10;
 	bottomY = START_BOTTOM;
@@ -15,6 +18,7 @@ Player::Player()
 	radious = 50;
 	isJump = false;
 	isDead = false;
+	isClear = false;
 	speed = 10;
 	gravity = GRAVITY;	//중력가속도
 
@@ -37,6 +41,8 @@ Player::Player()
 
 void Player::Update()
 {
+	score += posX/100;
+
 	Gravity();
 
 	//player motion
@@ -69,6 +75,7 @@ void Player::Update()
 
 
 }
+//160*50
 
 void Player::Render()
 {

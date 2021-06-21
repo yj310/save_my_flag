@@ -19,6 +19,7 @@ public:
 	/* Render */
 	void BackgroundRender();
 
+	GameOver gameOver;
 
 protected:
 

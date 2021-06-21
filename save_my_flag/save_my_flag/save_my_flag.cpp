@@ -124,7 +124,10 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/ui/return_button_a.png", TEX_RETURN_BUTTON_NOMAL);
 	textureManager.LoadTexture(L"source/image/ui/return_button_B.png", TEX_RETURN_BUTTON_MOUSEOVER);
 	textureManager.LoadTexture(L"source/image/ui/main_button_a.png", TEX_MAIN_BUTTON_NOMAL);
-	textureManager.LoadTexture(L"source/image/ui/main_button_B.png", TEX_MAIN_BUTTON_MOUSEOVER);
+    textureManager.LoadTexture(L"source/image/ui/main_button_B.png", TEX_MAIN_BUTTON_MOUSEOVER);
+
+    textureManager.LoadTexture(L"source/image/ui/score.png", TEX_SCORE);
+    textureManager.LoadTexture(L"source/image/ui/name.png", TEX_NAME);
 
     
 	// character

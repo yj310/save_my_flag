@@ -17,11 +17,14 @@ public:
 	int getRadious();
 	float getSpeed();
 	bool getIsDead();
-	void IsDead() { isDead = false; }
+	void IsDead() { isDead = true; }
 	D3DXVECTOR2 getSize();
 	D3DXVECTOR2 getCenter();
 	void setPrintPos();
 	D3DXVECTOR2 getPrintPos() { return { printX, printY }; }
+	int getCoin() { return coin_c; }
+	int setCoin(int c) { coin_c = c; }
+	void AddCoin() { coin_c += 1; }
 
 	float accumulatedGravityPower;
 	float jumpHeight;
@@ -37,10 +40,14 @@ public:
 	int radious;
 	float jumpStartPosY;
 	bool isDead;
+	bool isClear;
 	//
 	int randCharacter;
 	float printX;
 	float printY;
+
+	int score;
+	int coin_c;
 
 
 	bool isTouch_top;

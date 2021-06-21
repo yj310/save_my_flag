@@ -1,6 +1,6 @@
 #include "first_game_page.h"
 #include "global.h"	
-
+#include "player.h"
 
 FirstGamePage::FirstGamePage()
 {
@@ -13,13 +13,20 @@ void FirstGamePage::Update()
 	
 	BackgroundUpdate();
 	gameSystem.Update();
+	if (gameSystem.player->isDead)
+	{
+		gameOver.Update();
+	}
 }
 
 void FirstGamePage::Render()
 {
 	BackgroundRender();
 	gameSystem.Render();
-	
+	if (gameSystem.player->isDead)
+	{
+		gameOver.Render();
+	}
 }
 
 void FirstGamePage::BackgroundUpdate()

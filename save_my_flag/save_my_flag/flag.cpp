@@ -60,3 +60,8 @@ D3DXVECTOR2 Flag::getSize()
 {
 	return D3DXVECTOR2(width, height);
 }
+
+D3DXVECTOR2 Flag::getPos()
+{
+	return D3DXVECTOR2(posX, posY);
+}
