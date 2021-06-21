@@ -5,6 +5,9 @@
 #include "game_over.h"
 #include "enemy.h"
 #include "cloud.h"
+#include "gold.h"
+#include "flag.h"
+
 using namespace std;
 
 class Player;
@@ -17,6 +20,7 @@ public:
 	void GenerateTiles();
 	void GenerateEnemys();
 	void GenerateClouds();
+	void GenerateCoin();
 	void MakeNomalBrickTile(float x, float y);
 	void MakeDropBrickTile(float x, float y, int group);
 	void MakeDamageTile(float x, float y);
@@ -36,9 +40,12 @@ public:
 		down,
 		updown
 	};
-	Player* player;
+	Player* player;;
+	Gold* gold;
+	Flag* flag;
 	vector<Tile*> tiles;
 	vector<Enemy*> enemys;
 	vector<Cloud*> clouds;
+	vector<Gold*> coins;
 	GameOver* gameOverPage;
 };

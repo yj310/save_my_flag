@@ -25,6 +25,9 @@ void GameSystem::CreateMap()
 	GenerateTiles();
 	GenerateEnemys();
 	GenerateClouds();
+	GenerateCoin();
+
+	flag = new Flag(80 * 100, START_BOTTOM - 300+10);
 }
 
 void GameSystem::MakeNomalBrickTile(float x, float y)
@@ -65,7 +68,8 @@ void GameSystem::MakeCloud(float x, float y, int state, int type)
 
 void GameSystem::MakeCoin(float x, float y)
 {
-	
+	Gold* coin = new Gold(x, y);
+	coins.push_back(coin);
 }
 
 
@@ -173,6 +177,7 @@ void GameSystem::GenerateTiles()
 	MakeNomalBrickTile(53 * 100, START_BOTTOM - 100 * 1);
 	MakeNomalBrickTile(68 * 100, START_BOTTOM - 100 * 1);
 
+
 	//hidden
 	MakeHiddenTile(59 * 100, START_BOTTOM - 400 * 1);
 	MakeHiddenTile(60 * 100, START_BOTTOM - 400 * 1);
@@ -191,35 +196,18 @@ void GameSystem::GenerateTiles()
 		}
 	}
 
-	for (int i = 78; i < 78 + 8; i++)
+	for (int i = 78; i < 100; i++)
 	{
 		for (int j = 0; j < 10; j++)
 		{
-			if (((i == 83) || (i == 84) || (i == 85)) && ((j == 7) || (j == 8)))
-				continue;
+			/*if (((i == 83) || (i == 84) || (i == 85)) && ((j == 7) || (j == 8)))
+				continue;*/
 				posX = i * 100;
 				posY = START_BOTTOM + j * 100;
 				MakeNomalBrickTile(posX, posY);
 		}
 	}
-	MakeNomalBrickTile(86*100, START_BOTTOM+9*100);
-
-	for (int i = 87; i < 87 + 14; i++)
-	{
-		posX = i * 100;
-		posY = START_BOTTOM -  4* 100;
-		MakeNomalBrickTile(posX, posY);
-	}
-
-	for (int i = 87+15; i < 87+15+ 6; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			posX = i * 100;
-			posY = START_BOTTOM + j * 100;
-			MakeNomalBrickTile(posX, posY);
-		}
-	}
+	
 }
 
 void GameSystem::GenerateEnemys()
@@ -234,12 +222,19 @@ void GameSystem::GenerateEnemys()
 
 }
 
+void GameSystem::GenerateCoin()
+{
+	MakeCoin(23 * 100, START_BOTTOM - 50);
+	MakeCoin(60 * 100, START_BOTTOM - 500);
+}
+
 void GameSystem::GenerateClouds()
 {
 	MakeCloud(300, 30, normal, TEX_CLOUD_A);
 	MakeCloud(2000, 80, normal, TEX_CLOUD_B);
 	MakeCloud(3500, -200, down, TEX_CLOUD_A);
-	MakeCloud(4700, 80, down, TEX_CLOUD_B);
+	MakeCloud(4900, 80, down, TEX_CLOUD_B);
+	MakeCloud(88*100, 80, updown, TEX_CLOUD_A);
 }
 
 
@@ -265,18 +260,26 @@ void GameSystem::Update()
 	{
 		enemys[i]->setPos(enemys[i]->getPos().x + row_speed, enemys[i]->getPos().y + column_speed);
 	}
+	for (int i = 0; i < coins.size(); i++)
+	{
+		coins[i]->setPos(coins[i]->getPos().x + row_speed, coins[i]->getPos().y + column_speed);
+	}
 	for (int i = 0; i < clouds.size(); i++)
 	{
 		clouds[i]->setStartPosY(clouds[i]->getStartPosY() + column_speed);
 		clouds[i]->setPos(clouds[i]->getPos().x + row_speed, clouds[i]->getPos().y + column_speed);
 	}
+
+
 	player->setPos(player->getPos().x + row_speed, player->getPos().y + column_speed);
 	
-
+	
 
 
 	if (!player->isDead)
 	{
+		flag->Update();
+
 		player->Update();
 		for (int i = 0; i < tiles.size(); i++)
 		{
@@ -324,7 +327,7 @@ void GameSystem::Update()
 
 				if (tiles[i]->getTileType() == DAMAGE_TILE)
 				{
-					//player->IsDead();
+					player->IsDead();
 				}
 				
 				if (tiles[i]->getTileType() == HIDDEN_BRICK) {
@@ -449,7 +452,17 @@ void GameSystem::Update()
 			if (isCircleCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 				enemys[i]->getPos().x, enemys[i]->getPos().y, enemys[i]->getRadious()))
 			{
-				//player->IsDead();
+				player->IsDead();
+			}
+
+		}
+
+		for (int i = 0; i < coins.size(); i++)
+		{
+			if (isCircleCollided(player->getPos().x, player->getPos().y, player->getRadious(),
+				coins[i]->getPos().x, coins[i]->getPos().y, coins[i]->getRadious()))
+			{
+				coins[i]->isTouch = true;
 			}
 		}
 
@@ -460,7 +473,7 @@ void GameSystem::Update()
 				if (isCircleVsBoxCollided(player->getPos().x, player->getPos().y, player->getRadious(),
 					clouds[i]->getPos().x, clouds[i]->getPos().y, clouds[i]->getSize().x, clouds[i]->getSize().y))
 				{
-					//player->IsDead();
+					player->IsDead();
 				}
 			}
 			
@@ -480,7 +493,8 @@ void GameSystem::Update()
 
 void GameSystem::Render()
 {
-
+	
+	flag->Render();
 	player->Render();
 	for (int i = 0; i < enemys.size(); i++)
 	{
@@ -494,11 +508,16 @@ void GameSystem::Render()
 	{
 		clouds[i]->Render();
 	}
-
+	for (int i = 0; i < coins.size(); i++)
+	{
+		coins[i]->Render();
+	}
 	if (player->isDead)
 	{
 		gameOverPage->Render();
 	}
+
+	
 }
 
 void GameSystem::deleteData()
@@ -522,11 +541,15 @@ void GameSystem::deleteData()
 	{
 		clouds.pop_back();
 	}
+	size = coins.size();
+	for (int i = 0; i < size; i++)
+	{
+		coins.pop_back();
+	}
 	group_number = -1;
 }
 
 D3DXVECTOR2 GameSystem::getPrintPos(float x, float y)
-{
+{	
 	return { x - (player->getPos().x - player->getPrintPos().x), y - (player->getPos().y - player->getPrintPos().y) };
-	//return { x - (player->getPos().x - player->getPrintPos().x), y+player->bottomY };
 }

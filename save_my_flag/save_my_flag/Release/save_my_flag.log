@@ -1,0 +1,79 @@
+﻿  game_system.cpp
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(84,20): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(88,44): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(95,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(96,24): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(103,12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(115,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(116,24): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(125,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(126,24): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(136,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(137,24): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(149,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(150,36): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(161,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(162,36): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(171,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(172,24): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(193,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(194,24): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(205,14): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(206,25): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(255,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(259,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(263,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(267,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(269,53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(284,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(292,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(296,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(315,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(319,88): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(343,16): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(344,16): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(346,14): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(347,14): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(348,18): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(349,19): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(358,49): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(358,21): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(365,36): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(365,21): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(371,30): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(372,30): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(380,55): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(380,39): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(386,43): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(386,27): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(393,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(395,16): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(396,16): warning C4244: '초기화 중': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(397,21): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(406,52): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(406,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(412,39): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(412,25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(418,33): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(419,33): warning C4244: '=': 'FLOAT'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(431,58): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(431,43): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(441,46): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(441,31): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(450,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(452,83): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(460,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(463,69): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(462,83): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(469,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(473,89): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(499,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(503,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(507,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\qwer1\2021\save_my_flag\save_my_flag\save_my_flag\game_system.cpp(511,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다.
+  1 of 362 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  save_my_flag.vcxproj -> C:\Users\qwer1\2021\save_my_flag\save_my_flag\Release\save_my_flag.exe

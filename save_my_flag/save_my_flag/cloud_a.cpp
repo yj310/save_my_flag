@@ -19,7 +19,7 @@ CloudA::CloudA(float x, float y, int state, int type)
 
 	width = CLOUD_WIDTH;
 	height = CLOUD_HEIGHT;
-	speed = GRAVITY+10;
+	speed = GRAVITY;
 	isStart = false;
 }
 
@@ -30,6 +30,16 @@ void CloudA::Update()
 
 	if (isStart)
 	{
+		if (img_type == TEX_CLOUD_A)
+		{
+			img_type = TEX_CLOUD_A_BAD;
+		}
+		else if (img_type == TEX_CLOUD_B)
+		{
+			img_type = TEX_CLOUD_B_BAD;
+
+		}
+
 		if (_state == down)
 		{
 			Down();
@@ -65,9 +75,9 @@ void CloudA::Down()
 void CloudA::UpDown()
 {
 	Down();
-	if (posY < WINDOW_HEIGHT + 500)
+	if (posY > WINDOW_HEIGHT + height)
 	{
-		speed * -1;
+		speed *= -1;
 	}
 }
 

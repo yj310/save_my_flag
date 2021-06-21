@@ -15,10 +15,13 @@ public:
 	int state_count;
 	int state;
 
+	bool isTouch;
+
 	void setPos(float x, float y);
 	D3DXVECTOR2 getPos();
 	void setSize(float width, float height);
 	D3DXVECTOR2 getSize();
+	int getRadious();
 	void setState(int state);
 	int getState();
 };

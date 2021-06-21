@@ -8,6 +8,7 @@ Gold::Gold(float x, float y)
 
 	width = 100;
 	height = 80;
+	isTouch = false;
 
 	state_count = 0;
 	state = TEX_GOLD_A;
@@ -16,25 +17,29 @@ Gold::Gold(float x, float y)
 
 void Gold::Render()
 {
-	TextureElement* element = textureManager.getTexture(state);
+	if (!isTouch)
+	{
+		TextureElement* element = textureManager.getTexture(state);
 
-	RECT rc;
-	D3DXVECTOR3 pos;
-	D3DXVECTOR3 cen;
+		RECT rc;
+		D3DXVECTOR3 pos;
+		D3DXVECTOR3 cen;
 
-	element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
+		element->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
-	rc.left = 0;
-	rc.top = 0;
-	rc.right = width;
-	rc.bottom = height;
+		rc.left = 0;
+		rc.top = 0;
+		rc.right = width;
+		rc.bottom = height;
 
-	cen = { width / 2, height, 0 };
-	pos = { posX, posY, 0 };
+		cen = { width / 2, height, 0 };
+		pos = { gameSystem.getPrintPos(posX, posY).x, gameSystem.getPrintPos(posX, posY).y, 0 };
 
-	element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+		element->sprite->Draw(element->texture, &rc, &cen, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 
-	element->sprite->End();
+		element->sprite->End();
+	}
+	
 }
 
 void Gold::Update()
@@ -64,6 +69,11 @@ void Gold::setPos(float x, float y)
 D3DXVECTOR2 Gold::getPos()
 {
 	return { posX, posY };
+}
+
+int Gold::getRadious()
+{
+	return 40;
 }
 
 void Gold::setSize(float width, float height)

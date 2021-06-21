@@ -94,7 +94,8 @@ void InitMyStuff()
 	textureManager.LoadTexture(L"source/image/object/enemy/enemy_a.png", TEX_ENEMY_A_1);
 	textureManager.LoadTexture(L"source/image/object/enemy/enemy_b.png", TEX_ENEMY_A_2);
 	textureManager.LoadTexture(L"source/image/object/enemy/enemy_c.png", TEX_ENEMY_A_3);
-	textureManager.LoadTexture(L"source/image/object/enemy/enemy_d.png", TEX_ENEMY_A_4);
+    textureManager.LoadTexture(L"source/image/object/enemy/enemy_d.png", TEX_ENEMY_A_4);
+    textureManager.LoadTexture(L"source/image/object/flag.png", TEX_FLAG);
 
 	textureManager.LoadTexture(L"source/image/object/tile/brick_nomal.png", TEX_BRICK);
 	textureManager.LoadTexture(L"source/image/object/tile/damage_tile.png", TEX_DAMAGE_TILE);

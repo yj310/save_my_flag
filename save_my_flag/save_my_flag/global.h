@@ -33,7 +33,7 @@
 
 // map
 #define START_BOTTOM 910
-#define FINISH_TILE_RIGHT 10700
+#define FINISH_TILE_RIGHT 10000
 #define FINISH_TILE_BOTTOM START_BOTTOM + 1000
 
 #define GRAVITY 20.5
@@ -54,6 +54,8 @@
 #define TEX_ENEMY_A_2				2011
 #define TEX_ENEMY_A_3				2012
 #define TEX_ENEMY_A_4				2013
+
+#define TEX_FLAG					2014
 
 #define TEX_GOLD_A					2030
 #define TEX_GOLD_B					2031

@@ -17,7 +17,7 @@ public:
 	int getRadious();
 	float getSpeed();
 	bool getIsDead();
-	void IsDead() { isDead = true; }
+	void IsDead() { isDead = false; }
 	D3DXVECTOR2 getSize();
 	D3DXVECTOR2 getCenter();
 	void setPrintPos();
