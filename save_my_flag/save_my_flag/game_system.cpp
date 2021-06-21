@@ -304,6 +304,10 @@ void GameSystem::Update()
 			}
 			clouds[i]->Update();
 		}
+		for (int i = 0; i < coins.size(); i++)
+		{
+			coins[i]->Update();
+		}
 
 
 		player->isTouch_top = false;
