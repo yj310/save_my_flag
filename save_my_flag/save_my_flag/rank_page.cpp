@@ -164,7 +164,7 @@ void RankPage::Render()
 
 	
 	
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		/*name*/
 		for (int j = 0; j < strlen(ranking[i].playerName); j++)
@@ -199,7 +199,31 @@ void RankPage::Render()
 			D3DXCOLOR(0.21f, 0.05f, 0.35f, 1.0f));
 	}
 
-	rc.left = TEXT_RANK_X;
-	rc.top = TEXT_RANK_Y;
+	/*player*/
+	//txt
+	for (int i = 0; i < strlen(ranking[6].playerName); i++)
+	{
+		rc.left = TEXT_RANK_X + i * 50;
+		rc.top = TEXT_RANK_Y + 5 * 120 + 20;
+		rc.right = 15;
+		rc.bottom = 15;
+
+		_stprintf_s<256>(text, _T("%c"), ranking[6].playerName[i]);
+		font->DrawText(NULL, text, -1, &rc, DT_NOCLIP,
+			D3DXCOLOR(0.21f, 0.05f, 0.35f, 1.0f));
+
+	}
+	//score
+
+	rc.left = TEXT_SCORE_X;
+	rc.top = TEXT_RANK_Y + 5 * 120 + 20;
+	rc.right = 15;
+	rc.bottom = 15;
+
+	_stprintf_s<256>(text, _T("%d"), ranking[6].playerScore);
+	font->DrawText(NULL, text, -1, &rc, DT_NOCLIP,
+		D3DXCOLOR(0.21f, 0.05f, 0.35f, 1.0f));
+
+	
 
 }

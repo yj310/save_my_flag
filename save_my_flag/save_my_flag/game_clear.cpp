@@ -108,7 +108,7 @@ void GameClear::Update()
 			std::string name(cname.begin(), cname.end());
 			strcpy_s(ranking[5].playerName, name.c_str());
 			ranking[5].playerScore = (gameSystem.player->score);
-			//ranking[6] = ranking[5];
+			ranking[6] = ranking[5];
 			pageManager.CreateRankingPage();
 		}
 	}
