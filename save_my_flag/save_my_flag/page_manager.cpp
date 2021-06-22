@@ -10,26 +10,55 @@ void PageManager::CreateTitlePage()
 {
 	if (currentPage != nullptr) 
 	{
-		if (currentPage->classType == FIRST_GAME_PAGE)
+		prevPage = currentPage;
+
+		if (prevPage->classType == TITLE_PAGE)
 		{
+			soundManager.BGMTitleStage->Stop();
+		}
+		if (prevPage->classType == FIRST_GAME_PAGE)
+		{
+			soundManager.BGMFirstStage->Stop();
 			gameSystem.deleteData();
+		}
+		if (prevPage->classType == RANK_PAGE)
+		{
+			soundManager.BGMRankStage->Stop();
 		}
 		delete currentPage;
 	}
+
+	soundManager.BGMTitleStage->Reset();
+	soundManager.BGMTitleStage->Play(0, DSBPLAY_LOOPING, 1);
 	TitlePage* newPage = new TitlePage();
 	currentPage = newPage;
+
 }
 
 void PageManager::CreateFirstGamePage()
 {
-	if (currentPage != nullptr) 
+	if (currentPage != nullptr)
 	{
-		if (currentPage->classType == FIRST_GAME_PAGE)
+		prevPage = currentPage;
+
+		if (prevPage->classType == TITLE_PAGE)
 		{
+			soundManager.BGMTitleStage->Stop();
+		}
+		if (prevPage->classType == FIRST_GAME_PAGE)
+		{
+			soundManager.BGMFirstStage->Stop();
 			gameSystem.deleteData();
+		}
+		if (prevPage->classType == RANK_PAGE)
+		{
+			soundManager.BGMRankStage->Stop();
 		}
 		delete currentPage;
 	}
+
+	soundManager.BGMFirstStage->Reset();
+	soundManager.BGMFirstStage->Play(0, DSBPLAY_LOOPING, 1);
 	FirstGamePage* newPage = new FirstGamePage();
 	currentPage = newPage;
 }
@@ -44,6 +73,7 @@ void PageManager::CreateMapEditPage()
 		}
 		delete currentPage;
 	}
+
 	MapEditPage* newPage = new MapEditPage();
 	currentPage = newPage;
 }
@@ -52,12 +82,25 @@ void PageManager::CreateRankingPage()
 {
 	if (currentPage != nullptr)
 	{
-		if (currentPage->classType == FIRST_GAME_PAGE)
+		prevPage = currentPage;
+
+		if (prevPage->classType == TITLE_PAGE)
 		{
+			soundManager.BGMTitleStage->Stop();
+		}
+		if (prevPage->classType == FIRST_GAME_PAGE)
+		{
+			soundManager.BGMFirstStage->Stop();
 			gameSystem.deleteData();
+		}
+		if (prevPage->classType == RANK_PAGE)
+		{
+			soundManager.BGMRankStage->Stop();
 		}
 		delete currentPage;
 	}
+	soundManager.BGMRankStage->Reset();
+	soundManager.BGMRankStage->Play(0, DSBPLAY_LOOPING, 1);
 	RankPage* newPage = new RankPage();
 	currentPage = newPage;
 }

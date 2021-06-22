@@ -48,6 +48,9 @@ void Player::Update()
 	//player motion
 	if (inputManager.keyBuffer['W'] == 1 && !isJump && !isTouch_top && isTouch_bottom)
 	{
+		soundManager.sndJump->Reset();
+		soundManager.sndJump->Play(0, 0, 1);
+
 		isTouch_bottom = false;
 		isJump = true;
 		jumpTime = 1.f;

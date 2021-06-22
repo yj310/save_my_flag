@@ -85,6 +85,8 @@ GameOver::GameOver()
 		&font2);
 
 	enterTimer = ENTERTIMER;
+
+	
 }
 
 void GameOver::Update()

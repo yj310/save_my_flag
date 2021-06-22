@@ -11,9 +11,9 @@
 #include "page_manager.h"
 #include "data_manager.h"
 #include "game_system.h"
-
 #include "cheat.h"
 
+#include "SDKsound.h"
 
 
 // window size
@@ -24,6 +24,7 @@
 #define TEX_FADING 0
 #define TITLE_PAGE 1
 #define FIRST_GAME_PAGE 2
+#define RANK_PAGE 3
 
 // tile
 #define NOMAL_BRICK 0
@@ -90,6 +91,8 @@
 #define TEX_SCORE					3024
 #define TEX_NAME					3025
 #define TEX_GAME_CLEAR				3026
+#define TEX_BACK_NORMAL				3027
+#define TEX_BACK_BORDER				3028
 
 // Character
 #define TEX_PLAYER					4000
@@ -117,6 +120,7 @@ extern PageManager pageManager;
 extern DataManager dataManager;
 extern DataManager dataManager;
 extern GameSystem gameSystem;
+extern CSoundManager soundManager;
 
 // Other
 extern HWND hWnd;

@@ -188,6 +188,8 @@
     <ClInclude Include="page_manager.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="rank_page.h" />
+    <ClInclude Include="SDKsound.h" />
+    <ClInclude Include="SDKwavefile.h" />
     <ClInclude Include="texture_manager.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="save_my_flag.h" />
@@ -217,6 +219,8 @@
     <ClCompile Include="palyer.cpp" />
     <ClCompile Include="rank_page.cpp" />
     <ClCompile Include="save_my_flag.cpp" />
+    <ClCompile Include="SDKsound.cpp" />
+    <ClCompile Include="SDKwavefile.cpp" />
     <ClCompile Include="texture_manager.cpp" />
     <ClCompile Include="title_page.cpp" />
   </ItemGroup>

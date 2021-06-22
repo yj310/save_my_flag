@@ -51,6 +51,8 @@
 TitlePage::TitlePage()
 {
 	classType = TITLE_PAGE;
+
+
 	StartButtonState = TEX_START_BUTTON_NOMAL;
 	ExitButtonState = TEX_EXIT_BUTTON_NOMAL;
 	ManualButtonState = TEX_MANUAL_BUTTON_NOMAL;

@@ -33,6 +33,8 @@ public:
 	void deleteData();
 	D3DXVECTOR2 getPrintPos(float x, float y);
 	
+
+	bool done = false;	
 	int group_number;
 	enum cloud_state
 	{

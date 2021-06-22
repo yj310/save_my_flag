@@ -39,6 +39,8 @@ InputManager inputManager;
 PageManager pageManager;
 DataManager dataManager;
 GameSystem gameSystem;
+CSoundManager soundManager;
+
 
 // Other
 float deltaTime = 0.3f;
@@ -57,18 +59,18 @@ HRESULT InitD3D(HWND hWnd)
     // using more complex geometry, we will create a device with a zbuffer.
     D3DPRESENT_PARAMETERS d3dpp;
     ZeroMemory(&d3dpp, sizeof(d3dpp));
-    /*d3dpp.Windowed = TRUE;
+    d3dpp.Windowed = TRUE;
     d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
     d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
     d3dpp.EnableAutoDepthStencil = TRUE;
-    d3dpp.AutoDepthStencilFormat = D3DFMT_D16;*/
+    d3dpp.AutoDepthStencilFormat = D3DFMT_D16;
 
 
-	d3dpp.Windowed = false;
+	/*d3dpp.Windowed = false;
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
 	d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8;
 	d3dpp.BackBufferWidth = WINDOW_WIDTH;
-	d3dpp.BackBufferHeight = WINDOW_HEIGHT;
+	d3dpp.BackBufferHeight = WINDOW_HEIGHT;*/
 
     // Create the D3DDevice
     if (FAILED(g_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd,
@@ -132,6 +134,9 @@ void InitMyStuff()
     textureManager.LoadTexture(L"source/image/ui/score.png", TEX_SCORE);
     textureManager.LoadTexture(L"source/image/ui/name.png", TEX_NAME);
 
+    textureManager.LoadTexture(L"source/image/ui/back_button_border.png", TEX_BACK_BORDER);
+    textureManager.LoadTexture(L"source/image/ui/back_button_normal.png", TEX_BACK_NORMAL);
+
     
 	// character
 	textureManager.LoadTexture(L"source/image/character/player.png", TEX_PLAYER);
@@ -145,6 +150,65 @@ void InitMyStuff()
 	//pageManager.CreateMapEditPage();
     pageManager.CreateTitlePage();
     prevTime = GetTickCount();
+
+    for (int i = 0; i < 7; ++i)
+    {
+        strcpy_s<128>(ranking[i].playerName, "player");
+        ranking[i].playerScore = 0;
+    }
+}
+
+
+void initSound()
+{
+    soundManager.Initialize(hWnd, DSSCL_NORMAL);
+
+    {
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/title.wav");
+        soundManager.Create(&soundManager.BGMTitleStage, fileName);
+    }
+    {
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/firstgame.wav");
+        soundManager.Create(&soundManager.BGMFirstStage, fileName);
+    }
+    {
+        //
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/rank.wav");  
+        soundManager.Create(&soundManager.BGMRankStage, fileName);
+    }
+    {
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/popup.wav");
+        soundManager.Create(&soundManager.BGMPopup, fileName);
+    }
+    {
+        //
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/Game Over.wav");
+        soundManager.Create(&soundManager.sndDie, fileName);
+    }
+    {
+        //
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/gameclear.wav");
+        soundManager.Create(&soundManager.sndClear, fileName);
+    }
+    {
+        //
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/jump.wav");
+        soundManager.Create(&soundManager.sndJump, fileName);
+    }
+    {
+        //
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/coin.wav");
+        soundManager.Create(&soundManager.sndCoin, fileName);
+    }
+
 }
 
 void Render()
@@ -269,7 +333,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    }
 
    InitD3D(hWnd);
+   initSound();
    InitMyStuff();
+   
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 

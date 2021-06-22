@@ -9,6 +9,7 @@
 #include "damage_tile.h"
 #include "enemy_a.h"
 #include "cloud_a.h"
+#include "flag.h"
 
 
 
@@ -470,6 +471,9 @@ void GameSystem::Update()
 				{
 					coins[i]->isTouch = true;
 					player->AddCoin();
+
+					soundManager.sndCoin->Reset();
+					soundManager.sndCoin->Play(0, 0, 2);
 				}
 			}
 			
@@ -496,13 +500,19 @@ void GameSystem::Update()
 		player->setPrintPos();
 
 	}
-	else if(player->isDead)
+	else if(player->isDead && !done)
 	{
-		//gameOverPage->Update();
+		soundManager.BGMFirstStage->Stop();
+		soundManager.sndDie->Reset();
+		soundManager.sndDie->Play(0, 0, 1);
+		done = true;
 	}
-	else if (player->isClear)
+	else if (player->isClear && !done)
 	{
-
+		soundManager.BGMFirstStage->Stop();
+		soundManager.sndClear->Reset();
+		soundManager.sndClear->Play(0, 0, 1);
+		done = true;
 	}
 
 
@@ -542,6 +552,8 @@ void GameSystem::deleteData()
 {
 	delete player;
 	player = new Player();
+	delete flag;
+	flag = new Flag(80 * 100, START_BOTTOM - 300 + 10);
 	//delete gameOverPage;
 	//gameOverPage = new GameOver();
 	int size = tiles.size();
@@ -565,6 +577,7 @@ void GameSystem::deleteData()
 		coins.pop_back();
 	}
 	group_number = -1;
+	done = false;
 }
 
 D3DXVECTOR2 GameSystem::getPrintPos(float x, float y)
