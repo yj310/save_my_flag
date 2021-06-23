@@ -41,8 +41,8 @@ Player::Player()
 
 void Player::Update()
 {
-	score += posX/100;
-
+	score += (posX+ coin_c)/100;
+	
 	Gravity();
 
 	//player motion
