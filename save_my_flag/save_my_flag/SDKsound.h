@@ -79,6 +79,7 @@ public:
     CSound* sndCoin;
     CSound* sndDie;
     CSound* sndClear;
+    CSound* sndOnBtn;
 	
 
 

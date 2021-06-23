@@ -117,8 +117,13 @@ void TitlePage::StartButtonUpdate(POINT pt)
 	if (pt.x > START_BUTTON_X - START_BUTTON_HALF_WIDTH && pt.x < START_BUTTON_X + START_BUTTON_HALF_WIDTH
 		&& pt.y > START_BUTTON_Y - START_BUTTON_HALF_HEIGHT && pt.y < START_BUTTON_Y + START_BUTTON_HALF_HEIGHT)
 	{
+		
+
 		if (StartButtonState == TEX_START_BUTTON_NOMAL)
 		{
+			soundManager.sndOnBtn->Reset();
+			soundManager.sndOnBtn->Play(0, 0, 1);
+
 			StartButtonState = TEX_START_BUTTON_BORD;
 		}
 
@@ -140,8 +145,11 @@ void TitlePage::ExitButtonUpdate(POINT pt)
 	if (pt.x > EXIT_BUTTON_X - EXIT_BUTTON_HALF_WIDTH && pt.x < EXIT_BUTTON_X + EXIT_BUTTON_HALF_WIDTH
 		&& pt.y > EXIT_BUTTON_Y - EXIT_BUTTON_HALF_HEIGHT && pt.y < EXIT_BUTTON_Y + EXIT_BUTTON_HALF_HEIGHT)
 	{
+		
 		if (ExitButtonState == TEX_EXIT_BUTTON_NOMAL)
 		{
+			soundManager.sndOnBtn->Reset();
+			soundManager.sndOnBtn->Play(0, 0, 1);
 			ExitButtonState = TEX_EXIT_BUTTON_BORD;
 		}
 
@@ -164,8 +172,12 @@ void TitlePage::ManualButtonUpdate(POINT pt)
 	if (pt.x > MANUAL_BUTTON_X - MANUAL_BUTTON_HALF_WIDTH && pt.x < MANUAL_BUTTON_X + MANUAL_BUTTON_HALF_WIDTH
 		&& pt.y > MANUAL_BUTTON_Y - MANUAL_BUTTON_HALF_HEIGHT && pt.y < MANUAL_BUTTON_Y + MANUAL_BUTTON_HALF_HEIGHT)
 	{
+		
+
 		if (ManualButtonState == TEX_MANUAL_BUTTON_NOMAL)
 		{
+			soundManager.sndOnBtn->Reset();
+			soundManager.sndOnBtn->Play(0, 0, 1);
 			ManualButtonState = TEX_MANUAL_BUTTON_BORD;
 		}
 
@@ -189,6 +201,8 @@ void TitlePage::RankingButtonUpdate(POINT pt)
 	{
 		if (RankingButtonState == TEX_RANKING_BUTTON_NOMAL)
 		{
+			soundManager.sndOnBtn->Reset();
+			soundManager.sndOnBtn->Play(0, 0, 1);
 			RankingButtonState = TEX_RANKING_BUTTON_BORD;
 		}
 

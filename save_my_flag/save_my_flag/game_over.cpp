@@ -102,6 +102,9 @@ void GameOver::Update()
 	{
 		if (mainButtonState == TEX_MAIN_BUTTON_NOMAL)
 		{
+			soundManager.sndOnBtn->Reset();
+			soundManager.sndOnBtn->Play(0, 0, 1);
+
 			mainButtonState = TEX_MAIN_BUTTON_MOUSEOVER;
 		}
 
@@ -131,6 +134,8 @@ void GameOver::Update()
 	{
 		if (returnButtonState == TEX_RETURN_BUTTON_NOMAL)
 		{
+			soundManager.sndOnBtn->Reset();
+			soundManager.sndOnBtn->Play(0, 0, 1);
 			returnButtonState = TEX_RETURN_BUTTON_MOUSEOVER;
 		}
 

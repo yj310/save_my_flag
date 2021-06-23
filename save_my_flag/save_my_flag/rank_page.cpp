@@ -106,12 +106,14 @@ void RankPage::Update()
 
 	if (pt.x > BACK_BUTTON_X && pt.x<BACK_BUTTON_X+BACK_BUTTON_WIDTH && pt.y>BACK_BUTTON_Y && pt.y<BACK_BUTTON_Y+BACK_BUTTON_HEIGHT)
 	{
-		//if (buttonState == TEX_MAIN_BUTTON_NOMAL)
-		//{
-		//	//soundManager.sndOnButton->Reset();
-		//	//soundManager.sndOnButton->Play(0, 0, 1);
-		//}
-		buttonState = TEX_BACK_BORDER;
+		if (buttonState == TEX_BACK_NORMAL)
+		{
+			buttonState = TEX_BACK_BORDER;
+
+			soundManager.sndOnBtn->Reset();
+			soundManager.sndOnBtn->Play(0, 0, 1);
+		}
+	
 
 		if (inputManager.prevKeyBuffer[VK_LBUTTON] == 1 && inputManager.keyBuffer[VK_LBUTTON] == 0)
 		{

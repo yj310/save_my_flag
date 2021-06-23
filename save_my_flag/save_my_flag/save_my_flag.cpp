@@ -208,7 +208,13 @@ void initSound()
         swprintf_s<MAX_PATH>(fileName, L"source/sound/coin.wav");
         soundManager.Create(&soundManager.sndCoin, fileName);
     }
-
+    {
+        //
+        WCHAR fileName[MAX_PATH];
+        swprintf_s<MAX_PATH>(fileName, L"source/sound/onButton.wav");
+        soundManager.Create(&soundManager.sndOnBtn, fileName);
+    }
+    
 }
 
 void Render()

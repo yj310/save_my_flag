@@ -245,14 +245,14 @@ void GameSystem::Update()
 	float row_speed = 0;
 	float column_speed = 0;
 	float speed = 20;
-	if (inputManager.keyBuffer[VK_LEFT] == 1)
+	/*if (inputManager.keyBuffer[VK_LEFT] == 1)
 		row_speed = speed * 1;
 	if (inputManager.keyBuffer[VK_RIGHT] == 1)
 		row_speed = speed * -1;
 	if (inputManager.keyBuffer[VK_UP] == 1)
 		column_speed = speed * 1;
 	if (inputManager.keyBuffer[VK_DOWN] == 1)
-		column_speed = speed * -1;
+		column_speed = speed * -1;*/
 	for (int i = 0; i < tiles.size(); i++)
 	{	
 		tiles[i]->setPos(tiles[i]->getPos().x + row_speed, tiles[i]->getPos().y + column_speed);
